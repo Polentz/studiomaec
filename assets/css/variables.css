@@ -1,0 +1,11 @@
+:root {
+    --doc-height: 100%;
+    --bg-color: #e8e8e8;
+    --main-color: #001bcb;
+    --difference-color: #ffe434;
+    --acc-color: #ff4f5d;
+    --white: #fff;
+    --black: #000;
+    --txt-large-size: 10rem;
+    --txt-size: .9rem;
+}

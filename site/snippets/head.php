@@ -21,14 +21,11 @@
         <meta property="og:image" content="<?= $ogImage->url() ?>">
     <?php endif ?>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <!-- <link href="/assets/favicons/favicon.ico" rel="icon" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/mcx4xyg.css"> -->
+    <!-- <link href="/assets/favicons/favicon.ico" rel="icon" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://use.typekit.net/lbh6bnf.css">
     <?= css ([
-        // 'assets/css/variables.css',
-        // 'assets/css/fonts.css',
+        'assets/css/variables.css',
+        'assets/css/fonts.css',
         'assets/css/base.css',
         'assets/css/style.css',
         '@auto',
