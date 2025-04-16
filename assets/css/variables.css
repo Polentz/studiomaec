@@ -7,6 +7,8 @@
     --white: #fff;
     --black: #000;
     --txt-large-size: 8rem;
+    --txt-medium-size: 1.3rem;
     --txt-size: 1rem;
-    --main-margin: 3rem;
+    --main-margin: calc(2rem + 5vw);
+    --grid-gap: 2rem;
 }

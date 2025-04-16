@@ -4,6 +4,7 @@ html {
 
 body {
     width: 100%;
+    /* height: 200vh; */
     min-height: var(--doc-height);
     color: var(--main-color);
     background-color: var(--bg-color);
@@ -11,30 +12,57 @@ body {
     font-family: "Elza", sans-serif;
 }
 
+img {
+    width: 100%;
+}
+
+.--700-text {
+    font-weight: 700;
+}
+
+.--500-text {
+    font-weight: 500;
+}
+
+.--400-text {
+    font-weight: 400;
+}
+
 .header {
     width: 100%;
-    position: fixed;
-    top: 0;
+    position: sticky;
+    top: -3.5rem;
     left: 0;
+    padding: 0 var(--main-margin);
+    z-index: 999;
 }
 
 .site-title {
+    position: relative;
     font-size: var(--txt-large-size);
     font-weight: 400;
     line-height: 1;
+    /* color: var(--difference-color); */
     color: var(--main-color);
     text-align: center;
     margin: 0;
+    mix-blend-mode: difference;
+}
+
+.page-title {
+    font-weight: 400;
 }
 
 .nav {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     font-weight: 700;
+    line-height: 1;
     border-top: solid 1px var(--main-color);
     border-bottom: solid 1px var(--main-color);
-    padding: 1rem var(--main-margin);
+    padding: .75rem 0;
     text-transform: lowercase;
     background-color: var(--bg-color);
     transform: translateY(-1rem);
@@ -42,6 +70,80 @@ body {
 
 .nav-wrapper {
     display: flex;
-    gap: var(--main-margin);
+    gap: 3rem;
+}
 
+.main {
+    padding: 9rem var(--main-margin);
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+}
+
+.grid-item {
+    height: fit-content;
+    position: sticky;
+    top: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.item-header,
+.item-ui {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-ui-counter,
+.item-ui-button {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.item-header {
+    text-transform: lowercase;
+}
+
+.item-ui-counter {
+    font-size: .8rem;
+}
+
+.item-footer-text {
+    font-size: var(--txt-medium-size);
+    line-height: 120%;
+}
+
+.footer {
+    width: 100%;
+    padding: 0 var(--main-margin);
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: .75rem 0;
+    font-size: var(--txt-size);
+    line-height: 1.2;
+}
+
+.footer-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-wrapper:first-of-type {
+    border-bottom: solid 1px var(--main-color);
 }
