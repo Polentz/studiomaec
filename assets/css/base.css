@@ -188,3 +188,18 @@ button {
     border: none;
     border-radius: 0;
 }
+
+*::-moz-selection {
+    background: transparent;
+    color: var(--acc-color);
+}
+
+*::selection {
+    background: transparent;
+    color: var(--acc-color);
+}
+
+h1::selection {
+    background: transparent;
+    color: transparent;
+}

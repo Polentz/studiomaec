@@ -1,4 +1,4 @@
-<footer id="footer" class="footer">
+<footer id="contact" class="footer">
     <div class="footer-wrapper">
         <ul class="footer-block text weight-700">
             <li>studio mäc</li>

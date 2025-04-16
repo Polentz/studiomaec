@@ -8,7 +8,7 @@
         <ul class="nav-menu text weight-700">
             <li class="nav-item"><a href="">Works</a></li>
             <li class="nav-item"><a href="">About</a></li>
-            <li class="nav-item"><a href="#footer">Contact</a></li>
+            <li class="nav-item"><a class="js-href" href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>

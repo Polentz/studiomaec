@@ -4,7 +4,6 @@ html {
 
 body {
     width: 100%;
-    /* height: 200vh; */
     min-height: var(--doc-height);
     color: var(--main-color);
     background-color: var(--bg-color);
@@ -22,7 +21,7 @@ img {
     top: -3.5rem;
     left: 0;
     mix-blend-mode: difference;
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
     z-index: 999;
 }
 
