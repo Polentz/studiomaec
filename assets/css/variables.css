@@ -6,9 +6,14 @@
     --acc-color: #ff4f5d;
     --white: #fff;
     --black: #000;
-    --txt-large-size: 8rem;
-    --txt-medium-size: 1.3rem;
+    --txt-title-size: 8rem;
+    --txt-large-size: 2.5rem;
+    --txt-medium-size: 1.2rem;
     --txt-size: 1rem;
+    --txt-small-size: .8rem;
+    --button-size: 1.5rem;
     --main-margin: calc(2rem + 5vw);
-    --grid-gap: 2rem;
+    /* --inner-margin: 1.5rem; */
+    --grid-gap: 1.5rem;
+    --inner-gap: .5rem;
 }
