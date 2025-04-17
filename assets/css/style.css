@@ -5,7 +5,7 @@ html {
 
 body {
     width: 100%;
-    min-height: var(--doc-height);
+    /* min-height: var(--doc-height); */
     color: var(--main-color);
     background-color: var(--bg-color);
     overflow-x: hidden;
@@ -160,7 +160,8 @@ img {
 }
 
 .main {
-    padding: 9rem var(--main-margin);
+    min-height: calc(var(--doc-height) - var(--footer-height) - 11rem);
+    padding: 8rem var(--main-margin);
 }
 
 .grid {
@@ -234,6 +235,7 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -2;
     pointer-events: none;
     opacity: 0;
@@ -241,14 +243,6 @@ img {
 
 .list-item-topbar .topbar-image img {
     transform: scale(0.95);
-}
-
-.list-item-topbar .topbar-image:nth-child(odd) {
-    transform: translate(-60%, -50%);
-}
-
-.list-item-topbar .topbar-image:nth-child(even) {
-    transform: translate(-40%, -50%);
 }
 
 .list-item-topbar:hover .topbar-image {

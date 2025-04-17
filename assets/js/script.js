@@ -3,6 +3,13 @@ const documentHeight = () => {
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
 };
 
+const footerHeight = () => {
+    const doc = document.documentElement;
+    const footer = document.querySelector(".footer");
+    doc.style.setProperty("--footer-height", `${footer.offsetHeight}px`);
+    console.log(footer.offsetHeight);
+};
+
 const handleHref = () => {
     const anchorTags = document.querySelectorAll(".js-href");
     if (anchorTags) {
@@ -20,9 +27,11 @@ const handleHref = () => {
 
 window.addEventListener("load", () => {
     documentHeight();
+    footerHeight();
     handleHref();
 });
 
 window.addEventListener("resize", () => {
     documentHeight();
+    footerHeight();
 });
