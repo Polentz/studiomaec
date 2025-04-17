@@ -1,0 +1,32 @@
+title: Works
+  
+options:
+  delete: false
+  duplicate: false
+  changeStatus: false
+  move: false
+  sort: false
+
+image:
+  icon: bookmark
+  query: false
+
+tabs:
+  content:
+    label: Page content
+    icon: page
+    sections:
+      items:
+        label: Works
+        type: pages
+        layout: cardlets
+        template:
+          - project
+        info: '{{ page.title }}'
+        search: true
+        sortable: true
+        image:
+          cover: true
+          ratio: 1/1
+          back: '#7ba3dd'
+          query: page.gallery.toFile()
