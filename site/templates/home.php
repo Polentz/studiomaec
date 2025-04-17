@@ -2,7 +2,7 @@
 <?= snippet('header') ?>
 
 <main class="main">
-    <section class="section-grid">
+    <section class="section">
         <div class="grid">
             <div class="grid-item span-1">
                 <div class="item-header">

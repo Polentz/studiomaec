@@ -6,8 +6,11 @@
         <h2 class="text weight-700">Architecture & Territory</h2>
         <h3 class="page-title"><?= $page->title() ?></h3>
         <ul class="nav-menu text weight-700">
-            <li class="nav-item"><a href="">Works</a></li>
-            <li class="nav-item"><a href="">About</a></li>
+            <?php foreach($site->children()->listed() as $page) : ?>
+                <?php if (!$page->isOpen()) : ?>
+                    <li class="nav-item"><a href="<?= $page->url() ?>"><?= $page->title() ?></a></li>                    
+                <?php endif ?>
+            <?php endforeach ?>
             <li class="nav-item"><a class="js-href" href="#contact">Contact</a></li>
         </ul>
     </div>

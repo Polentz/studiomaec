@@ -1,5 +1,6 @@
 html {
     font-size: 100%;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -16,7 +17,7 @@ img {
 }
 
 .header {
-    width: 100%;
+    width: 100dvw;
     position: sticky;
     top: -3.5rem;
     left: 0;
@@ -45,6 +46,12 @@ img {
     line-height: 1.2;
 }
 
+.text-label {
+    font-size: var(--txt-size);
+    line-height: 1.2;
+    text-transform: lowercase;
+}
+
 .text-small {
     font-size: var(--txt-small-size);
     line-height: 1.2;
@@ -70,6 +77,10 @@ img {
 
 .weight-700 {
     font-weight: 700;
+}
+
+.button {
+    display: flex;
 }
 
 .button svg {
@@ -185,6 +196,38 @@ img {
     display: flex;
     gap: var(--inner-gap);
     align-items: center;
+}
+
+.list-item-topbar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: stretch;
+    align-items: center;
+    border-bottom: solid 1px var(--main-color);
+    padding: .75rem 0;
+}
+
+.list-item-topbar-header {
+    border-top: solid 1px var(--main-color);
+}
+
+.list-item-topbar-header  .topbar-label {
+    display: flex;
+    align-items: baseline;
+    gap: var(--grid-gap);
+}
+
+.list-item-topbar-header  .topbar-label svg {
+    width: .5rem;
+    fill: none;
+    stroke: var(--main-color);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.list-item-topbar .item-ui-buttons {
+    justify-content: flex-end;
 }
 
 .footer {

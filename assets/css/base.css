@@ -200,6 +200,5 @@ button {
 }
 
 h1::selection {
-    background: transparent;
-    color: transparent;
+    color: var(--difference-color);
 }

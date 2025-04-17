@@ -6,10 +6,10 @@ const documentHeight = () => {
 const handleHref = () => {
     const anchorTags = document.querySelectorAll(".js-href");
     if (anchorTags) {
-        anchorTags.forEach(link => {
-            link.addEventListener("click", (event) => {
+        anchorTags.forEach(a => {
+            a.addEventListener("click", (event) => {
                 event.preventDefault();
-                const href = link.getAttribute("href");
+                const href = a.getAttribute("href");
                 document.querySelector(href).scrollIntoView({
                     behavior: "smooth"
                 });
