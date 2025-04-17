@@ -18,6 +18,7 @@ img {
 
 .header {
     width: 100dvw;
+    height: var(--header-height);
     position: sticky;
     top: -3.5rem;
     left: 0;
@@ -116,13 +117,13 @@ img {
     /* transition: transform .2s ease-in-out; */
 }
 
-.list-item-topbar-content:hover .topbar-label span,
+.list-item-topbar-content:not(.--selected):hover .topbar-label span,
 .nav-item a:hover {
     color: var(--bg-color);
     /* font-style: italic; */
 }
 
-.list-item-topbar-content:hover .topbar-label span::after,
+.list-item-topbar-content:not(.--selected):hover .topbar-label span::after,
 .nav-item a:hover::after {
     transform: translateX(-4px) scaleX(1);
     transform-origin: left;
@@ -134,7 +135,7 @@ img {
     top: 4.5rem;
     background-color: var(--bg-color);
     padding: 0 var(--main-margin);
-    transform: translateY(-1rem);
+    /* transform: translateY(-1rem); */
     z-index: 999;
 }
 
@@ -160,8 +161,7 @@ img {
 }
 
 .main {
-    min-height: calc(var(--doc-height) - var(--footer-height) - 11rem);
-    padding: 8rem var(--main-margin);
+    padding: 10rem var(--main-margin);
 }
 
 .grid {
@@ -202,6 +202,19 @@ img {
     align-items: center;
 }
 
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .list-item {
+    order: unset;
+}
+
+.list-item.--order {
+    order: -1
+} */
+
 .list-item-topbar {
     position: relative;
     display: grid;
@@ -237,8 +250,13 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -2;
+    display: block;
     pointer-events: none;
     opacity: 0;
+}
+
+.list-item-topbar .topbar-image.--display {
+    display: none;
 }
 
 .list-item-topbar .topbar-image img {
@@ -255,18 +273,28 @@ img {
     transition: transform .15s ease-in-out;
 }
 
+.list-item-topbar-content {
+    cursor: pointer;
+}
+
 .list-item-topbar-content .item-ui-buttons {
     position: absolute;
     right: 0;
 }
 
-.list-item-topbar.--selected {
+.list-item-topbar-content.--selected {
     color: var(--acc-color);
     border-bottom: solid 1px var(--acc-color);
 }
 
+.list-item-text .button svg,
+.list-item-topbar.--selected .button svg {
+    stroke: var(--acc-color);
+}
+
 .list-item-content {
     display: none;
+    border-bottom: solid 1px var(--acc-color);
 }
 
 .list-item-content.--open,
@@ -281,6 +309,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: var(--grid-gap);
+    color: var(--acc-color);
 }
 
 .footer {
