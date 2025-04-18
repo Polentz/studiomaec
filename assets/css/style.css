@@ -215,24 +215,16 @@ img {
     order: -1
 } */
 
-.list-item-topbar {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-items: stretch;
-    align-items: center;
-    border-bottom: solid 1px var(--main-color);
-    padding: .75rem 0;
-}
-
 .list-item-topbar-header {
     border-top: solid 1px var(--main-color);
 }
 
 .list-item-topbar-header .topbar-label {
+    width: fit-content;
     display: flex;
     align-items: baseline;
     gap: var(--grid-gap);
+    cursor: pointer;
 }
 
 .list-item-topbar-header .topbar-label svg {
@@ -242,6 +234,33 @@ img {
     stroke-width: 1px;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.list-item-topbar-header .topbar-label.asc,
+.list-item-topbar-header .topbar-label.desc {
+    font-weight: 700;
+}
+
+.list-item-topbar-header .topbar-label.asc svg{
+    transform: rotate(0deg);
+    transform-origin: center;
+    stroke-width: 2px;
+}
+
+.list-item-topbar-header .topbar-label.desc svg{
+    transform: rotate(180deg);
+    transform-origin: center;
+    stroke-width: 2px;
+}
+
+.list-item-topbar {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: stretch;
+    align-items: center;
+    border-bottom: solid 1px var(--main-color);
+    padding: .75rem 0;
 }
 
 .list-item-topbar .topbar-image {
@@ -279,6 +298,7 @@ img {
 
 .list-item-topbar-content .item-ui-buttons {
     position: absolute;
+    top: .75rem;
     right: 0;
 }
 
@@ -294,6 +314,7 @@ img {
 
 .list-item-content {
     display: none;
+    grid-column: 1 / -1;
     border-bottom: solid 1px var(--acc-color);
 }
 

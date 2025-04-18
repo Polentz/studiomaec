@@ -31,33 +31,122 @@ const handleHref = () => {
 };
 
 const accordion = () => {
-    const accordion = document.querySelectorAll(".accordion");
-    const allOpeners = document.querySelectorAll(".accordion-opener");
-    const allContent = document.querySelectorAll(".accordion-content");
-    const allPreviews = document.querySelectorAll(".topbar-image");
-    accordion.forEach(item => {
-        const openers = item.querySelectorAll(".accordion-opener");
-        const content = item.querySelector(".accordion-content");
-        const preview = item.querySelector(".topbar-image");
-        openers.forEach(opener => {
-            opener.addEventListener("click", () => {
-                [...allOpeners].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
-                [...allContent].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
-                [...allPreviews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
-                opener.classList.toggle("--selected");
-                content.classList.toggle("--open");
-                preview.classList.toggle("--display");
-                const offset = 1280;
-                const itemPosition = item.getBoundingClientRect().top;
-                const offsetPosition = itemPosition - offset;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                });
+    // const accordion = document.querySelectorAll(".accordion");
+    // const allOpeners = document.querySelectorAll(".accordion-opener");
+    // const allContent = document.querySelectorAll(".accordion-content");
+    // const allPreviews = document.querySelectorAll(".topbar-image");
+    // accordion.forEach(item => {
+    //     const openers = item.querySelectorAll(".accordion-opener");
+    //     const content = item.querySelector(".accordion-content");
+    //     const preview = item.querySelector(".topbar-image");
+    //     openers.forEach(opener => {
+    //         opener.addEventListener("click", () => {
+    //             [...allOpeners].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
+    //             [...allContent].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
+    //             [...allPreviews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
+    //             opener.classList.toggle("--selected");
+    //             content.classList.toggle("--open");
+    //             preview.classList.toggle("--display");
+    //             const offset = 1280;
+    //             const itemPosition = item.getBoundingClientRect().top;
+    //             const offsetPosition = itemPosition - offset;
+    //             window.scrollTo({
+    //                 top: offsetPosition,
+    //                 behavior: "smooth",
+    //             });
+    //         });
+    //     });
+    // });
+
+    // with table structure:
+    const accordions = document.querySelectorAll(".accordion-opener");
+    const contents = document.querySelectorAll(".accordion-content");
+    const previews = document.querySelectorAll(".topbar-image");
+    
+    accordions.forEach(opener => {
+        opener.addEventListener("click", () => {
+            const openerId = opener.getAttribute("data-id");
+            const content = document.querySelector(`.accordion-content[data-id="${openerId}"]`);
+            const preview = opener.querySelector(".topbar-image");
+            [...accordions].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
+            [...contents].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
+            [...previews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
+            opener.classList.toggle("--selected");
+            content.classList.toggle("--open");
+            preview.classList.toggle("--display");
+            const offset = 1280;
+            const itemPosition = opener.getBoundingClientRect().top;
+            const offsetPosition = itemPosition - offset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
             });
         });
     });
 };
+
+const sortTable = (n) => {
+    let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("table");
+    switching = true;
+    dir = "asc"; 
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+            };
+            } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+            };
+            };
+        };
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;      
+        } else {
+            if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+            };
+        };
+    };
+};
+
+const toggleArrow = (header) => {
+    const headers = document.querySelectorAll(".list-item-topbar-header th");
+    const isAsc = header.classList.contains("asc");
+
+    if (isAsc) {
+        [...headers].filter(i => i !== header).forEach(i => i.classList.remove("desc", "asc"));
+        header.classList.remove("asc");
+        header.classList.add("desc");
+    } else {
+        [...headers].filter(i => i !== header).forEach(i => i.classList.remove("asc", "desc"));
+        header.classList.remove("desc");
+        header.classList.add("asc");
+    };
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".list-item-topbar-header th");
+
+    headers.forEach((header, index) => {
+        header.addEventListener("click", () => {
+            sortTable(index);
+            toggleArrow(header);
+        });
+    });
+});
 
 window.addEventListener("load", () => {
     documentHeight();
