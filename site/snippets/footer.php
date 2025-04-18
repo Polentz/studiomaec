@@ -1,11 +1,11 @@
 <footer id="contact" class="footer">
     <div class="footer-wrapper">
         <ul class="footer-block text weight-700">
-            <li>studio mäc</li>
             <li>architecture & territory</li>
             <li>berlin . paris</li>
         </ul>
         <ul class="footer-block text weight-700">
+            <li>studio mäc</li>
             <li>Julia Mäckler + Augustin Clément</li>
         </ul>
         <ul class="footer-block text weight-700">

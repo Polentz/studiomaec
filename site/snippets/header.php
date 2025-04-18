@@ -1,5 +1,5 @@
 <header class="header">
-    <h1 class="site-title"><?= $site->title() ?></h1>
+    <h1 class="site-title"><a href="<?= $site->url() ?>"><?= $site->title() ?></a></h1>
 </header>
 <nav class="nav">
     <div class="nav-wrapper">

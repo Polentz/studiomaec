@@ -31,49 +31,25 @@ const handleHref = () => {
 };
 
 const accordion = () => {
-    // const accordion = document.querySelectorAll(".accordion");
-    // const allOpeners = document.querySelectorAll(".accordion-opener");
-    // const allContent = document.querySelectorAll(".accordion-content");
-    // const allPreviews = document.querySelectorAll(".topbar-image");
-    // accordion.forEach(item => {
-    //     const openers = item.querySelectorAll(".accordion-opener");
-    //     const content = item.querySelector(".accordion-content");
-    //     const preview = item.querySelector(".topbar-image");
-    //     openers.forEach(opener => {
-    //         opener.addEventListener("click", () => {
-    //             [...allOpeners].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
-    //             [...allContent].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
-    //             [...allPreviews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
-    //             opener.classList.toggle("--selected");
-    //             content.classList.toggle("--open");
-    //             preview.classList.toggle("--display");
-    //             const offset = 1280;
-    //             const itemPosition = item.getBoundingClientRect().top;
-    //             const offsetPosition = itemPosition - offset;
-    //             window.scrollTo({
-    //                 top: offsetPosition,
-    //                 behavior: "smooth",
-    //             });
-    //         });
-    //     });
-    // });
-
-    // with table structure:
     const accordions = document.querySelectorAll(".accordion-opener");
     const contents = document.querySelectorAll(".accordion-content");
     const previews = document.querySelectorAll(".topbar-image");
+    const buttons = document.querySelectorAll(".button.plus-minus");
     
     accordions.forEach(opener => {
         opener.addEventListener("click", () => {
             const openerId = opener.getAttribute("data-id");
             const content = document.querySelector(`.accordion-content[data-id="${openerId}"]`);
             const preview = opener.querySelector(".topbar-image");
+            const button = opener.querySelector(".button.plus-minus");
             [...accordions].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
             [...contents].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
             [...previews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
+            [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("--minus"));
             opener.classList.toggle("--selected");
             content.classList.toggle("--open");
             preview.classList.toggle("--display");
+            button.classList.toggle("--minus");
             const offset = 1280;
             const itemPosition = opener.getBoundingClientRect().top;
             const offsetPosition = itemPosition - offset;
@@ -123,7 +99,7 @@ const sortTable = (n) => {
 };
 
 const toggleArrow = (header) => {
-    const headers = document.querySelectorAll(".list-item-topbar-header th");
+    const headers = document.querySelectorAll(".list-topbar-header th");
     const isAsc = header.classList.contains("asc");
 
     if (isAsc) {
@@ -138,7 +114,7 @@ const toggleArrow = (header) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    const headers = document.querySelectorAll(".list-item-topbar-header th");
+    const headers = document.querySelectorAll(".list-topbar-header th");
 
     headers.forEach((header, index) => {
         header.addEventListener("click", () => {
