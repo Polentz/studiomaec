@@ -149,14 +149,12 @@ img {
     stroke: var(--bg-color);
 }
 
-.topbar-label span,
-.nav-item a {
+.link {
     position: relative;
     padding: 0 1px;
 }
 
-.topbar-label span::after,
-.nav-item a::after {
+.link::after {
     content: "";
     background: var(--main-color);
     width: calc(100% + 8px);
@@ -170,16 +168,19 @@ img {
     /* transition: transform .2s ease-in-out; */
 }
 
-.list-topbar-content:not(.--selected):hover .topbar-label span,
-.nav-item a:hover {
+.list-topbar-content:not(.--selected):hover .link,
+.link:hover {
     color: var(--bg-color);
-    /* font-style: italic; */
 }
 
-.list-topbar-content:not(.--selected):hover .topbar-label span::after,
-.nav-item a:hover::after {
+.list-topbar-content:not(.--selected):hover .link::after,
+.link:hover::after {
     transform: translateX(-4px) scaleX(1);
     transform-origin: left;
+}
+
+.--selected:hover .link::after {
+    background: var(--acc-color);
 }
 
 .nav {
@@ -268,7 +269,6 @@ img {
     display: flex;
     align-items: baseline;
     gap: var(--grid-gap);
-    cursor: pointer;
 }
 
 .list-topbar-header .topbar-label svg {
@@ -295,6 +295,10 @@ img {
     transform: rotate(180deg);
     transform-origin: center;
     stroke-width: 2px;
+}
+
+.topbar-label {
+    cursor: pointer;
 }
 
 .topbar-image {
@@ -324,10 +328,6 @@ img {
 .list-topbar-content:hover .topbar-image img {
     transform: scale(1);
     transition: transform .15s ease-in-out;
-}
-
-.list-topbar-content {
-    cursor: pointer;
 }
 
 .topbar-icons {

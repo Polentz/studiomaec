@@ -8,10 +8,10 @@
         <ul class="nav-menu text weight-700">
             <?php foreach($site->children()->listed() as $page) : ?>
                 <?php if (!$page->isOpen()) : ?>
-                    <li class="nav-item"><a href="<?= $page->url() ?>"><?= $page->title() ?></a></li>                    
+                    <li class="nav-item"><a class="link" href="<?= $page->url() ?>"><?= $page->title() ?></a></li>                    
                 <?php endif ?>
             <?php endforeach ?>
-            <li class="nav-item"><a class="js-href" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="link js-href" href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>

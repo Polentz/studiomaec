@@ -36,26 +36,29 @@ const accordion = () => {
     const previews = document.querySelectorAll(".topbar-image");
     const buttons = document.querySelectorAll(".button.plus-minus");
     
-    accordions.forEach(opener => {
-        opener.addEventListener("click", () => {
-            const openerId = opener.getAttribute("data-id");
-            const content = document.querySelector(`.accordion-content[data-id="${openerId}"]`);
-            const preview = opener.querySelector(".topbar-image");
-            const button = opener.querySelector(".button.plus-minus");
-            [...accordions].filter(i => i !== opener).forEach(i => i.classList.remove("--selected"));
-            [...contents].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
-            [...previews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
-            [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("--minus"));
-            opener.classList.toggle("--selected");
-            content.classList.toggle("--open");
-            preview.classList.toggle("--display");
-            button.classList.toggle("--minus");
-            const offset = 1280;
-            const itemPosition = opener.getBoundingClientRect().top;
-            const offsetPosition = itemPosition - offset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
+    accordions.forEach(accordion => {
+        const openers = accordion.querySelectorAll(".accordion-opener .topbar-label, .button.plus-minus");
+        openers.forEach(opener => {
+            opener.addEventListener("click", () => {
+                const openerId = accordion.getAttribute("data-id");
+                const content = document.querySelector(`.accordion-content[data-id="${openerId}"]`);
+                const preview = accordion.querySelector(".topbar-image");
+                const button = accordion.querySelector(".button.plus-minus");
+                [...accordions].filter(i => i !== accordion).forEach(i => i.classList.remove("--selected"));
+                [...contents].filter(i => i !== content).forEach(i => i.classList.remove("--open"));
+                [...previews].filter(i => i !== preview).forEach(i => i.classList.remove("--display"));
+                [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("--minus"));
+                accordion.classList.toggle("--selected");
+                content.classList.toggle("--open");
+                preview.classList.toggle("--display");
+                button.classList.toggle("--minus");
+                const offset = 1280;
+                const itemPosition = opener.getBoundingClientRect().top;
+                const offsetPosition = itemPosition - offset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                });
             });
         });
     });

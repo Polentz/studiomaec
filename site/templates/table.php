@@ -44,12 +44,12 @@
             </tr>
             <?php foreach ($page->children()->listed()->sortBy('year', 'desc') as $project) : ?>
                 <tr class="list-topbar-content accordion-opener" data-id="<?= $project->title() ?>">
-                    <td class="topbar-label text-label weight-700"><span><?= $project->title() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span><?= $project->year() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span><?= $project->client() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span><?= $project->location() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span><?= $project->category() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span><?= $project->stat() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></td>
+                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->stat() ?></span></td>
                     <td class="topbar-icons icons">
                         <button class="button plus-minus">
                             <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
