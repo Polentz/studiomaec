@@ -190,13 +190,13 @@ button {
 }
 
 *::-moz-selection {
-    background: transparent;
-    color: var(--acc-color);
+    background: var(--main-color);
+    color: var(--bg-color);
 }
 
 *::selection {
-    background: transparent;
-    color: var(--acc-color);
+    background: var(--main-color);
+    color: var(--bg-color);
 }
 
 h1::selection {

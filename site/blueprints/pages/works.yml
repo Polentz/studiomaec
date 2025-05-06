@@ -1,11 +1,11 @@
 title: Works
   
-options:
-  delete: false
-  duplicate: false
-  changeStatus: false
-  move: false
-  sort: false
+# options:
+#   delete: false
+#   duplicate: false
+#   changeStatus: false
+#   move: false
+#   sort: false
 
 image:
   icon: bookmark
@@ -19,7 +19,17 @@ tabs:
       items:
         label: Works
         type: pages
-        layout: cardlets
+        layout: table
+        info: "{{ page.slug }}"
+        columns:
+          title: true
+          info: false
+          year: true
+          client: true
+          location: true
+          category: true
+          stat:
+            label: Status
         template:
           - work
         info: '{{ page.title }}'

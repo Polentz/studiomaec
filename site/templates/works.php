@@ -8,43 +8,44 @@
         <div class="list">
             <ul class="list-topbar-header">
                 <li class="topbar-label text-label weight-400" data-item="project">
-                    <span>Project</span>
+                    <span class="link">Project</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
                 <li class="topbar-label text-label weight-400" data-item="year">
-                    <span>Year</span>
+                    <span class="link">Year</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
                 <li class="topbar-label text-label weight-400" data-item="client">
-                    <span>Client</span>
+                    <span class="link">Client</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
                 <li class="topbar-label text-label weight-400" data-item="location">
-                    <span>Location</span>
+                    <span class="link">Location</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
                 <li class="topbar-label text-label weight-400" data-item="category">
-                    <span>Category</span>
+                    <span class="link">Category</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
                 <li class="topbar-label text-label weight-400" data-item="status">
-                    <span>Status</span>
+                    <span class="link">Status</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
                 </li>
             </ul>
-            <?php foreach ($page->children()->listed()->sortBy('year', 'asc') as $project) : ?>
+            <!-- sortBy('year', 'asc') -->
+            <?php foreach ($page->children()->listed() as $project) : ?>
                 <div class="list-item accordion" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
                     <ul class="list-topbar-content accordion-opener">
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
@@ -78,6 +79,7 @@
                             <?php foreach ($project->gallery()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
                                     <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+                                    <!-- add if -->
                                     <figcaption class="text-small"><?= $project->imagecaption()->kt() ?></figcaption>
                                 </figure>
                             <?php endforeach ?>

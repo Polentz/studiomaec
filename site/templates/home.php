@@ -6,7 +6,7 @@
         <?php foreach ($page->grid()->toLayouts() as $layout) : ?>
             <div class="grid">
                 <?php foreach ($layout->columns() as $column): ?>
-                    <div class="grid-item span-<?= $column->span() ?>">
+                    <div class="grid-item sticky span-<?= $column->span() ?>">
                         <?= $column->blocks() ?>
                     </div>
                 <?php endforeach ?>

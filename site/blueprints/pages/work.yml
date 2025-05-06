@@ -104,9 +104,12 @@ columns:
             layout: list
             options: query
             query:
-              fetch:  page.siblings.pluck("status", ",", true)
+              fetch:  page.siblings.pluck("stat", ",", true)
               text: "{{ arrayItem.value }}"
               value: "{{ arrayItem.value }}"
+          team: 
+            label: Team
+            type: text
           attachments:
             label:
               en: File attachments

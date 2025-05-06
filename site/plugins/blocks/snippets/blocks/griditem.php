@@ -8,7 +8,9 @@
 </div>
 <div class="item-images">
     <?php foreach ($images as $image): ?>
-        <figure><img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>"></figure>
+        <figure class="item-images-wrapper">
+            <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+        </figure>
     <?php endforeach ?>
 </div>
 <div class="accordion">
@@ -49,7 +51,7 @@
             <?php endif ?>
         </div>
     </div>
-    <div class="item-content accordion-content text-medium weight-600">
+    <div class="item-content accordion-content text-medium weight-500">
         <?= $block->text()->kt() ?>
     </div>
 </div>

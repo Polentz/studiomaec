@@ -240,7 +240,7 @@ const sortAccordion = () => {
         ascending: true
     };
 
-    svgs[0].classList.add("asc");
+    // svgs[0].classList.add("asc");
 
     sortButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -285,6 +285,22 @@ const sortAccordion = () => {
     });
 };
 
+const groupStickyItems = () => {
+    const container = document.querySelector(".grid-section");
+    const items = Array.from(container.querySelectorAll(".grid-item"));
+
+    container.innerHTML = "";
+
+    for (let i = 0; i < items.length; i += 4) {
+        const group = items.slice(i, i + 4);
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("grid");
+
+        group.forEach(item => wrapper.appendChild(item));
+        container.appendChild(wrapper);
+    };
+}; 
+
 window.addEventListener("load", () => {
     documentHeight();
     headerHeight();
@@ -292,6 +308,7 @@ window.addEventListener("load", () => {
     handleHref();
     slideshow();
     accordion();
+    groupStickyItems();
 });
 
 window.addEventListener("resize", () => {

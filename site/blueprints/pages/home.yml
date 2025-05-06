@@ -1,5 +1,9 @@
 title: Homepage
 
+image:
+  icon: home
+  query: false
+
 sections:
   layouts:
     type: fields
