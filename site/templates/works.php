@@ -44,35 +44,36 @@
                     </svg>
                 </li>
             </ul>
-            <!-- <div class="list-container"> -->
-            <?php foreach ($page->children()->listed()->sortBy('year', 'desc') as $project) : ?>
-                <ul class="list-topbar-content accordion-opener" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></li>
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></li>
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></li>
-                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->stat() ?></span></li>
-                    <li class="topbar-icons icons">
-                        <button class="button plus-minus">
-                            <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                                <path class="horizontal-path" d="M5.94434 10.9553H15.9443"/>
-                                <path class="vertical-path" d="M10.9443 5.95532V15.9553"/>
-                            </svg>
-                        </button>
-                        <a href="<?= $project->url() ?>" class="button go">
-                            <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.5176 7.14148L7.51758 15.1415"/>
-                                <path d="M9.51758 7.14148H15.5176V13.1415"/>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="topbar-image">
-                        <?php foreach ($project->gallery()->toFiles()->limit(1) as $image) : ?>
-                            <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
-                        <?php endforeach ?>
-                    </li>
-                    <li class="list-content accordion-content" data-project="<?= $project->title() ?>">
+            <?php foreach ($page->children()->listed()->sortBy('title', 'asc') as $project) : ?>
+                <div class="accordion">
+                    <ul class="list-topbar-content accordion-opener" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></li>
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></li>
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></li>
+                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->stat() ?></span></li>
+                        <li class="topbar-icons icons">
+                            <button class="button plus-minus">
+                                <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="horizontal-path" d="M5.94434 10.9553H15.9443"/>
+                                    <path class="vertical-path" d="M10.9443 5.95532V15.9553"/>
+                                </svg>
+                            </button>
+                            <a href="<?= $project->url() ?>" class="button go">
+                                <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.5176 7.14148L7.51758 15.1415"/>
+                                    <path d="M9.51758 7.14148H15.5176V13.1415"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="topbar-image">
+                            <?php foreach ($project->gallery()->toFiles()->limit(1) as $image) : ?>
+                                <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+                            <?php endforeach ?>
+                        </li>
+                    </ul>
+                    <div class="list-content accordion-content">
                         <div class="list-content-image">
                             <?php foreach ($project->gallery()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
@@ -95,10 +96,9 @@
                                 </button>
                             </a>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             <?php endforeach ?>
-            <!-- </div> -->
         </div>
     </section>
 </main>
