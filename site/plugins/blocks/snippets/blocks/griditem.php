@@ -31,12 +31,14 @@
             </div>
         <?php endif ?>
         <div class="icons">
-            <button class="button plus-minus accordion-opener">
-                <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                    <path class="horizontal-path" d="M5.94434 10.9553H15.9443"/>
-                    <path class="vertical-path" d="M10.9443 5.95532V15.9553"/>
-                </svg>
-            </button>
+            <?php if ($block->text()->isNotEmpty()) : ?>
+                <button class="button plus-minus accordion-opener">
+                    <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                        <path class="horizontal-path" d="M5.94434 10.9553H15.9443"/>
+                        <path class="vertical-path" d="M10.9443 5.95532V15.9553"/>
+                    </svg>
+                </button>
+            <?php endif ?>
             <?php if ($block->link()->isNotEmpty()) : ?>
                 <a href="<?= $block->link()->url() ?>" class="button go">
                     <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +49,7 @@
             <?php endif ?>
         </div>
     </div>
-    <div class="item-content accordion-content text-medium weight-500">
+    <div class="item-content accordion-content text-medium weight-600">
         <?= $block->text()->kt() ?>
     </div>
 </div>

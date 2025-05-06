@@ -261,7 +261,7 @@ const sortAccordion = () => {
                 svg.classList.add(currentSort.ascending ? "asc" : "desc");
             };
 
-            const items = Array.from(document.querySelectorAll(".list-topbar-content"));
+            const items = Array.from(document.querySelectorAll(".list-item"));
 
             items.sort((a, b) => {
                 let aValue = a.dataset[sortKey] || "";

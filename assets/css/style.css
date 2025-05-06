@@ -74,6 +74,10 @@ img {
     font-weight: 500;
 }
 
+.weight-600 {
+    font-weight: 600;
+}
+
 .weight-700 {
     font-weight: 700;
 }
@@ -335,7 +339,7 @@ img {
 }
 
 .list-topbar-header .topbar-label svg {
-    display: none;
+    /* display: none; */
     width: 8px;
     fill: none;
     stroke: var(--main-color);
@@ -348,7 +352,7 @@ img {
 
 .list-topbar-header .topbar-label svg.asc {
     display: inline-block;
-    fill: var(--main-color);
+    /* fill: var(--main-color); */
     -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -356,7 +360,7 @@ img {
 
 .list-topbar-header .topbar-label svg.desc {
     display: inline-block;
-    fill: var(--main-color);
+    /* fill: var(--main-color); */
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
@@ -434,14 +438,6 @@ img {
     gap: var(--grid-gap);
     color: var(--acc-color);
 }
-
-/* .list-content-text .button {
-    border: solid 1px var(--acc-color);
-}
-
-.list-content-text .button svg {
-    stroke: var(--acc-color);
-} */
 
 .footer {
     width: 100%;

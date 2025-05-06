@@ -4,8 +4,8 @@
 <!-- Posso fare la topbar dinamica con structure -->
 
 <main class="main">
-    <section class="section">
-        <div id="table" class="list">
+    <section class="section list-section">
+        <div class="list">
             <ul class="list-topbar-header">
                 <li class="topbar-label text-label weight-400" data-item="project">
                     <span>Project</span>
@@ -44,9 +44,9 @@
                     </svg>
                 </li>
             </ul>
-            <?php foreach ($page->children()->listed()->sortBy('title', 'asc') as $project) : ?>
-                <div class="accordion">
-                    <ul class="list-topbar-content accordion-opener" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
+            <?php foreach ($page->children()->listed()->sortBy('year', 'asc') as $project) : ?>
+                <div class="list-item accordion" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
+                    <ul class="list-topbar-content accordion-opener">
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></li>
