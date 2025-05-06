@@ -21,7 +21,7 @@ tabs:
         type: pages
         layout: cardlets
         template:
-          - project
+          - work
         info: '{{ page.title }}'
         search: true
         sortable: true

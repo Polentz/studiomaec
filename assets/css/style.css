@@ -315,29 +315,36 @@ img {
 }
 
 .list-topbar-header .topbar-label svg {
+    display: none;
     width: 8px;
     fill: none;
     stroke: var(--main-color);
     stroke-width: 1px;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transform-origin: center;
+    transition: transform 0.2s ease;
 }
 
-.list-topbar-header .topbar-label.asc,
-.list-topbar-header .topbar-label.desc {
+.list-topbar-header .topbar-label svg.asc {
+    display: inline-block;
+    fill: var(--main-color);
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+
+.list-topbar-header .topbar-label svg.desc {
+    display: inline-block;
+    fill: var(--main-color);
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.topbar-label span:has(+ svg.asc),
+.topbar-label span:has(+ svg.desc) {
     font-weight: 700;
-}
-
-.list-topbar-header .topbar-label.asc svg{
-    transform: rotate(0deg);
-    transform-origin: center;
-    stroke-width: 2px;
-}
-
-.list-topbar-header .topbar-label.desc svg{
-    transform: rotate(180deg);
-    transform-origin: center;
-    stroke-width: 2px;
 }
 
 .topbar-label {

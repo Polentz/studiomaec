@@ -2,57 +2,58 @@
 <?= snippet('header') ?>
 
 <!-- Posso fare la topbar dinamica con structure -->
- 
+
 <main class="main">
     <section class="section">
-        <table id="table" class="list">
-            <tr class="list-topbar-header">
-                <th class="topbar-label text-label weight-400">
+        <div id="table" class="list">
+            <ul class="list-topbar-header">
+                <li class="topbar-label text-label weight-400" data-item="project">
                     <span>Project</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-                <th class="topbar-label text-label weight-400">
+                </li>
+                <li class="topbar-label text-label weight-400" data-item="year">
                     <span>Year</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-                <th class="topbar-label text-label weight-400">
+                </li>
+                <li class="topbar-label text-label weight-400" data-item="client">
                     <span>Client</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-                <th class="topbar-label text-label weight-400">
+                </li>
+                <li class="topbar-label text-label weight-400" data-item="location">
                     <span>Location</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-                <th class="topbar-label text-label weight-400">
+                </li>
+                <li class="topbar-label text-label weight-400" data-item="category">
                     <span>Category</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-                <th class="topbar-label text-label weight-400">
+                </li>
+                <li class="topbar-label text-label weight-400" data-item="status">
                     <span>Status</span>
                     <svg viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 1L5 11L1 1"/>
                     </svg>
-                </th>
-            </tr>
+                </li>
+            </ul>
+            <!-- <div class="list-container"> -->
             <?php foreach ($page->children()->listed()->sortBy('year', 'desc') as $project) : ?>
-                <tr class="list-topbar-content accordion-opener" data-id="<?= $project->title() ?>">
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></td>
-                    <td class="topbar-label text-label weight-700"><span class="link"><?= $project->stat() ?></span></td>
-                    <td class="topbar-icons icons">
+                <ul class="list-topbar-content accordion-opener" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></li>
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></li>
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></li>
+                    <li class="topbar-label text-label weight-700"><span class="link"><?= $project->stat() ?></span></li>
+                    <li class="topbar-icons icons">
                         <button class="button plus-minus">
                             <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                                 <path class="horizontal-path" d="M5.94434 10.9553H15.9443"/>
@@ -65,13 +66,13 @@
                                 <path d="M9.51758 7.14148H15.5176V13.1415"/>
                             </svg>
                         </a>
-                    </td>
-                    <td class="topbar-image">
+                    </li>
+                    <li class="topbar-image">
                         <?php foreach ($project->gallery()->toFiles()->limit(1) as $image) : ?>
                             <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
                         <?php endforeach ?>
-                    </td>
-                    <td class="list-content accordion-content" data-id="<?= $project->title() ?>">
+                    </li>
+                    <li class="list-content accordion-content" data-project="<?= $project->title() ?>">
                         <div class="list-content-image">
                             <?php foreach ($project->gallery()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
@@ -94,10 +95,11 @@
                                 </button>
                             </a>
                         </div>
-                    </td>
-                </tr>
+                    </li>
+                </ul>
             <?php endforeach ?>
-        </table>
+            <!-- </div> -->
+        </div>
     </section>
 </main>
 
