@@ -1,0 +1,43 @@
+name: Grid Item
+icon: page
+preview: fields
+wysiwyg: true
+# max: 1
+fields:
+  title:
+    label: Title
+    placeholder: Title …
+    type: text
+  category:
+    label: Category
+    type: tags
+    max: 1
+    layout: list
+  images:
+    label: Images
+    type: files
+    multiple: true
+    template: image
+    uploads: image
+    translate: false
+    image:
+      icon: true
+      ratio: 4/3
+      back: white
+      cover: true
+  link:
+    label: Link
+    type: url
+    placeholder: https://example.com
+  text:
+    label: Text
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+  

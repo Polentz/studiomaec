@@ -1,0 +1,17 @@
+title: Homepage
+
+sections:
+  layouts:
+    type: fields
+    fields:
+      grid:
+        label: Page
+        type: layout
+        layouts:
+          - "1/4, 1/4, 1/4, 1/4"
+          - "1/2, 1/2"
+          - "1/2, 1/4, 1/4"
+          - "1/4, 1/4, 1/2"
+        max: 1
+        fieldsets:
+          - griditem

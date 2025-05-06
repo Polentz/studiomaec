@@ -1,0 +1,12 @@
+.k-toolbar-button[title="Insert after"],
+.k-toolbar-button[title="More"] {
+    display: none;
+}
+
+.k-block-type-griditem .k-block-type-fields-header .k-block-title{
+    display: none;
+}
+
+.k-block-container:not([data-hidden=true]) .k-block-type-fields>:not([data-collapsed=true]) {
+    padding-top: var(--spacing-3);
+}

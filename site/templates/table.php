@@ -1,9 +1,11 @@
 <?= snippet('head') ?>
 <?= snippet('header') ?>
 
+<!-- Posso fare la topbar dinamica con structure -->
+ 
 <main class="main">
     <section class="section">
-        <table id="table" class="list" width="100%">
+        <table id="table" class="list">
             <tr class="list-topbar-header">
                 <th class="topbar-label text-label weight-400">
                     <span>Project</span>

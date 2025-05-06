@@ -30,6 +30,102 @@ const handleHref = () => {
     };
 };
 
+const slideshow = () => {
+    const items = document.querySelectorAll(".grid-item");
+    items.forEach(item => {
+        const figures = item.querySelectorAll(".item-images figure");
+        const images = item.querySelectorAll(".item-images img");
+        const counter = item.querySelector(".counter-num");
+        const prev = item.querySelector(".button.left");
+        const next = item.querySelector(".button.right");
+        const imageWrapper = item.querySelector(".item-images");
+
+        let slideIndex = 1;
+
+        if (figures.length > 0) {
+            figures[0].classList.add("active");
+        };
+
+        if (figures.length > 1) {
+            const plusSlides = (n) => {
+                showSlides(slideIndex += n);
+            };
+
+            const showSlides = (n) => {
+                if (n > figures.length) slideIndex = 1;
+                if (n < 1) slideIndex = figures.length;
+
+                figures.forEach((figure, i) => {
+                    figure.classList.remove("active");
+                    gsap.to(figure.querySelector("img"), {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power1.out",
+                    });
+                });
+
+                const activeFigure = figures[slideIndex - 1];
+                activeFigure.classList.add("active");
+                counter.innerHTML = slideIndex;
+
+                gsap.to(activeFigure.querySelector("img"), {
+                    scale: 1.035,
+                    duration: 0.3,
+                    ease: "power1.out",
+                });
+            };
+
+            next.addEventListener("click", () => plusSlides(1));
+            prev.addEventListener("click", () => plusSlides(-1));
+
+            showSlides(slideIndex);
+        };
+
+        // tallest image:
+        // const updateImageWrapperHeight = () => {
+        //     let maxHeight = 0;
+        //     let loadedCount = 0;
+
+        //     images.forEach(img => {
+        //         const measure = () => {
+        //             const height = img.naturalHeight / img.naturalWidth * img.offsetWidth;
+        //             if (height > maxHeight) maxHeight = height;
+        //             loadedCount++;
+        //             if (loadedCount === images.length) {
+        //                 imageWrapper.style.height = `${maxHeight}px`;
+        //             }
+        //         };
+
+        //         if (img.complete) {
+        //             measure();
+        //         } else {
+        //             img.onload = measure;
+        //         }
+        //     });
+        // };
+
+        // first image:
+        const updateImageWrapperHeight = () => {
+            const firstImg = images[0];
+            if (!firstImg) return;
+        
+            const setHeight = () => {
+                const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
+                imageWrapper.style.height = `${height}px`;
+            };
+        
+            if (firstImg.complete) {
+                setHeight();
+            } else {
+                firstImg.onload = setHeight;
+            }
+        };
+
+        updateImageWrapperHeight();
+        window.addEventListener("resize", updateImageWrapperHeight);
+    });
+};
+
 const accordion = () => {
     const accordions = document.querySelectorAll(".accordion-opener");
     const contents = document.querySelectorAll(".accordion-content");
@@ -64,68 +160,81 @@ const accordion = () => {
     });
 };
 
-const sortTable = (n) => {
-    let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("table");
-    switching = true;
-    dir = "asc"; 
-    while (switching) {
-        switching = false;
-        rows = table.rows;
-        for (i = 1; i < (rows.length - 1); i++) {
-            shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-            if (dir == "asc") {
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
+const handleTable = () => {
+    const sortTable = (n) => {
+        let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("table");
+        switching = true;
+        dir = "asc"; 
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                };
+                } else if (dir == "desc") {
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                };
+                };
             };
-            } else if (dir == "desc") {
-            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                shouldSwitch = true;
-                break;
-            };
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;      
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+                };
             };
         };
-        if (shouldSwitch) {
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount ++;      
+    };
+
+    const headers = document.querySelectorAll(".list-topbar-header th");
+
+    const toggleArrow = (header) => {
+        // const headers = document.querySelectorAll(".list-topbar-header th");
+        const isAsc = header.classList.contains("asc");
+    
+        if (isAsc) {
+            [...headers].filter(i => i !== header).forEach(i => i.classList.remove("desc", "asc"));
+            header.classList.remove("asc");
+            header.classList.add("desc");
         } else {
-            if (switchcount == 0 && dir == "asc") {
-            dir = "desc";
-            switching = true;
-            };
+            [...headers].filter(i => i !== header).forEach(i => i.classList.remove("asc", "desc"));
+            header.classList.remove("desc");
+            header.classList.add("asc");
         };
     };
-};
+    
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     const headers = document.querySelectorAll(".list-topbar-header th");
+    
+    //     headers.forEach((header, index) => {
+    //         header.addEventListener("click", () => {
+    //             sortTable(index);
+    //             toggleArrow(header);
+    //         });
+    //     });
+    // });
 
-const toggleArrow = (header) => {
-    const headers = document.querySelectorAll(".list-topbar-header th");
-    const isAsc = header.classList.contains("asc");
-
-    if (isAsc) {
-        [...headers].filter(i => i !== header).forEach(i => i.classList.remove("desc", "asc"));
-        header.classList.remove("asc");
-        header.classList.add("desc");
-    } else {
-        [...headers].filter(i => i !== header).forEach(i => i.classList.remove("asc", "desc"));
-        header.classList.remove("desc");
-        header.classList.add("asc");
-    };
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-    const headers = document.querySelectorAll(".list-topbar-header th");
-
+    // const headers = document.querySelectorAll(".list-topbar-header th");
+    
     headers.forEach((header, index) => {
         header.addEventListener("click", () => {
             sortTable(index);
             toggleArrow(header);
         });
     });
-});
+};
 
 window.addEventListener("load", () => {
     documentHeight();
@@ -133,6 +242,8 @@ window.addEventListener("load", () => {
     footerHeight();
     handleHref();
     accordion();
+    slideshow();
+    handleTable();
 });
 
 window.addEventListener("resize", () => {

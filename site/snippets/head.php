@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/lbh6bnf.css">
     <?= css ([
         'assets/css/variables.css',
-        'assets/css/fonts.css',
         'assets/css/base.css',
         'assets/css/style.css',
         '@auto',

@@ -5,7 +5,6 @@ html {
 
 body {
     width: 100%;
-    /* min-height: var(--doc-height); */
     color: var(--main-color);
     background-color: var(--bg-color);
     overflow-x: hidden;
@@ -23,7 +22,6 @@ img {
     top: -3.5rem;
     left: 0;
     mix-blend-mode: difference;
-    /* transform: translateY(-1px); */
     z-index: 999;
 }
 
@@ -163,9 +161,9 @@ img {
     top: -3px;
     left: 0;
     transform: translateX(-3px) scaleX(0);
-    transform-origin: right;
+    transform-origin: left;
     z-index: -1;
-    /* transition: transform .2s ease-in-out; */
+    transition: transform .15s ease-in-out;
 }
 
 .list-topbar-content:not(.--selected):hover .link,
@@ -186,10 +184,9 @@ img {
 .nav {
     height: fit-content;
     position: sticky;
-    top: 4.5rem;
+    top: 3.5rem;
     background-color: var(--bg-color);
     padding: 0 var(--main-margin);
-    /* transform: translateY(-1rem); */
     z-index: 999;
 }
 
@@ -215,7 +212,14 @@ img {
 }
 
 .main {
+    min-height: var(--doc-height);
     padding: 10rem var(--main-margin);
+}
+
+.grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--grid-gap) * 3);
 }
 
 .grid {
@@ -225,12 +229,12 @@ img {
     gap: var(--grid-gap);
 }
 
-.span-2 {
-    grid-column: span 2;
+.span-3 {
+    grid-column: span 1;
 }
 
-.span-1 {
-    grid-column: span 1;
+.span-6 {
+    grid-column: span 2;
 }
 
 .grid-item {
@@ -247,6 +251,45 @@ img {
     display: flex;
     justify-content: space-between;
     text-transform: lowercase;
+}
+
+.item-images {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    transition: height .3s ease;
+}
+
+.item-images figure {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .3s ease;
+}
+
+.item-images figure.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.item-images img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.counter {
+    min-width: 1.2rem;
+    text-align: center;
+}
+
+.list {
+    width: 100%;
 }
 
 .list-topbar-header,
@@ -368,8 +411,6 @@ img {
     gap: var(--grid-gap);
     color: var(--acc-color);
 }
-
-/*  */
 
 .footer {
     width: 100%;
