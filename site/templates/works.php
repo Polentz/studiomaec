@@ -88,15 +88,7 @@
                             <div class="list-content-text-wrapper text-large weight-700">
                                 <?= $project->description()->kt() ?>
                             </div>
-                            <a href="<?= $project->url() ?>" class="icons">
-                                <span class="link text-label weight-700">View project</span>
-                                <button class="button go">
-                                    <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.5176 7.14148L7.51758 15.1415"/>
-                                        <path d="M9.51758 7.14148H15.5176V13.1415"/>
-                                    </svg>
-                                </button>
-                            </a>
+                            <a href="<?= $project->url() ?>" class="text-label weight-700">View project</a>
                         </div>
                     </div>
                 </div>

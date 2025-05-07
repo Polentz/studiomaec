@@ -35,6 +35,10 @@ img {
     margin: 0;
 }
 
+.site-title a  {
+    text-decoration: none;
+}
+
 .page-title {
     font-size: var(--txt-size);
     font-weight: 400;
@@ -83,7 +87,6 @@ img {
 }
 
 .icons {
-    width: fit-content;
     display: flex;
     gap: var(--inner-gap);
     align-items: center;
@@ -170,6 +173,7 @@ a:hover {
 .link,
 .item-header-title a,
 .footer-block a {
+    width: fit-content;
     position: relative;
     text-decoration: none;
     padding: 0 1px;
