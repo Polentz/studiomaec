@@ -46,7 +46,7 @@
             </ul>
             <!-- sortBy('year', 'asc') -->
             <?php foreach ($page->children()->listed() as $project) : ?>
-                <div class="list-item accordion" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
+                <div class="list-item accordion alternate" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
                     <ul class="list-topbar-content accordion-opener">
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
@@ -89,7 +89,7 @@
                                 <?= $project->description()->kt() ?>
                             </div>
                             <a href="<?= $project->url() ?>" class="icons">
-                                <span class="text-label weight-700">View project</span>
+                                <span class="link text-label weight-700">View project</span>
                                 <button class="button go">
                                     <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.5176 7.14148L7.51758 15.1415"/>

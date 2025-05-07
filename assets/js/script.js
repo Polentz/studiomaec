@@ -126,82 +126,6 @@ const slideshow = () => {
     });
 };
 
-// const handleTable = () => {
-//     const sortTable = (n) => {
-//         let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-//         table = document.getElementById("table");
-//         switching = true;
-//         dir = "asc"; 
-//         while (switching) {
-//             switching = false;
-//             rows = table.rows;
-//             for (i = 1; i < (rows.length - 1); i++) {
-//                 shouldSwitch = false;
-//                 x = rows[i].getElementsByTagName("TD")[n];
-//                 y = rows[i + 1].getElementsByTagName("TD")[n];
-//                 if (dir == "asc") {
-//                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-//                     shouldSwitch = true;
-//                     break;
-//                 };
-//                 } else if (dir == "desc") {
-//                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-//                     shouldSwitch = true;
-//                     break;
-//                 };
-//                 };
-//             };
-//             if (shouldSwitch) {
-//                 rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-//                 switching = true;
-//                 switchcount ++;      
-//             } else {
-//                 if (switchcount == 0 && dir == "asc") {
-//                 dir = "desc";
-//                 switching = true;
-//                 };
-//             };
-//         };
-//     };
-
-//     const headers = document.querySelectorAll(".list-topbar-header th");
-
-//     const toggleArrow = (header) => {
-//         // const headers = document.querySelectorAll(".list-topbar-header th");
-//         const isAsc = header.classList.contains("asc");
-    
-//         if (isAsc) {
-//             [...headers].filter(i => i !== header).forEach(i => i.classList.remove("desc", "asc"));
-//             header.classList.remove("asc");
-//             header.classList.add("desc");
-//         } else {
-//             [...headers].filter(i => i !== header).forEach(i => i.classList.remove("asc", "desc"));
-//             header.classList.remove("desc");
-//             header.classList.add("asc");
-//         };
-//     };
-    
-//     // document.addEventListener("DOMContentLoaded", () => {
-//     //     const headers = document.querySelectorAll(".list-topbar-header th");
-    
-//     //     headers.forEach((header, index) => {
-//     //         header.addEventListener("click", () => {
-//     //             sortTable(index);
-//     //             toggleArrow(header);
-//     //         });
-//     //     });
-//     // });
-
-//     // const headers = document.querySelectorAll(".list-topbar-header th");
-    
-//     headers.forEach((header, index) => {
-//         header.addEventListener("click", () => {
-//             sortTable(index);
-//             toggleArrow(header);
-//         });
-//     });
-// };
-
 const accordion = () => {
     const accordions = document.querySelectorAll(".accordion");
     const contents = document.querySelectorAll(".accordion-content");
@@ -212,9 +136,11 @@ const accordion = () => {
         const content = accordion.querySelector(".accordion-content");
         openers.forEach(opener => {
             opener.addEventListener("click", () => {
-                [...accordions].filter(i => i !== accordion).forEach(i => i.classList.remove("selected"));
-                [...contents].filter(i => i !== content).forEach(i => i.classList.remove("open"));
-                [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("minus"));
+                if (accordion.classList.contains("alternate")) {
+                    [...accordions].filter(i => i !== accordion).forEach(i => i.classList.remove("selected"));
+                    [...contents].filter(i => i !== content).forEach(i => i.classList.remove("open"));
+                    [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("minus"));
+                }
                 accordion.classList.toggle("selected");
                 content.classList.toggle("open");
                 button.classList.toggle("minus");
@@ -285,19 +211,61 @@ const sortAccordion = () => {
     });
 };
 
-const groupStickyItems = () => {
+const groupGalleryItems = () => {
+    // const container = document.querySelector(".grid-section");
+    // const items = Array.from(container.querySelectorAll(".grid-item"));
+    // const targetClass = "span-6";
+
+    // container.innerHTML = "";
+
+    // for (let i = 0; i < items.length; i += 4) {
+    //     const group = items.slice(i, i + 4);
+    //     const wrapper = document.createElement("div");
+    //     wrapper.classList.add("grid");
+
+    //     group.forEach(item => wrapper.appendChild(item));
+    //     container.appendChild(wrapper);
+    // };
+
     const container = document.querySelector(".grid-section");
     const items = Array.from(container.querySelectorAll(".grid-item"));
+    const specialClass = "span-6";
 
     container.innerHTML = "";
 
-    for (let i = 0; i < items.length; i += 4) {
-        const group = items.slice(i, i + 4);
+    let i = 0;
+    while (i < items.length) {
+        const chunk = items.slice(i, i + 4);
+        const specials = chunk.filter(item => item.classList.contains(specialClass));
+
+        if (chunk.length < 3) {
+            const wrapper = document.createElement("div");
+            wrapper.classList.add("grid");
+            chunk.forEach(item => wrapper.appendChild(item));
+            container.appendChild(wrapper);
+            break;
+        };
+
+        let groupItems;
+        let step;
+
+        if (specials.length >= 2) {
+            groupItems = items.slice(i, i + 2);
+            step = 2;
+        } else if (specials.length === 1) {
+            groupItems = items.slice(i, i + 3);
+            step = 3;
+        } else {
+            groupItems = chunk;
+            step = 4;
+        };
+
         const wrapper = document.createElement("div");
         wrapper.classList.add("grid");
-
-        group.forEach(item => wrapper.appendChild(item));
+        groupItems.forEach(item => wrapper.appendChild(item));
         container.appendChild(wrapper);
+
+        i += step;
     };
 }; 
 
@@ -306,9 +274,6 @@ window.addEventListener("load", () => {
     headerHeight();
     footerHeight();
     handleHref();
-    slideshow();
-    accordion();
-    groupStickyItems();
 });
 
 window.addEventListener("resize", () => {

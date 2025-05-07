@@ -1,19 +1,32 @@
 name: Grid Item
 icon: page
-preview: fields
 wysiwyg: true
-# max: 1
 fields:
   title:
     label: Title
+    width: 1/2
     placeholder: Title …
-    type: text
-    required: true
+    type: writer
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
   category:
     label: Category
+    width: 1/2
     type: tags
     max: 1
     layout: list
+    options:
+      type: query
+      query: page.grid.toBlocks.filterBy("type", "griditem")
+      text: "{{ block.category }}"
+      value: "{{ block.category }}"
   images:
     label: Images
     type: files
@@ -31,10 +44,28 @@ fields:
       ratio: 4/3
       back: white
       cover: true
-  link:
+  linklocation:
     label: Link
+    type: radio
+    columns: 2
+    default: "web"
+    options:
+      web: External URL
+      page: Internal URL (link one of your pages)
+  url:
+    label: External URL
+    width: 1/2
     type: url
     placeholder: https://example.com
+    when:
+      linklocation: web
+  link:
+    label: Page URL
+    width: 1/2
+    type: pages
+    multiple: false
+    when:
+      linklocation: page
   text:
     label: Text
     type: writer

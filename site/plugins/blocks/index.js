@@ -2,24 +2,37 @@ panel.plugin("studiomaec/blocks", {
   blocks: {
     griditem: {
       computed: {
-        image() {
+        images() {
           return this.content.images[0] || {};
         },
       },
       template: `
-        <k-input
-          v-bind="field('title')"
-          :value="content.title"
-          @input="update({ title: $event })">
-        </k-input>
-        <div v-for="image in content.images" :key="image.id">
-          <k-image-frame
-            :ratio="ratio"
-            :src="image.url"
-            :srcset="image.image.srcset"
-          />
-        </div>
-      `
+          <div @dblclick="open" class="griditem-block">
+            <div class="griditem-block-header">
+              <k-input
+                v-bind="field('title')"
+                :value="content.title"
+                @input="update({ title: $event })">
+              </k-input>
+              <k-input
+                v-bind="field('category')"
+                :value="content.category"
+                @input="update({ category: $event })">
+              </k-input>
+            </div>
+            <k-aspect-ratio
+              class="griditem-block-image"
+              cover="true"
+              ratio="4/3"
+            >
+              <img
+                v-if="images.url"
+                :src="images.url"
+                alt=""
+              >
+            </k-aspect-ratio>
+          </div>
+        `
     },
   }
 });

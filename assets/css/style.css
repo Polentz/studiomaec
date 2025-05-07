@@ -83,6 +83,7 @@ img {
 }
 
 .icons {
+    width: fit-content;
     display: flex;
     gap: var(--inner-gap);
     align-items: center;
@@ -155,12 +156,14 @@ img {
     stroke: var(--bg-color);
 }
 
-.link {
+.link,
+.item-header-title a {
     position: relative;
     padding: 0 1px;
 }
 
-.link::after {
+.link::after,
+.item-header-title a::after {
     content: "";
     background: var(--main-color);
     width: calc(100% + 8px);
@@ -175,13 +178,15 @@ img {
 }
 
 .list-topbar-content:not(.selected):hover .link,
-.link:hover {
+.link:hover,
+.item-header-title a:hover {
     color: var(--bg-color);
     font-weight: 700;
 }
 
 .list-topbar-content:not(.selected):hover .link::after,
-.link:hover::after {
+.link:hover::after,
+.item-header-title a:hover::after {
     transform: translateX(-4px) scaleX(1);
     transform-origin: left;
 }
@@ -190,19 +195,20 @@ img {
     background: var(--acc-color);
 }
 
-.nav {
+.menu {
     height: fit-content;
     position: sticky;
     top: 3.5rem;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-opacity);
     padding: 0 var(--main-margin);
     z-index: 999;
 }
 
-.nav-wrapper {
+.menu-wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-transform: lowercase;
     border-top: solid 1px var(--main-color);
     border-bottom: solid 1px var(--main-color);
@@ -215,7 +221,7 @@ img {
     transform: translateX(-50%);
 }
 
-.nav-menu {
+.nav {
     display: flex;
     gap: var(--menu-gap);
 }
@@ -249,10 +255,12 @@ img {
     gap: var(--grid-gap);
 }
 
+.span-1,
 .span-3 {
     grid-column: span 1;
 }
 
+.span-2,
 .span-6 {
     grid-column: span 2;
 }
@@ -268,9 +276,20 @@ img {
 
 .item-header,
 .item-footer {
-    display: flex;
-    justify-content: space-between;
-    text-transform: lowercase;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.item-header-title,
+.item-footer-counter {
+    grid-column: 1 / 2;
+    justify-self: start;
+}
+
+.item-header-category,
+.item-footer-links {
+    grid-column: 2 / 3;
+    justify-self: end;
 }
 
 .item-images {
