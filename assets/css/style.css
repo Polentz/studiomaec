@@ -345,6 +345,7 @@ img {
     text-align: center;
 }
 
+.selected .item-header,
 .selected .counter,
 .item-content {
     color: var(--acc-color);

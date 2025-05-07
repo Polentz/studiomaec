@@ -2,7 +2,7 @@
     $images = $block->images()->toFiles();
 ?>
 
-<div class="grid-item span-<?= $column->span() ?>">
+<div class="grid-item span-<?= $column->span() ?> accordion">
     <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
         <div class="item-header">
             <?php if ($block->title()->isNotEmpty()) : ?>
@@ -21,7 +21,7 @@
         <?php endforeach ?>
     </div>
     <?php if ($images->count() > 1 || $block->text()->isNotEmpty() || $block->link()->isNotEmpty() || $block->url()->isNotEmpty()) : ?>
-        <div class="accordion">
+        <!-- <div class="accordion"> -->
             <div class="item-footer">
                 <?php if ($images->count() > 1) : ?>
                     <div class="icons item-footer-counter">
@@ -71,6 +71,6 @@
                     <?= $block->text()->kt() ?>
                 </div>
             <?php endif ?>
-        </div>
+        <!-- </div> -->
     <?php endif ?>
 </div>
