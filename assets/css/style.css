@@ -184,7 +184,7 @@ a:hover {
 .footer-block a::after {
     content: "";
     background: var(--main-color);
-    width: calc(100% + 8px);
+    width: calc(100% + 6px);
     height: calc(100% + 6px);
     position: absolute;
     top: -4px;
@@ -213,6 +213,15 @@ a:hover {
 
 .selected:hover .link::after {
     background: var(--acc-color);
+}
+
+.link.current {
+    color: var(--bg-color);
+    font-weight: 700;
+}
+
+.link.current::after {
+    transform: translateX(-3px) scaleX(1);
 }
 
 .menu {
@@ -247,8 +256,8 @@ a:hover {
 }
 
 .main {
-    min-height: var(--doc-height);
-    padding: var(--main-margin);
+    /* min-height: var(--doc-height); */
+    padding: var(--inner-margin) var(--main-margin);
 }
 
 .accordion-content {

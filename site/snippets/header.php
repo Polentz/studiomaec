@@ -7,11 +7,11 @@
         <h3 class="page-title"><?= $page->title() ?></h3>
         <nav class="nav">
             <?php foreach($site->children()->listed() as $page) : ?>
-                <?php if (!$page->isHomePage()) : ?>
-                    <a class="nav-item text-label weight-700 link" href="<?= $page->url() ?>"><?= $page->title() ?></a>
-                <?php endif ?>
+                <a class="nav-item text-label weight-700 link <?= e($page->isOpen(), 'current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
             <a class="nav-item text-label weight-700 link js-href" href="#contact">Contact</a>
         </nav>
     </div>
 </menu>
+
+<?= e($page->isOpen(), '--current') ?>

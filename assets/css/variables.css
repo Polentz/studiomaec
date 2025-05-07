@@ -16,8 +16,14 @@
     --txt-small-size: .9rem;
     --button-size: 1.5rem;
     --main-margin: calc(2rem + 2vw);
-    /* --inner-margin: 1.5rem; */
+    --inner-margin: calc(2rem + 2vw);
     --grid-gap: 1.5rem;
     --inner-gap: .75rem;
     --menu-gap: 2.5rem;
+}
+
+@media screen and (min-width: 1600px) {
+    :root {
+        --main-margin: 20rem;
+    }
 }
