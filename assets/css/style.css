@@ -156,14 +156,28 @@ img {
     stroke: var(--bg-color);
 }
 
+a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .link,
-.item-header-title a {
+.item-header-title a,
+.footer-block a {
     position: relative;
+    text-decoration: none;
     padding: 0 1px;
 }
 
 .link::after,
-.item-header-title a::after {
+.item-header-title a::after,
+.footer-block a::after {
     content: "";
     background: var(--main-color);
     width: calc(100% + 8px);
@@ -179,14 +193,16 @@ img {
 
 .list-topbar-content:not(.selected):hover .link,
 .link:hover,
-.item-header-title a:hover {
+.item-header-title a:hover,
+.footer-block a:hover {
     color: var(--bg-color);
     font-weight: 700;
 }
 
 .list-topbar-content:not(.selected):hover .link::after,
 .link:hover::after,
-.item-header-title a:hover::after {
+.item-header-title a:hover::after,
+.footer-block a:hover::after {
     transform: translateX(-4px) scaleX(1);
     transform-origin: left;
 }

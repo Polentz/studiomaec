@@ -77,4 +77,15 @@ fields:
       - link
       - clear
     nodes: false
+  subtext:
+    label: Notes
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
   
