@@ -34,5 +34,27 @@ panel.plugin("studiomaec/blocks", {
           </div>
         `
     },
+    galleryitem: {
+      computed: {
+        images() {
+          return this.content.images[0] || {};
+        },
+      },
+      template: `
+          <div @dblclick="open" class="griditem-block">
+            <k-aspect-ratio
+              class="griditem-block-image"
+              cover="true"
+              ratio="4/3"
+            >
+              <img
+                v-if="images.url"
+                :src="images.url"
+                alt=""
+              >
+            </k-aspect-ratio>
+          </div>
+        `
+    },
   }
 });

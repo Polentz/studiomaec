@@ -70,7 +70,7 @@
                         </li>
                         <li class="topbar-image">
                             <?php foreach ($project->gallery()->toFiles()->limit(1) as $image) : ?>
-                                <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+                                <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
                             <?php endforeach ?>
                         </li>
                     </ul>
@@ -78,7 +78,7 @@
                         <div class="list-content-image">
                             <?php foreach ($project->gallery()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
-                                    <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+                                    <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
                                     <!-- add if -->
                                     <figcaption class="text-small"><?= $project->imagecaption()->kt() ?></figcaption>
                                 </figure>

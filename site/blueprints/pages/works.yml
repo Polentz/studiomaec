@@ -8,7 +8,7 @@ title: Works
 #   sort: false
 
 image:
-  icon: bookmark
+  icon: page
   query: false
 
 tabs:
@@ -17,7 +17,7 @@ tabs:
     icon: page
     sections:
       items:
-        label: Works
+        label: "{{ page.title }}"
         type: pages
         layout: table
         info: "{{ page.slug }}"
@@ -33,10 +33,10 @@ tabs:
         template:
           - work
         info: '{{ page.title }}'
-        search: true
+        search: false
         sortable: true
         image:
           cover: true
           ratio: 1/1
-          back: '#7ba3dd'
-          query: page.gallery.toFile()
+          back: white
+          query: page.cover.toFile()

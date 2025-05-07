@@ -134,13 +134,17 @@ const accordion = () => {
         const button = accordion.querySelector(".button.plus-minus");
         const openers = accordion.querySelectorAll(".accordion-opener", button);
         const content = accordion.querySelector(".accordion-content");
+        const excludedButton = accordion.querySelector(".button.go");
         openers.forEach(opener => {
+            if (excludedButton) {
+                excludedButton.addEventListener("click", event => event.stopPropagation());
+            };
             opener.addEventListener("click", () => {
                 if (accordion.classList.contains("alternate")) {
                     [...accordions].filter(i => i !== accordion).forEach(i => i.classList.remove("selected"));
                     [...contents].filter(i => i !== content).forEach(i => i.classList.remove("open"));
                     [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("minus"));
-                }
+                };
                 accordion.classList.toggle("selected");
                 content.classList.toggle("open");
                 button.classList.toggle("minus");
@@ -210,64 +214,6 @@ const sortAccordion = () => {
         });
     });
 };
-
-const groupGalleryItems = () => {
-    // const container = document.querySelector(".grid-section");
-    // const items = Array.from(container.querySelectorAll(".grid-item"));
-    // const targetClass = "span-6";
-
-    // container.innerHTML = "";
-
-    // for (let i = 0; i < items.length; i += 4) {
-    //     const group = items.slice(i, i + 4);
-    //     const wrapper = document.createElement("div");
-    //     wrapper.classList.add("grid");
-
-    //     group.forEach(item => wrapper.appendChild(item));
-    //     container.appendChild(wrapper);
-    // };
-
-    const container = document.querySelector(".grid-section");
-    const items = Array.from(container.querySelectorAll(".grid-item"));
-    const specialClass = "span-6";
-
-    container.innerHTML = "";
-
-    let i = 0;
-    while (i < items.length) {
-        const chunk = items.slice(i, i + 4);
-        const specials = chunk.filter(item => item.classList.contains(specialClass));
-
-        if (chunk.length < 3) {
-            const wrapper = document.createElement("div");
-            wrapper.classList.add("grid");
-            chunk.forEach(item => wrapper.appendChild(item));
-            container.appendChild(wrapper);
-            break;
-        };
-
-        let groupItems;
-        let step;
-
-        if (specials.length >= 2) {
-            groupItems = items.slice(i, i + 2);
-            step = 2;
-        } else if (specials.length === 1) {
-            groupItems = items.slice(i, i + 3);
-            step = 3;
-        } else {
-            groupItems = chunk;
-            step = 4;
-        };
-
-        const wrapper = document.createElement("div");
-        wrapper.classList.add("grid");
-        groupItems.forEach(item => wrapper.appendChild(item));
-        container.appendChild(wrapper);
-
-        i += step;
-    };
-}; 
 
 window.addEventListener("load", () => {
     documentHeight();

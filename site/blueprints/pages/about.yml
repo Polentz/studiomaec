@@ -1,8 +1,8 @@
-title: Project
+title: About
 
 create:
   title:
-    label: Title
+    label: Project name
   fields:
     - category
   redirect: true
@@ -12,7 +12,8 @@ options:
   move: false
 
 image:
-  icon: false
+  icon: page
+  query: false
 
 columns:
   intro:
@@ -59,11 +60,9 @@ columns:
             min: 1
             multiple: false
             translate: false
-            link: false
-            text: false
             image:
               icon: true
-              ratio: 16/9
+              ratio: 4/3
               back: white
               cover: true
   infos:

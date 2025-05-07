@@ -11,11 +11,11 @@
             <?= $page->description()->kt() ?>
         </div>
         <div class="intro-info grid">
-            <?php foreach ($page->gallery()->toFiles()->limit(1) as $image) : ?>
+            <?php if ($cover = $page->cover()->toFile()) : ?>
                 <figure class="intro-info-image">
-                    <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
+                    <img src="<?= $cover->url() ?>" alt="<?= $cover->name() ?>">
                 </figure>
-            <?php endforeach ?>
+            <?php endif?>
             <ul class="intro-info-text">
                 <li class="text">
                     <p class="weight-400">Project</p>
@@ -48,15 +48,8 @@
             </ul>
         </div>
     </section>
-    <section class="section grid-section">
-        <?php foreach ($page->gallery()->toFiles()->not($first) as $image) : ?>
-            <figure class="grid-item">
-                <img src="<?= $image->url() ?>" alt="<?= $image->alt() ?>">
-                <!-- add if -->
-                <figcaption><?= $image->caption() ?></figcaption>
-            </figure>
-        <?php endforeach ?>
-    </section>
+
+    <?= snippet('grid') ?>
 </main>
 
 <?= snippet('footer') ?>

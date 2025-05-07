@@ -15,7 +15,7 @@
     --txt-size: 1rem;
     --txt-small-size: .9rem;
     --button-size: 1.5rem;
-    --main-margin: calc(2rem + 5vw);
+    --main-margin: calc(2rem + 2vw);
     /* --inner-margin: 1.5rem; */
     --grid-gap: 1.5rem;
     --inner-gap: .75rem;
