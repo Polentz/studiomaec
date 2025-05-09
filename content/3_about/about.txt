@@ -14,7 +14,7 @@ Cover: - file://eboqAndmR67Z4ZQq
 
 ----
 
-Infoblocks: [{"content":{"infotitle":"Team","infotext":"Julia Mäckler + Augustin Clément"},"id":"f16ec7d4-b3e7-4340-9b1b-52521e2c36f3","isHidden":false,"type":"infoitem"},{"content":{"infotitle":"Clients / Partners","infotext":"Laura Doe<br>John Doe<br>Name Surname"},"id":"e9acf18a-2f49-495d-95d1-64ecc16cffb1","isHidden":false,"type":"infoitem"}]
+Infoblocks: [{"content":{"infotitle":"Team","infotext":"Augustin Clément<br>Julia Mäckler"},"id":"f16ec7d4-b3e7-4340-9b1b-52521e2c36f3","isHidden":false,"type":"infoitem"},{"content":{"infotitle":"Clients / Partners","infotext":"Laura Doe<br>John Doe<br>Name Surname"},"id":"e9acf18a-2f49-495d-95d1-64ecc16cffb1","isHidden":false,"type":"infoitem"}]
 
 ----
 

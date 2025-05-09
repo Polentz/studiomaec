@@ -3,7 +3,7 @@
     --header-height: 7rem;
     --footer-height: 7rem;
     --bg-color: #e8e8e8;
-    --bg-color-opacity: #e8e8e8a0;
+    --bg-color-opacity: #e8e8e8ea;
     --main-color: #001bcb;
     --difference-color: #ffe434;
     --acc-color: #ff4f5d;
@@ -20,6 +20,7 @@
     --grid-gap: 1.5rem;
     --inner-gap: .75rem;
     --menu-gap: 2.5rem;
+    --main-gap: calc(var(--grid-gap) * 3);
 }
 
 @media screen and (min-width: 1600px) {

@@ -265,7 +265,13 @@ a:hover {
 
 .main {
     /* min-height: var(--doc-height); */
-    padding: var(--inner-margin) var(--main-margin);
+    padding-top: calc(var(--inner-margin) * 2);
+    padding-right: var(--main-margin);
+    padding-bottom: var(--inner-margin);
+    padding-left: var(--main-margin);
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-gap);
 }
 
 .accordion-content {
@@ -275,14 +281,50 @@ a:hover {
 .intro-section {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-gap) * 3);
-    padding-bottom: calc(var(--grid-gap) * 3);
+    gap: var(--main-gap);
 }
 
 .grid-section {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-gap) * 3);
+    gap: var(--main-gap);
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+}
+
+.lightbox-section {
+    width: 100%;
+    height: var(--doc-height);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-color-opacity);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--grid-gap);
+    padding: var(--inner-margin) var(--main-margin);
+    z-index: 999;
+}
+
+.lightbox-section .button.close {
+    position: absolute;
+    top: var(--inner-margin);
+    right: calc(var(--grid-gap) + var(--main-margin));
+    cursor: pointer;
+}
+
+.lightbox-section img {
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+    border-bottom: solid 1px var(--main-color);
+    border-top: solid 1px var(--main-color);
 }
 
 .grid {
@@ -354,19 +396,34 @@ a:hover {
     z-index: 1;
 }
 
+.item-images figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--acc-color);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.item-images figure:hover::after {
+    opacity: .5;
+}
+
 .item-images img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
-}
-
-.item-images img:hover .item-images img::after {
-    opacity: .5;
+    cursor: pointer;
 }
 
 .counter {
-    min-width: 1.2rem;
+    min-width: 2.5rem;
     text-align: center;
 }
 
@@ -572,7 +629,10 @@ a:hover {
 
 .footer {
     width: 100%;
-    padding: 0 var(--main-margin);
+    padding-top: var(--inner-margin);
+    padding-right: var(--main-margin);
+    padding-bottom: 0;
+    padding-left: var(--main-margin);
 }
 
 .footer-wrapper {

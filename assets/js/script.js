@@ -215,6 +215,85 @@ const sortAccordion = () => {
     });
 };
 
+const lightbox = () => {
+    const galleryImages = document.querySelectorAll(".intro-info-image img, .item-images-wrapper img");
+    const container = document.querySelector(".main");
+    
+    const openLightbox = (startIndex) => {
+        const lightbox = document.createElement("section");
+        lightbox.classList.add("lightbox-section");
+    
+        const closeBtn = document.createElement("span");
+        closeBtn.classList.add("button", "close");
+        closeBtn.setAttribute("aria-label", "Close");
+        closeBtn.setAttribute("role", "button");
+        closeBtn.innerHTML = `
+        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.45679 7.39349L14.5279 14.4646"/>
+            <path d="M14.5278 7.39349L7.45676 14.4646"/>
+        </svg>
+        `;
+    
+        const lightboxImg = document.createElement("img");
+        
+        const counter = document.createElement("div");
+        counter.classList.add("counter", "text-small", "weight-500");
+        const icons = document.createElement("div");
+        icons.classList.add("icons");
+        const prevBtn = document.createElement("button");
+        prevBtn.classList.add("button", "left");
+        prevBtn.innerHTML = `
+        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.49951 11H16.4995"></path>
+            <path d="M10.4995 7L6.49951 11L10.4995 15"></path>
+        </svg>
+        `;
+        const nextBtn = document.createElement("button");
+        nextBtn.classList.add("button", "right");
+        nextBtn.innerHTML = `
+        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.5005 11L6.50049 11"></path>
+            <path d="M12.5005 15L16.5005 11L12.5005 7"></path>
+        </svg>
+        `;
+
+        icons.append(prevBtn, counter, nextBtn);
+        lightbox.append(lightboxImg, icons, closeBtn);
+        container.appendChild(lightbox);
+
+        let currentIndex = startIndex;
+
+        const updateLightbox = () => {
+            lightboxImg.src = galleryImages[currentIndex].src;
+            counter.innerHTML = `<span class="counter-num">${currentIndex + 1}</span> / <span class="counter-lenght">${galleryImages.length}</span>`;
+        }
+
+        prevBtn.onclick = () => {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+            };
+
+        nextBtn.onclick = () => {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            updateLightbox();
+        };
+
+        closeBtn.onclick = () => {
+            container.removeChild(lightbox);
+        };
+
+        // container.onclick = () => {
+        //     container.removeChild(lightbox);
+        // };
+        
+        updateLightbox();
+    };
+
+    galleryImages.forEach((img, index) => {
+        img.addEventListener("click", () => openLightbox(index));
+    });
+};
+
 window.addEventListener("load", () => {
     documentHeight();
     headerHeight();
