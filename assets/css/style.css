@@ -264,7 +264,7 @@ a:hover {
 }
 
 .main {
-    min-height: 65vh;
+    min-height: 75vh;
     padding-top: calc(var(--inner-margin) * 2);
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
@@ -400,6 +400,7 @@ a:hover {
 .item-footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    transition: all .3s ease;
 }
 
 .item-header-title,
@@ -445,8 +446,9 @@ a:hover {
 }
 
 .counter {
-    min-width: 1.2rem;
+    min-width: 1.5rem;
     text-align: center;
+    transition: all .3s ease;
 }
 
 .selected .item-header,
