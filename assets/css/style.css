@@ -264,6 +264,7 @@ a:hover {
 }
 
 .main {
+    min-height: 65vh;
     padding-top: calc(var(--inner-margin) * 2);
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
@@ -444,7 +445,7 @@ a:hover {
 }
 
 .counter {
-    min-width: 2.5rem;
+    min-width: 1.2rem;
     text-align: center;
 }
 
@@ -479,9 +480,10 @@ a:hover {
 .list-topbar-content {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     justify-items: stretch;
     align-items: center;
+    row-gap: var(--grid-gap);
     border-bottom: solid 1px var(--main-color);
     padding: var(--inner-gap) 0;
 }
@@ -534,6 +536,16 @@ a:hover {
     cursor: pointer;
 }
 
+.topbar-label {
+    grid-column: span 2;
+}
+
+.topbar-label[data-item="year"],
+.topbar-label:first-of-type,
+.topbar-label:last-of-type {
+    grid-column: span 1;
+}
+
 .topbar-image {
     position: absolute;
     top: 50%;
@@ -550,6 +562,7 @@ a:hover {
 }
 
 .topbar-image img {
+    height: 35vh;
     transform: scale(0.95);
 }
 

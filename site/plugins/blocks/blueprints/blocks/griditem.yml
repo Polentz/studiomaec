@@ -30,6 +30,8 @@ fields:
   images:
     label: Images
     type: files
+    template: image
+    uploads: image
     multiple: true
     min: 1
     template: image

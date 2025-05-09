@@ -1,0 +1,52 @@
+Title: Alice
+
+----
+
+Preview:
+
+- file://WL9szal4LsrmWgue
+- file://HOyuFYxxQBsiboJ8
+
+----
+
+Description: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+----
+
+Text: 
+
+----
+
+Cover: - file://WL9szal4LsrmWgue
+
+----
+
+Year: 2022/2023
+
+----
+
+Client: Various
+
+----
+
+Location: Various
+
+----
+
+Category: Explorations
+
+----
+
+Stat: On going
+
+----
+
+Team: A lot of people
+
+----
+
+Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://cof98ixDA6aH1Scj"],"caption":""},"id":"cb1b2d98-9bb3-4156-9714-a530288c6d90","isHidden":false,"type":"galleryitem"}],"id":"c09c8c40-012b-4052-8a2a-595470710473","width":"1/2"},{"blocks":[{"content":{"images":["file://rrGr9vCSXoGIbvaU"],"caption":""},"id":"7c366fc3-c043-4815-b839-7bd89a06299f","isHidden":false,"type":"galleryitem"}],"id":"1ce6c506-2d79-4d12-bf1d-f94a4cb47799","width":"1/4"},{"blocks":[{"content":{"images":["file://JYCdzQnBf9u9HoCZ"],"caption":""},"id":"539e02dc-660d-44f4-8afe-59ac89921dce","isHidden":false,"type":"galleryitem"}],"id":"0fed120c-ce24-4918-81d7-bff5ade31c72","width":"1/4"}],"id":"de302f93-c301-4108-840e-86b40320993b"},{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://2HV178RDYDUAvrC4"],"caption":""},"id":"841bf84a-0144-4e5b-b489-24fefa864ce2","isHidden":false,"type":"galleryitem"}],"id":"ee5c8d0b-ff45-414c-a157-77857b7debe0","width":"1/4"},{"blocks":[{"content":{"images":["file://XFIaOI6ey62q0iio"],"caption":""},"id":"a944ac8b-3358-45be-bafe-e18fbfc1b358","isHidden":false,"type":"galleryitem"}],"id":"9ec24f8a-d9d9-4d04-a4c9-229560327b27","width":"1/4"},{"blocks":[{"content":{"images":["file://bhecrGgK3a7I6gQM"],"caption":""},"id":"887924e1-eb4e-44f2-bb9d-1a2c6e18e621","isHidden":false,"type":"galleryitem"}],"id":"47027671-84c1-4952-aa9a-bc5a7bfcfb54","width":"1/4"},{"blocks":[{"content":{"images":["file://Q7yXZ0EfENx8YhIf"],"caption":""},"id":"45f95d18-aeac-418e-a92a-e8aca3570fab","isHidden":false,"type":"galleryitem"}],"id":"4e54596a-f072-451a-bcf6-a5fc08a19dad","width":"1/4"}],"id":"8d3f25ce-cb45-47d6-b62c-e2418771c4fd"},{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://CM938kXml485bqPe"],"caption":""},"id":"f35eb5a6-2d10-4a97-8f43-190c2525dae2","isHidden":false,"type":"galleryitem"}],"id":"a7e4f10d-e597-4c42-85a8-f5b05285bef4","width":"1/4"},{"blocks":[{"content":{"images":["file://CF3FWPUiV3C0Kk2F"],"caption":""},"id":"07a764e9-d6b7-42a4-96d3-ad600da28ab1","isHidden":false,"type":"galleryitem"}],"id":"2287ab2c-1f9e-43b7-98d0-23a38821173b","width":"1/4"},{"blocks":[{"content":{"images":["file://TRdf865bWvXEaryV"],"caption":""},"id":"c777488f-000c-4f2f-be03-e9c312cb5c34","isHidden":false,"type":"galleryitem"}],"id":"4d5b8b4e-3256-4cab-bd54-636b427f14d8","width":"1/4"},{"blocks":[{"content":{"images":["file://0G76pkIrmcpFwsaO"],"caption":""},"id":"e98f6064-fa9c-4585-ad57-e5607edc2fb8","isHidden":false,"type":"galleryitem"}],"id":"bd6a4eb7-17f0-4503-b8eb-3035b4691f61","width":"1/4"}],"id":"5e96baf5-f8be-4007-bbdc-d75a8ed26c9e"}]
+
+----
+
+Uuid: 2BXTMV95avHTUOqZ

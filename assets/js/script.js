@@ -58,8 +58,7 @@ const slideshow = () => {
                 figures.forEach((figure, i) => {
                     figure.classList.remove("active");
                     gsap.to(figure.querySelector("img"), {
-                        scale: 1,
-                        duration: 0.3,
+                        duration: .5,
                         ease: "power1.out",
                     });
                 });
@@ -69,8 +68,7 @@ const slideshow = () => {
                 counter.innerHTML = slideIndex;
 
                 gsap.to(activeFigure.querySelector("img"), {
-                    scale: 1.035,
-                    duration: 0.3,
+                    duration: .5,
                     ease: "power1.out",
                 });
             };

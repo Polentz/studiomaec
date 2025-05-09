@@ -16,7 +16,7 @@
             <?php if ($cover = $page->cover()->toFile()) : ?>
                 <div class="intro-info-image lightbox-item">
                     <figure>
-                        <img src="<?= $cover->url() ?>" alt="<?= $cover->name() ?>">
+                        <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->name() ?>">
                     </figure>
                 </div>
             <?php endif?>
@@ -84,7 +84,7 @@
                 <div class="list-item accordion">
                     <ul class="list-topbar-content accordion-opener">
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $page->nextListed()->title() ?></span></li>
-                        <li class="topbar-label text-label weight-700"><span class="link"><?= $page->nextListed()->year() ?></span></li>
+                        <li class="topbar-label text-label weight-700" data-item="year"><span class="link"><?= $page->nextListed()->year() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $page->nextListed()->client() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $page->nextListed()->location() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $page->nextListed()->category() ?></span></li>
@@ -106,11 +106,9 @@
                     </ul>
                     <div class="list-content accordion-content">
                         <div class="list-content-image">
-                            <?php foreach ($page->nextListed()->gallery()->toFiles()->limit(2) as $image) : ?>
+                            <?php foreach ($page->nextListed()->preview()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
-                                    <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
-                                    <!-- add if -->
-                                    <figcaption class="text-small"><?= $page->nextListed()->imagecaption()->kt() ?></figcaption>
+                                    <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
                                 </figure>
                             <?php endforeach ?>
                         </div>
@@ -177,7 +175,7 @@
                         <div class="list-content-image">
                             <?php foreach ($first->gallery()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
-                                    <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
+                                    <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
                                     <!-- add if -->
                                     <figcaption class="text-small"><?= $first->imagecaption()->kt() ?></figcaption>
                                 </figure>

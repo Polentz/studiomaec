@@ -5,6 +5,8 @@ fields:
   images:
     label: Image
     type: files
+    template: image
+    uploads: image
     multiple: false
     min: 1
     template: image

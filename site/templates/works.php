@@ -48,7 +48,7 @@
                 <div class="list-item accordion alternate" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
                     <ul class="list-topbar-content accordion-opener">
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->title() ?></span></li>
-                        <li class="topbar-label text-label weight-700"><span class="link"><?= $project->year() ?></span></li>
+                        <li class="topbar-label text-label weight-700" data-item="year"><span class="link"><?= $project->year() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->client() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->location() ?></span></li>
                         <li class="topbar-label text-label weight-700"><span class="link"><?= $project->category() ?></span></li>
@@ -68,18 +68,16 @@
                             </a>
                         </li>
                         <li class="topbar-image">
-                            <?php foreach ($project->gallery()->toFiles()->limit(1) as $image) : ?>
+                            <?php if ($image = $project->cover()->toFile()) : ?>
                                 <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
-                            <?php endforeach ?>
+                            <?php endif ?>
                         </li>
                     </ul>
                     <div class="list-content accordion-content">
                         <div class="list-content-image">
-                            <?php foreach ($project->gallery()->toFiles()->limit(2) as $image) : ?>
+                            <?php foreach ($project->preview()->toFiles()->limit(2) as $image) : ?>
                                 <figure class="list-content-image-wrapper">
-                                    <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
-                                    <!-- add if -->
-                                    <figcaption class="text-small"><?= $project->imagecaption()->kt() ?></figcaption>
+                                    <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
                                 </figure>
                             <?php endforeach ?>
                         </div>

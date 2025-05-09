@@ -55,6 +55,8 @@ columns:
           cover:
             label: Cover image
             type: files
+            template: image
+            uploads: image
             layout: cards
             size: big
             min: 1

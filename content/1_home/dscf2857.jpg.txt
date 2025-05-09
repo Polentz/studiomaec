@@ -1,0 +1,5 @@
+Uuid: HEXLDcSntse13eKD
+
+----
+
+Template: image

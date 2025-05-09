@@ -1,0 +1,52 @@
+Title: Dancet
+
+----
+
+Preview:
+
+- file://wgpa5lLHJLfyly0w
+- file://1P2PKfyM4R7Wx7HS
+
+----
+
+Description: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+----
+
+Text: 
+
+----
+
+Cover: - file://1P2PKfyM4R7Wx7HS
+
+----
+
+Year: 2000
+
+----
+
+Client: Lorem ipsum
+
+----
+
+Location: Lorem ipsum
+
+----
+
+Category: Lorem ipsum
+
+----
+
+Stat: Lorem ipsum
+
+----
+
+Team: Lorem ipsum
+
+----
+
+Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://T6iPgUXYarKeDYRK"],"caption":""},"id":"05ea9a05-f8a1-4976-9305-e1e1ffdf5d7d","isHidden":false,"type":"galleryitem"}],"id":"2eca952b-0383-43b2-a9f0-70ee2d649e39","width":"1/2"},{"blocks":[{"content":{"images":["file://6K5mlJArkuEH6gsz"],"caption":""},"id":"d4e28564-848a-4374-9168-5b86ad604419","isHidden":false,"type":"galleryitem"}],"id":"710a10df-8618-4be1-9102-6f3e9c997ee1","width":"1/4"},{"blocks":[{"content":{"images":["file://YoXXhVFr9augwTS8"],"caption":""},"id":"69606d86-0d2b-453b-99d7-420491705131","isHidden":false,"type":"galleryitem"}],"id":"7104f645-b71d-47c4-aa81-270389cbef38","width":"1/4"}],"id":"0bca7fcd-af06-4fb7-8d3c-e25ae3d0e85d"}]
+
+----
+
+Uuid: NhbQ14qM2MDhctpv

@@ -6,17 +6,17 @@
     <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
         <div class="item-header">
             <?php if ($block->title()->isNotEmpty()) : ?>
-                <p class="item-header-title text weight-700"><?= $block->title() ?></p>
+                <p class="item-header-title text-label weight-700"><?= $block->title() ?></p>
             <?php endif ?>
             <?php if ($block->category()->isNotEmpty()) : ?>
-                <p class="item-header-category text weight-500"><?= $block->category() ?></p>
+                <p class="item-header-category text-label weight-500"><?= $block->category() ?></p>
             <?php endif ?>
         </div>
     <?php endif ?>
     <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
             <figure class="item-image-wrapper">
-                <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
+                <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
             </figure>
         <?php endforeach ?>
     </div>
@@ -48,14 +48,14 @@
                         </svg>
                     </button>
                 <?php endif ?>
-                <?php if ($block->linklocation() == 'web') : ?>
+                <?php if ($block->linklocation() == 'web' && $block->url()->isNotEmpty()) : ?>
                     <a href="<?= $block->url()->url() ?>" target="_blank" class="button go">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.5176 7.14148L7.51758 15.1415"/>
                             <path d="M9.51758 7.14148H15.5176V13.1415"/>
                         </svg>
                     </a>
-                <?php elseif ($block->linklocation() == 'page') : ?>
+                <?php elseif ($block->linklocation() == 'page' && $block->link()->isNotEmpty()) : ?>
                     <a href="<?= $block->link()->toPage()->url() ?>" class="button go">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.5176 7.14148L7.51758 15.1415"/>

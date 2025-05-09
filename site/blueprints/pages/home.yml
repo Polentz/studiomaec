@@ -9,7 +9,7 @@ sections:
     type: fields
     fields:
       grid:
-        label: Page
+        label: Feed items
         type: layout
         layouts:
           - "1/4, 1/4, 1/4, 1/4"

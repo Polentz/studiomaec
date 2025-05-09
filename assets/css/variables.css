@@ -18,7 +18,7 @@
     --main-margin: calc(2rem + 2vw);
     --inner-margin: calc(2rem + 2vw);
     --grid-gap: 1.5rem;
-    --inner-gap: .75rem;
+    --inner-gap: .5rem;
     --menu-gap: 2.5rem;
     --main-gap: calc(var(--grid-gap) * 3);
 }

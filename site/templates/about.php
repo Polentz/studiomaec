@@ -9,7 +9,7 @@
         <div class="intro-info grid">
             <?php if ($cover = $page->cover()->toFile()) : ?>
                 <figure class="intro-info-image">
-                    <img src="<?= $cover->url() ?>" alt="<?= $cover->name() ?>">
+                    <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->name() ?>">
                 </figure>
             <?php endif?>
             <ul class="intro-info-text">

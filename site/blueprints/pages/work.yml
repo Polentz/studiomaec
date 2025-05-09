@@ -1,13 +1,5 @@
 title: Project
 
-create:
-  title:
-    label: Title
-  fields:
-    - category
-  redirect: true
-  status: unlisted
-
 options:
   move: false
 
@@ -15,6 +7,30 @@ image:
   icon: false
 
 columns:
+  preview:
+    width: 1/4
+    sections:
+      preview:
+        label: false
+        type: fields
+        fields:
+          preview:
+            label: "Preview images (max: 2)"
+            type: files
+            template: image
+            uploads: image
+            layout: cards
+            size: big
+            max: 2
+            multiple: true
+            translate: false
+            link: false
+            text: false
+            image:
+              icon: true
+              ratio: 16/9
+              back: white
+              cover: true
   intro:
     width: 1/1
     sections:
@@ -54,6 +70,8 @@ columns:
           cover:
             label: Cover image
             type: files
+            template: image
+            uploads: image
             layout: cards
             size: big
             min: 1
