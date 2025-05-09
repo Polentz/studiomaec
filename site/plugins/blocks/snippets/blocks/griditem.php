@@ -13,9 +13,9 @@
             <?php endif ?>
         </div>
     <?php endif ?>
-    <div class="item-images">
+    <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
-            <figure class="item-images-wrapper">
+            <figure class="item-image-wrapper">
                 <img src="<?= $image->url() ?>" alt="<?= $image->name() ?>">
             </figure>
         <?php endforeach ?>

@@ -264,7 +264,6 @@ a:hover {
 }
 
 .main {
-    /* min-height: var(--doc-height); */
     padding-top: calc(var(--inner-margin) * 2);
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
@@ -294,6 +293,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: var(--grid-gap);
+    padding-top: var(--inner-margin);
 }
 
 .lightbox-section {
@@ -315,8 +315,48 @@ a:hover {
 .lightbox-section .button.close {
     position: absolute;
     top: var(--inner-margin);
-    right: calc(var(--grid-gap) + var(--main-margin));
+    right: var(--main-margin);
     cursor: pointer;
+}
+
+.lightbox-item figure{
+    position: relative;
+    cursor: pointer;
+}
+
+.lightbox-item figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--acc-color);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.lightbox-item figure:hover::after {
+    opacity: .5;
+}
+
+.lightbox-item img {
+    display: block;
+}
+
+.lightbox-item .item-image-caption {
+    position: absolute;
+    bottom: calc(0% - var(--inner-gap) - var(--txt-small-size));
+    left: 0;
+    color: var(--acc-color);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.lightbox-item:hover .item-image-caption {
+    opacity: 1;
 }
 
 .lightbox-section img {
@@ -373,14 +413,14 @@ a:hover {
     justify-self: end;
 }
 
-.item-images {
+.slideshow-item {
     height: auto;
     position: relative;
     overflow: hidden;
     transition: height .3s ease;
 }
 
-.item-images figure {
+.slideshow-item figure {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -391,35 +431,16 @@ a:hover {
     transition: opacity .3s ease;
 }
 
-.item-images figure.active {
+.slideshow-item figure.active {
     opacity: 1;
     z-index: 1;
 }
 
-.item-images figure::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--acc-color);
-    opacity: 0;
-    z-index: 2;
-    pointer-events: none;
-    transition: opacity .3s ease;
-}
-
-.item-images figure:hover::after {
-    opacity: .5;
-}
-
-.item-images img {
+.slideshow-item img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
-    cursor: pointer;
 }
 
 .counter {
@@ -600,27 +621,6 @@ a:hover {
     object-fit: cover;
 }
 
-/* .grid-item {
-    position: relative;
-}
-
-.grid-item::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--acc-color);
-    opacity: 0;
-    z-index: 1;
-    transition: opacity .3s ease;
-}
-
-.grid-item:hover::after {
-    opacity: .5;
-} */
-
 .intro-info-text {
     display: flex;
     flex-direction: column;
@@ -642,6 +642,10 @@ a:hover {
     align-items: end;
     padding: var(--inner-gap) 0;
     border-bottom: solid 1px var(--main-color);
+}
+
+.footer-wrapper:last-child {
+    border-bottom: none;
 }
 
 .footer-block {

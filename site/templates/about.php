@@ -17,9 +17,7 @@
             </ul>
         </div>
     </section>
-
     <?= snippet('grid') ?>
-    
 </main>
 
 <?= snippet('footer') ?>

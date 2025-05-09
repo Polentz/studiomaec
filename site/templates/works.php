@@ -44,7 +44,6 @@
                     </svg>
                 </li>
             </ul>
-            <!-- sortBy('year', 'asc') -->
             <?php foreach ($page->children()->listed() as $project) : ?>
                 <div class="list-item accordion alternate" data-project="<?= $project->title() ?>" data-year="<?= $project->year() ?>" data-client="<?= $project->client()->slug() ?>" data-location="<?= $project->location()->slug() ?>" data-category="<?= $project->category()->slug() ?>" data-status="<?= $project->stat()->slug() ?>">
                     <ul class="list-topbar-content accordion-opener">
@@ -99,16 +98,3 @@
 
 <?= snippet('footer') ?>
 <?= snippet('foot') ?>
-
-
-<svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3.5752 3.5752C7.6757 -0.525309 14.3243 -0.525309 18.4248 3.5752C22.5253 7.6757 22.5253 14.3243 18.4248 18.4248C14.3243 22.5253 7.6757 22.5253 3.5752 18.4248C-0.525309 14.3243 -0.525309 7.6757 3.5752 3.5752Z"/>
-    <path d="M7.45679 7.39349L14.5279 14.4646"/>
-    <path d="M14.5278 7.39349L7.45676 14.4646"/>
-</svg>
-
-
-<svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7.45679 7.39349L14.5279 14.4646"/>
-    <path d="M14.5278 7.39349L7.45676 14.4646"/>
-</svg>

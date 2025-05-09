@@ -17,4 +17,18 @@ fields:
       ratio: 4/3
       back: white
       cover: true
+  caption:
+    label: Image caption
+    placeholder: Caption …
+    type: writer
+    inline: true
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+
   

@@ -33,12 +33,12 @@ const handleHref = () => {
 const slideshow = () => {
     const items = document.querySelectorAll(".grid-item");
     items.forEach(item => {
-        const figures = item.querySelectorAll(".item-images figure");
-        const images = item.querySelectorAll(".item-images img");
+        const figures = item.querySelectorAll(".slideshow-item figure");
+        const images = item.querySelectorAll(".slideshow-item img");
         const counter = item.querySelector(".counter-num");
         const prev = item.querySelector(".button.left");
         const next = item.querySelector(".button.right");
-        const imageWrapper = item.querySelector(".item-images");
+        const imageWrapper = item.querySelector(".slideshow-item");
 
         let slideIndex = 1;
 
@@ -216,49 +216,49 @@ const sortAccordion = () => {
 };
 
 const lightbox = () => {
-    const galleryImages = document.querySelectorAll(".intro-info-image img, .item-images-wrapper img");
+    const galleryImages = document.querySelectorAll(".lightbox-item img");
     const container = document.querySelector(".main");
     
     const openLightbox = (startIndex) => {
         const lightbox = document.createElement("section");
         lightbox.classList.add("lightbox-section");
     
-        const closeBtn = document.createElement("span");
+        const closeBtn = document.createElement("button");
         closeBtn.classList.add("button", "close");
         closeBtn.setAttribute("aria-label", "Close");
         closeBtn.setAttribute("role", "button");
         closeBtn.innerHTML = `
-        <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.45679 7.39349L14.5279 14.4646"/>
-            <path d="M14.5278 7.39349L7.45676 14.4646"/>
-        </svg>
+            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.45679 7.39349L14.5279 14.4646"/>
+                <path d="M14.5278 7.39349L7.45676 14.4646"/>
+            </svg>
         `;
     
         const lightboxImg = document.createElement("img");
         
-        const counter = document.createElement("div");
-        counter.classList.add("counter", "text-small", "weight-500");
         const icons = document.createElement("div");
         icons.classList.add("icons");
         const prevBtn = document.createElement("button");
         prevBtn.classList.add("button", "left");
         prevBtn.innerHTML = `
-        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.49951 11H16.4995"></path>
-            <path d="M10.4995 7L6.49951 11L10.4995 15"></path>
-        </svg>
+            <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.49951 11H16.4995"></path>
+                <path d="M10.4995 7L6.49951 11L10.4995 15"></path>
+            </svg>
         `;
+        const counter = document.createElement("div");
+        counter.classList.add("counter", "text-small", "weight-500");
         const nextBtn = document.createElement("button");
         nextBtn.classList.add("button", "right");
         nextBtn.innerHTML = `
-        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.5005 11L6.50049 11"></path>
-            <path d="M12.5005 15L16.5005 11L12.5005 7"></path>
-        </svg>
+            <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.5005 11L6.50049 11"></path>
+                <path d="M12.5005 15L16.5005 11L12.5005 7"></path>
+            </svg>
         `;
 
         icons.append(prevBtn, counter, nextBtn);
-        lightbox.append(lightboxImg, icons, closeBtn);
+        lightbox.append(closeBtn, lightboxImg, icons);
         container.appendChild(lightbox);
 
         let currentIndex = startIndex;
@@ -282,9 +282,11 @@ const lightbox = () => {
             container.removeChild(lightbox);
         };
 
-        // container.onclick = () => {
-        //     container.removeChild(lightbox);
-        // };
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                container.removeChild(lightbox);
+            };
+        });
         
         updateLightbox();
     };
@@ -299,7 +301,6 @@ window.addEventListener("load", () => {
     headerHeight();
     footerHeight();
     handleHref();
-    slideshow();
 });
 
 window.addEventListener("resize", () => {
