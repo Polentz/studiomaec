@@ -125,7 +125,16 @@ columns:
               value: "{{ arrayItem.value }}"
           team: 
             label: Team
-            type: text
+            type: writer
+            inline: true
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
   gallery:
     width: 1/1
     sections:
@@ -133,11 +142,6 @@ columns:
         label: false
         type: fields
         fields:
-          # galleryInfo:
-          #   type: info
-          #   label: false
-          #   text: >
-          #       The cover image will be used on the page {{ page.parent.title }}.
           grid:
             label: Gallery
             type: layout

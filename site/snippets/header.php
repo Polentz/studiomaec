@@ -13,5 +13,3 @@
         </nav>
     </div>
 </menu>
-
-<?= e($page->isOpen(), '--current') ?>

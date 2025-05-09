@@ -1,0 +1,17 @@
+name: Text item
+icon: page
+wysiwyg: true
+preview: fields
+fields:
+  text:
+    label: Text
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+  

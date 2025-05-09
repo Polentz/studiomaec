@@ -220,6 +220,7 @@ window.addEventListener("load", () => {
     headerHeight();
     footerHeight();
     handleHref();
+    slideshow();
 });
 
 window.addEventListener("resize", () => {

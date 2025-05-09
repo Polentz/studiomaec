@@ -72,59 +72,11 @@ columns:
         label: false
         type: fields
         fields:
-          year: 
-            label: Year
-            type: tags
-            max: 1
-            layout: list
-            options: query
-            query:
-              fetch: page.siblings.pluck("year", ",", true)
-              text: "{{ arrayItem.value }}"
-              value: "{{ arrayItem.value }}"
-          client: 
-            label: Client
-            type: tags
-            max: 1
-            layout: list
-            options: query
-            query:
-              fetch:  page.siblings.pluck("client", ",", true)
-              text: "{{ arrayItem.value }}"
-              value: "{{ arrayItem.value }}"
-          location: 
-            label: Location
-            type: tags
-            max: 1
-            layout: list
-            options: query
-            query:
-              fetch:  page.siblings.pluck("location", ",", true)
-              text: "{{ arrayItem.value }}"
-              value: "{{ arrayItem.value }}"
-          category: 
-            label: Category
-            type: tags
-            max: 1
-            layout: list
-            options: query
-            query:
-              fetch:  page.siblings.pluck("category", ",", true)
-              text: "{{ arrayItem.value }}"
-              value: "{{ arrayItem.value }}"
-          stat: 
-            label: Status
-            type: tags
-            max: 1
-            layout: list
-            options: query
-            query:
-              fetch:  page.siblings.pluck("stat", ",", true)
-              text: "{{ arrayItem.value }}"
-              value: "{{ arrayItem.value }}"
-          team: 
-            label: Team
-            type: text
+          infoBlocks:
+            type: blocks
+            label: Info blocks
+            fieldsets:
+              - infoitem
   gallery:
     width: 1/1
     sections:
@@ -132,11 +84,6 @@ columns:
         label: false
         type: fields
         fields:
-          # galleryInfo:
-          #   type: info
-          #   label: false
-          #   text: >
-          #       The cover image will be used on the page {{ page.parent.title }}.
           grid:
             label: Gallery
             type: layout
@@ -146,7 +93,10 @@ columns:
               - "1/2, 1/2"
               - "1/2, 1/4, 1/4"
               - "1/4, 1/4, 1/2"
+              - "3/4, 1/4"
+              - "1/4, 3/4"
             fieldsets:
+              - textitem
               - galleryitem
 
 

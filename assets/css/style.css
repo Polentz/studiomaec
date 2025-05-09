@@ -15,6 +15,14 @@ img {
     width: 100%;
 }
 
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 700;
+}
+
 .header {
     width: 100dvw;
     height: var(--header-height);
@@ -284,14 +292,16 @@ a:hover {
     gap: var(--grid-gap);
 }
 
-.span-1,
 .span-3 {
     grid-column: span 1;
 }
 
-.span-2,
 .span-6 {
     grid-column: span 2;
+}
+
+.span-9 {
+    grid-column: span 3;
 }
 
 .grid-item {
@@ -371,6 +381,16 @@ a:hover {
     flex-direction: column;
     gap: var(--inner-gap);
     padding-top: var(--inner-gap);
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+}
+
+.item-text strong {
+    font-weight: 700;
 }
 
 .list {
