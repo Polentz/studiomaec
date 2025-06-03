@@ -3,9 +3,16 @@ title: Site
 sections:
   pages:
     type: pages
+  header: 
+    type: fields
+    fields:
+      subtitle:
+        type: text
   footer:
     type: fields
     fields:
+      contactname:
+        type: text
       contact:
         type: blocks
         fieldsets:

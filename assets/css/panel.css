@@ -10,3 +10,8 @@
 .k-blocks-list .k-block-container-type-griditem:not(:first-child) {
     background-color: red;
 }
+
+th[data-column-id="info"],
+td[data-column-id="info"] {
+    display: none;
+}
