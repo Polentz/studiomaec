@@ -1,4 +1,9 @@
 window.addEventListener("load", () => {
-    lightbox();
+    lightbox(document.querySelectorAll(".main"));
     accordion();
+    gridAccordionTemplate();
+});
+
+window.addEventListener("resize", () => {
+    gridAccordionTemplate();
 });

@@ -8,7 +8,7 @@ image:
 
 columns:
   preview:
-    width: 1/4
+    width: 1/1
     sections:
       preview:
         label: false
@@ -20,7 +20,7 @@ columns:
             template: image
             uploads: image
             layout: cards
-            size: big
+            # size: big
             max: 2
             multiple: true
             translate: false
@@ -28,7 +28,7 @@ columns:
             text: false
             image:
               icon: true
-              ratio: 16/9
+              # ratio: 16/9
               back: white
               cover: true
   intro:
@@ -81,7 +81,7 @@ columns:
             text: false
             image:
               icon: true
-              ratio: 16/9
+              # ratio: 16/9
               back: white
               cover: true
   infos:

@@ -106,12 +106,12 @@ const slideshow = () => {
         const updateImageWrapperHeight = () => {
             const firstImg = images[0];
             if (!firstImg) return;
-        
+
             const setHeight = () => {
                 const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
                 imageWrapper.style.height = `${height}px`;
             };
-        
+
             if (firstImg.complete) {
                 setHeight();
             } else {
@@ -158,7 +158,7 @@ const accordion = () => {
     });
 };
 
-const sortAccordion = () => {  
+const sortAccordion = () => {
     const sortButtons = document.querySelectorAll('.topbar-label[data-item]');
     const svgs = document.querySelectorAll(".topbar-label svg");
     const container = document.querySelector(".list");
@@ -213,84 +213,108 @@ const sortAccordion = () => {
     });
 };
 
-const lightbox = () => {
-    const galleryImages = document.querySelectorAll(".lightbox-item img");
-    const container = document.querySelector(".main");
-    
-    const openLightbox = (startIndex) => {
-        const lightbox = document.createElement("section");
-        lightbox.classList.add("lightbox-section");
-    
-        const closeBtn = document.createElement("button");
-        closeBtn.classList.add("button", "close");
-        closeBtn.setAttribute("aria-label", "Close");
-        closeBtn.setAttribute("role", "button");
-        closeBtn.innerHTML = `
+const gridAccordionTemplate = () => {
+    const topbars = document.querySelectorAll(".list-topbar-content");
+    topbars.forEach(topbar => {
+        const doc = document.documentElement;
+
+        const elements = topbar.querySelectorAll(".topbar-label");
+        const icons = topbar.querySelector(".topbar-icons");
+
+        const topbarWidth = topbar.offsetWidth - 96;
+        const iconsWidth = icons.offsetWidth;
+        const columnWidth = (topbarWidth - iconsWidth) / 6;
+
+        doc.style.setProperty("--grid-column-width", `${columnWidth}px`);
+        doc.style.setProperty("--icons-width", `${iconsWidth}px`);
+        elements.forEach(element => {
+            element.style.maxWidth = `${columnWidth}px`;
+        });
+    });
+};
+
+const lightbox = (wrapper) => {
+    wrapper.forEach(wrap => {
+        const galleryImages = wrap.querySelectorAll(".lightbox-item img");
+        const container = document.querySelector(".main");
+
+        const openLightbox = (startIndex) => {
+            const lightbox = document.createElement("section");
+            lightbox.classList.add("lightbox-section");
+
+            const closeBtn = document.createElement("button");
+            closeBtn.classList.add("button", "close");
+            closeBtn.setAttribute("aria-label", "Close");
+            closeBtn.setAttribute("role", "button");
+            closeBtn.innerHTML = `
             <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.45679 7.39349L14.5279 14.4646"/>
                 <path d="M14.5278 7.39349L7.45676 14.4646"/>
             </svg>
         `;
-    
-        const lightboxImg = document.createElement("img");
-        
-        const icons = document.createElement("div");
-        icons.classList.add("icons");
-        const prevBtn = document.createElement("button");
-        prevBtn.classList.add("button", "left");
-        prevBtn.innerHTML = `
+
+            const lightboxImg = document.createElement("img");
+
+            const icons = document.createElement("div");
+            icons.classList.add("icons");
+            const prevBtn = document.createElement("button");
+            prevBtn.classList.add("button", "left");
+            prevBtn.setAttribute("role", "button");
+            prevBtn.innerHTML = `
             <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.49951 11H16.4995"></path>
                 <path d="M10.4995 7L6.49951 11L10.4995 15"></path>
             </svg>
         `;
-        const counter = document.createElement("div");
-        counter.classList.add("counter", "text-small", "weight-500");
-        const nextBtn = document.createElement("button");
-        nextBtn.classList.add("button", "right");
-        nextBtn.innerHTML = `
+            const counter = document.createElement("div");
+            counter.classList.add("counter", "text-small", "weight-500");
+            const nextBtn = document.createElement("button");
+            nextBtn.classList.add("button", "right");
+            nextBtn.setAttribute("role", "button");
+            nextBtn.innerHTML = `
             <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.5005 11L6.50049 11"></path>
                 <path d="M12.5005 15L16.5005 11L12.5005 7"></path>
             </svg>
         `;
 
-        icons.append(prevBtn, counter, nextBtn);
-        lightbox.append(closeBtn, lightboxImg, icons);
-        container.appendChild(lightbox);
+            icons.append(prevBtn, counter, nextBtn);
+            lightbox.append(closeBtn, lightboxImg, icons);
+            container.appendChild(lightbox);
 
-        let currentIndex = startIndex;
+            let currentIndex = startIndex;
 
-        const updateLightbox = () => {
-            lightboxImg.src = galleryImages[currentIndex].src;
-            counter.innerHTML = `<span class="counter-num">${currentIndex + 1}</span> / <span class="counter-lenght">${galleryImages.length}</span>`;
-        }
-
-        prevBtn.onclick = () => {
-            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-            updateLightbox();
+            const updateLightbox = () => {
+                lightboxImg.src = galleryImages[currentIndex].src;
+                counter.innerHTML = `<span class="counter-num">${currentIndex + 1}</span> / <span class="counter-lenght">${galleryImages.length}</span>`;
             };
 
-        nextBtn.onclick = () => {
-            currentIndex = (currentIndex + 1) % galleryImages.length;
-            updateLightbox();
-        };
+            prevBtn.onclick = () => {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateLightbox();
+            };
 
-        closeBtn.onclick = () => {
-            container.removeChild(lightbox);
-        };
+            nextBtn.onclick = () => {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                updateLightbox();
+            };
 
-        lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) {
+            closeBtn.onclick = () => {
                 container.removeChild(lightbox);
             };
-        });
-        
-        updateLightbox();
-    };
 
-    galleryImages.forEach((img, index) => {
-        img.addEventListener("click", () => openLightbox(index));
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    container.removeChild(lightbox);
+                };
+            });
+
+            updateLightbox();
+        };
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener("click", () => openLightbox(index));
+        });
     });
 };
 
@@ -305,4 +329,5 @@ window.addEventListener("resize", () => {
     documentHeight();
     headerHeight();
     footerHeight();
+    gridAccordionTemplate();
 });
