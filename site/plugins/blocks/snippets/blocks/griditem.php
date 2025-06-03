@@ -24,14 +24,14 @@ $images = $block->images()->toFiles();
         <div class="item-footer">
             <?php if ($images->count() > 1) : ?>
                 <div class="icons item-footer-counter">
-                    <button class="button left">
+                    <button class="button left" role="button" aria-label="Previous">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.49951 11H16.4995" />
                             <path d="M10.4995 7L6.49951 11L10.4995 15" />
                         </svg>
                     </button>
                     <div class="counter text-small weight-500"><span class="counter-num">1</span>/<span class="counter-lenght"><?= $images->count() ?></span></div>
-                    <button class="button right">
+                    <button class="button right" role="button" aria-label="Next">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.5005 11L6.50049 11" />
                             <path d="M12.5005 15L16.5005 11L12.5005 7" />
@@ -41,7 +41,7 @@ $images = $block->images()->toFiles();
             <?php endif ?>
             <div class="icons item-footer-links">
                 <?php if ($block->text()->isNotEmpty()) : ?>
-                    <button class="button plus-minus accordion-opener">
+                    <button class="button plus-minus accordion-opener" role="button" aria-label="Open/Close">
                         <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                             <path class="horizontal-path" d="M5.94434 10.9553H15.9443" />
                             <path class="vertical-path" d="M10.9443 5.95532V15.9553" />

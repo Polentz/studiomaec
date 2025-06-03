@@ -244,8 +244,8 @@ const lightbox = (wrapper) => {
 
             const closeBtn = document.createElement("button");
             closeBtn.classList.add("button", "close");
-            closeBtn.setAttribute("aria-label", "Close");
             closeBtn.setAttribute("role", "button");
+            closeBtn.setAttribute("aria-label", "Close");
             closeBtn.innerHTML = `
             <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.45679 7.39349L14.5279 14.4646"/>
@@ -260,6 +260,7 @@ const lightbox = (wrapper) => {
             const prevBtn = document.createElement("button");
             prevBtn.classList.add("button", "left");
             prevBtn.setAttribute("role", "button");
+            prevBtn.setAttribute("aria-label", "Previous");
             prevBtn.innerHTML = `
             <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.49951 11H16.4995"></path>
@@ -271,6 +272,7 @@ const lightbox = (wrapper) => {
             const nextBtn = document.createElement("button");
             nextBtn.classList.add("button", "right");
             nextBtn.setAttribute("role", "button");
+            nextBtn.setAttribute("aria-label", "Next");
             nextBtn.innerHTML = `
             <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.5005 11L6.50049 11"></path>
@@ -295,6 +297,11 @@ const lightbox = (wrapper) => {
             };
 
             nextBtn.onclick = () => {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                updateLightbox();
+            };
+
+            lightboxImg.onclick = () => {
                 currentIndex = (currentIndex + 1) % galleryImages.length;
                 updateLightbox();
             };

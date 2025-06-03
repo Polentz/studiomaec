@@ -8,7 +8,7 @@
         <li class="topbar-label text-label <?php if ($item->stat()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $item->stat() ?></span></li>
 
         <li class="topbar-icons icons">
-            <button class="button plus-minus">
+            <button class="button plus-minus" role="button" aria-label="Open/Close">
                 <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                     <path class="horizontal-path" d="M5.94434 10.9553H15.9443" />
                     <path class="vertical-path" d="M10.9443 5.95532V15.9553" />
