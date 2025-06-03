@@ -7,6 +7,11 @@
     display: none;
 } */
 
+.k-block-container-type-griditem .k-button[aria-label="Insert after"],
+.k-block-container-type-griditem .k-button[aria-label="More"] {
+    display: none !important;
+}
+
 .k-block-container:not([data-hidden=true]) .k-block-type-fields>:not([data-collapsed=true]) {
     padding-top: var(--spacing-3);
 }
@@ -24,4 +29,17 @@
 
 .k-choice-input:has(> input[value="true"]) {
     display: none;
+}
+
+.k-field-name-contact .k-blocks-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.k-field-name-contact .k-block-container {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.k-block-type-contactitem .k-text>:where(audio, blockquote, details, div, figure, h1, h2, h3, h4, h5, h6, hr, iframe, img, object, ol, p, picture, pre, table, ul)+* {
+    margin-block-start: 0;
 }

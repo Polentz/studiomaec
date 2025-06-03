@@ -1,0 +1,17 @@
+name: Contact item
+icon: page
+wysiwyg: true
+preview: text
+fields:
+  text:
+    label: Text
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+  

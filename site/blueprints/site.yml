@@ -3,3 +3,10 @@ title: Site
 sections:
   pages:
     type: pages
+  footer:
+    type: fields
+    fields:
+      contact:
+        type: blocks
+        fieldsets:
+          - contactitem
