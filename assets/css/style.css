@@ -621,6 +621,10 @@ a:hover {
     border-top: solid 1px var(--main-color);
 }
 
+.topbar-label {
+    cursor: pointer;
+}
+
 .list-topbar-header .topbar-label {
     width: -webkit-fit-content;
     width: -moz-fit-content;

@@ -1,19 +1,96 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
-  header: 
-    type: fields
-    fields:
-      subtitle:
-        type: text
-  footer:
-    type: fields
-    fields:
-      contactname:
-        type: text
-      contact:
-        type: blocks
-        fieldsets:
-          - contactitem
+tabs:
+  website:
+    label: Website
+    icon: angle-right
+    columns:
+      main:
+        width: 3/4
+        sections:
+          header: 
+            type: fields
+            fields:
+              headerHeadline:
+                label: Header
+                type: headline
+              subtitle:
+                label: Website subtitle
+                type: text
+              pagesHeadline:
+                label: Pages
+                type: headline
+          pages:
+            label: false
+            type: pages
+            template:
+              - home
+              - works
+              - about
+            help: The listed pages are linked to the site header navigation menu.
+          footer:
+            type: fields
+            fields:
+              footerHeadline:
+                label: Footer
+                type: headline
+              contactname:
+                label: Contact name
+                type: text
+              contact:
+                label: Contact items
+                type: blocks
+                fieldsets:
+                  - contactitem
+          otherPages:
+            label: Other pages
+            type: pages
+            template:
+              - basic
+            help: The listed pages are linked to the site footer.
+      sidebar:
+        width: 1/4
+        sections:
+          headline: 
+            type: fields
+            fields:
+              otherHeadline:
+                label: Sidebar
+                type: headline
+  seo:
+    label: Website metadata
+    icon: angle-right
+    columns:
+      main:
+        width: 1/2
+        sections:
+          seocontent:
+            type: fields
+            fields:
+              description:
+                label: Description
+                type: textarea
+                buttons: false
+              keywords:
+                label: 
+                  en: Keywords
+                  it: Parole chiave
+                type: tags         
+      image:
+        width: 1/2
+        sections:
+          image:
+            type: fields
+            fields:
+              ogimage:
+                label: Open Graph Image
+                type: files
+                template: file
+                uploads: file
+                layout: cards
+                size: full
+                multiple: false
+                image:
+                  ratio: 4/3
+                  cover: true
+                help: An Open Graph image is the picture that shows up when you share a link on social media.
