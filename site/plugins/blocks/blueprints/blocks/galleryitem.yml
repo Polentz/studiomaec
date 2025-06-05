@@ -1,27 +1,22 @@
-name: Grid Item
-icon: page
+name: Image
+icon: image
 wysiwyg: true
+preview: images
 fields:
   images:
     label: Image
     type: files
     template: image
     uploads: image
+    query: page.files.filterBy("type", "image")
     multiple: false
-    min: 1
-    template: image
-    uploads: image
-    translate: false
     text: false
     link: false
     image:
-      icon: true
       ratio: 4/3
-      back: white
       cover: true
   caption:
     label: Image caption
-    placeholder: Caption …
     type: writer
     inline: true
     marks:

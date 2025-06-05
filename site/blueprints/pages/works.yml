@@ -1,4 +1,8 @@
 title: Works
+
+create:
+  redirect: true
+  status: unlisted
   
 # options:
 #   delete: false
@@ -11,32 +15,34 @@ image:
   icon: page
   query: false
 
-tabs:
-  content:
-    label: Page content
-    icon: page
+columns:
+  main:
+    width: 3/4
     sections:
       items:
         label: "{{ page.title }}"
         type: pages
-        layout: table
-        info: "{{ page.slug }}"
-        columns:
-          title: true
-          info: false
-          year: true
-          client: true
-          location: true
-          category: true
-          stat:
-            label: Status
+        layout: cards
+        size: large
+        # layout: table
+        # info: "{{ page.slug }}"
+        # columns:
+        #   title: true
+        #   info: false
+        #   year: true
+        #   client: true
+        #   location: true
+        #   category: true
+        #   stat:
+        #     label: Status
         template:
           - work
-        info: '{{ page.title }}'
         search: false
         sortable: true
         image:
+          ratio: 4/3
           cover: true
-          ratio: 1/1
-          back: white
           query: page.cover.toFile()
+  sidebar:
+    width: 1/4
+    sections:

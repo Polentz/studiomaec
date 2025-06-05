@@ -2,7 +2,7 @@
 $images = $block->images()->toFiles();
 ?>
 
-<div class="grid-item span-<?= $column->span() ?> accordion lightbox-item">
+<div class="grid-item accordion lightbox-item">
     <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
         <div class="item-header">
             <?php if ($block->title()->isNotEmpty()) : ?>

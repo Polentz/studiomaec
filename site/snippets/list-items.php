@@ -1,12 +1,17 @@
-<div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $item->year() ?>" data-client="<?= $item->client()->slug() ?>" data-location="<?= $item->location()->slug() ?>" data-category="<?= $item->category()->slug() ?>" data-status="<?= $item->stat()->slug() ?>">
-    <ul class="list-topbar-content accordion-opener">
-        <li class="topbar-label text-label link weight-700"><span><?= $item->title() ?></span></li>
-        <li class="topbar-label text-label <?php if ($item->year()->isNotEmpty()) : ?>link<?php endif ?> weight-700" data-item="year"><span><?= $item->year() ?></span></li>
-        <li class="topbar-label text-label <?php if ($item->client()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $item->client() ?></span></li>
-        <li class="topbar-label text-label <?php if ($item->location()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $item->location() ?></span></li>
-        <li class="topbar-label text-label <?php if ($item->category()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $item->category() ?></span></li>
-        <li class="topbar-label text-label <?php if ($item->stat()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $item->stat() ?></span></li>
+<?php
+$summary = $item->summary()->toObject()
+?>
 
+<div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-status="<?= $summary->stat()->slug() ?>">
+    <ul class="list-topbar-content accordion-opener">
+        <?php if ($summary): ?>
+            <li class="topbar-label text-label link weight-700"><span><?= $item->title() ?></span></li>
+            <li class="topbar-label text-label <?php if ($summary->year()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $summary->year() ?></span></li>
+            <li class="topbar-label text-label <?php if ($summary->client()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $summary->client() ?></span></li>
+            <li class="topbar-label text-label <?php if ($summary->location()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $summary->location() ?></span></li>
+            <li class="topbar-label text-label <?php if ($summary->category()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $summary->category() ?></span></li>
+            <li class="topbar-label text-label <?php if ($summary->stat()->isNotEmpty()) : ?>link<?php endif ?> weight-700"><span><?= $summary->stat() ?></span></li>
+        <?php endif ?>
         <li class="topbar-icons icons">
             <button class="button plus-minus" role="button" aria-label="Open/Close">
                 <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">

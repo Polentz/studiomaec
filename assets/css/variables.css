@@ -5,7 +5,7 @@
     --bg-color: #e8e8e8;
     --bg-color-opacity: #e8e8e8ea;
     --main-color: #001bcb;
-    --difference-color: #ffe434;
+    --difference-color: #fcde1e;
     --acc-color: #ff4f5d;
     --white: #fff;
     --black: #000;
@@ -15,7 +15,8 @@
     --txt-size: 1rem;
     --txt-small-size: .9rem;
     --button-size: 1.5rem;
-    --main-margin: calc(2rem + 2vw);
+    /* --main-margin: calc(2rem + 2vw); */
+    --main-margin: 2rem;
     --inner-margin: calc(2rem + 2vw);
     --grid-gap: 1.5rem;
     --inner-gap: .5rem;
@@ -23,8 +24,20 @@
     --main-gap: calc(var(--grid-gap) * 3);
 }
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
     :root {
         --main-margin: 10vw;
+    }
+} */
+
+@media screen and (max-width: 600px) {
+    :root {
+        --txt-title-size: 4rem;
+        --txt-large-size: 1.5rem;
+        --main-margin: 1rem;
+        --inner-margin: 1rem;
+        --grid-gap: 1rem;
+        --menu-gap: 1rem;
+        --main-gap: calc(var(--grid-gap) * 3);
     }
 }

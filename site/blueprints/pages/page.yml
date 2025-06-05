@@ -1,10 +1,6 @@
-title: About
+title: Page
 
 create:
-  title:
-    label: Project name
-  fields:
-    - category
   redirect: true
   status: unlisted
 
@@ -16,15 +12,15 @@ image:
   query: false
 
 columns:
-  intro:
-    width: 1/1
+  main:
+    width: 3/4
     sections:
       intro:
         label: false
         type: fields
         fields:
           description:
-            label: Text
+            label: Introduction text
             type: writer
             marks:
               - bold
@@ -45,51 +41,13 @@ columns:
               - link
               - clear
             nodes: false
-  cover:
-    width: 3/4
-    sections:
       cover:
         label: false
         type: fields
         fields:
           cover:
             label: Cover image
-            type: files
-            template: image
-            uploads: image
-            layout: cards
-            size: big
-            min: 1
-            multiple: false
-            translate: false
-            image:
-              icon: true
-              ratio: 4/3
-              back: white
-              cover: true
-  infos:
-    width: 1/4
-    sections:
-      infos:
-        label: false
-        type: fields
-        fields:
-          infoBlocks:
-            type: blocks
-            label: Info blocks
-            fieldsets:
-              - infoitem
-  gallery:
-    width: 1/1
-    sections:
-      gallery:
-        label: false
-        type: fields
-        fields:
-          grid:
-            label: Gallery
             type: layout
-            translate: false
             layouts:
               - "1/4, 1/4, 1/4, 1/4"
               - "1/2, 1/2"
@@ -100,5 +58,39 @@ columns:
             fieldsets:
               - textitem
               - galleryitem
-
+      gallery:
+        label: false
+        type: fields
+        fields:
+          grid:
+            label: Gallery
+            type: layout
+            layouts:
+              - "1/4, 1/4, 1/4, 1/4"
+              - "1/2, 1/2"
+              - "1/2, 1/4, 1/4"
+              - "1/4, 1/4, 1/2"
+              - "3/4, 1/4"
+              - "1/4, 3/4"
+            fieldsets:
+              - textitem
+              - galleryitem
+  sidebar:
+    width: 1/4
+    sections:
+      features:
+        label: false
+        type: fields
+        fields:
+          attachments:
+            label: Attachments
+            type: files
+            help: Upload here the pdf files you want to use as attachments on this page.
+            template: document
+            uploads: document
+            query: page.files.filterBy("type", "document")
+            link: false
+            image:
+              ratio: 4/3
+              cover: true
 

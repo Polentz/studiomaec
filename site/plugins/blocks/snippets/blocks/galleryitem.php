@@ -1,4 +1,4 @@
-<div class="grid-item span-<?= $column->span() ?>">
+<div class="grid-item">
     <div class="item-image lightbox-item">
         <?php if ($image = $block->images()->toFile()) : ?>
             <figure class="item-image-wrapper">

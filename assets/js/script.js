@@ -30,6 +30,27 @@ const handleHref = () => {
     };
 };
 
+const updateImageWrapperHeight = () => {
+    const items = document.querySelectorAll(".grid-item");
+    items.forEach(item => {
+        const images = item.querySelectorAll(".slideshow-item img");
+        const imageWrapper = item.querySelector(".slideshow-item");
+        const firstImg = images[0];
+        if (!firstImg) return;
+
+        const setHeight = () => {
+            const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
+            imageWrapper.style.height = `${height}px`;
+        };
+
+        if (firstImg.complete) {
+            setHeight();
+        } else {
+            firstImg.onload = setHeight;
+        };
+    });
+};
+
 const slideshow = () => {
     const items = document.querySelectorAll(".grid-item");
     items.forEach(item => {
@@ -103,24 +124,24 @@ const slideshow = () => {
         // };
 
         // first image:
-        const updateImageWrapperHeight = () => {
-            const firstImg = images[0];
-            if (!firstImg) return;
+        // const updateImageWrapperHeight = () => {
+        //     const firstImg = images[0];
+        //     if (!firstImg) return;
 
-            const setHeight = () => {
-                const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
-                imageWrapper.style.height = `${height}px`;
-            };
+        //     const setHeight = () => {
+        //         const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
+        //         imageWrapper.style.height = `${height}px`;
+        //     };
 
-            if (firstImg.complete) {
-                setHeight();
-            } else {
-                firstImg.onload = setHeight;
-            }
-        };
+        //     if (firstImg.complete) {
+        //         setHeight();
+        //     } else {
+        //         firstImg.onload = setHeight;
+        //     }
+        // };
 
-        updateImageWrapperHeight();
-        window.addEventListener("resize", updateImageWrapperHeight);
+        // updateImageWrapperHeight();
+        // window.addEventListener("resize", updateImageWrapperHeight);
     });
 };
 
@@ -213,6 +234,7 @@ const sortAccordion = () => {
     });
 };
 
+//  si può eliminare se calcolo le colonne della tabella in percentuali
 const gridAccordionTemplate = () => {
     const topbars = document.querySelectorAll(".list-topbar-content");
     topbars.forEach(topbar => {
@@ -227,9 +249,9 @@ const gridAccordionTemplate = () => {
 
         doc.style.setProperty("--grid-column-width", `${columnWidth}px`);
         doc.style.setProperty("--icons-width", `${iconsWidth}px`);
-        elements.forEach(element => {
-            element.style.maxWidth = `${columnWidth}px`;
-        });
+        // elements.forEach(element => {
+        //     element.style.maxWidth = `${columnWidth}px`;
+        // });
     });
 };
 

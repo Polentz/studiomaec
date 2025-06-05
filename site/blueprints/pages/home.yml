@@ -1,21 +1,75 @@
 title: Homepage
 
+options:
+  delete: false
+  duplicate: false
+  changeStatus: false
+  move: false
+  sort: false
+
 image:
   icon: home
   query: false
 
-sections:
-  layouts:
-    type: fields
-    fields:
-      grid:
-        label: Feed items
-        type: layout
-        layouts:
-          - "1/4, 1/4, 1/4, 1/4"
-          - "1/2, 1/2"
-          - "1/2, 1/4, 1/4"
-          - "1/4, 1/4, 1/2"
-        max: 1
-        fieldsets:
-          - griditem
+columns:
+  main:
+    width: 3/4
+    sections:
+      intro:
+        label: false
+        type: fields
+        fields:
+          description:
+            label: Introduction text
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+          text:
+            label: Additional text
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+      gallery:
+        type: fields
+        fields:
+          grid:
+            label: Gallery
+            type: layout
+            layouts:
+              - "1/4, 1/4, 1/4, 1/4"
+              - "1/2, 1/2"
+              - "1/2, 1/4, 1/4"
+              - "1/4, 1/4, 1/2"
+            max: 1
+            fieldsets:
+              - griditem
+  sidebar:
+    width: 1/4
+    sections:
+      features:
+        label: false
+        type: fields
+        fields:
+          attachments:
+            label: Attachments
+            type: files
+            help: Upload here the pdf files you want to use as attachments on this page.
+            template: document
+            uploads: document
+            query: page.files.filterBy("type", "document")
+            link: false
+            image:
+              ratio: 4/3
+              cover: true

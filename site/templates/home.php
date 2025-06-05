@@ -2,7 +2,12 @@
 <?= snippet('header') ?>
 
 <main class="main">
-    <?= snippet('grid') ?>
+    <?= snippet('intro') ?>
+
+    <?php snippet('grid', slots: true) ?>
+    <?php slot('gridField') ?>
+    <?php endslot() ?>
+    <?php endsnippet() ?>
 </main>
 
 <?= snippet('footer') ?>

@@ -26,8 +26,14 @@ tabs:
             template:
               - home
               - works
-              - about
-            help: The listed pages are linked to the site header navigation menu.
+              - page
+            help: When a page is listed, it appears in the main navigation menu.
+          otherPages:
+            label: Other pages
+            type: pages
+            template:
+              - default
+            help: When a page is listed, it appears in the footer at the bottom of the page.
           footer:
             type: fields
             fields:
@@ -42,12 +48,6 @@ tabs:
                 type: blocks
                 fieldsets:
                   - contactitem
-          otherPages:
-            label: Other pages
-            type: pages
-            template:
-              - basic
-            help: The listed pages are linked to the site footer.
       sidebar:
         width: 1/4
         sections:

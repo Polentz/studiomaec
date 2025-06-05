@@ -36,15 +36,10 @@ fields:
     min: 1
     template: image
     uploads: image
-    translate: false
-    layout: cards
-    size: small
     text: false
     link: false
     image:
-      icon: true
       ratio: 4/3
-      back: white
       cover: true
   linklocation:
     label: Link
@@ -66,6 +61,7 @@ fields:
     width: 1/2
     type: pages
     multiple: false
+    query: site.children.filterBy('template', 'in', ['home', 'page', 'works', 'work'])
     when:
       linklocation: page
   text:

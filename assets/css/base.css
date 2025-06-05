@@ -199,6 +199,12 @@ button {
     color: var(--bg-color);
 }
 
-h1::selection {
-    color: var(--difference-color);
+.site-title a::-moz-selection {
+    background: var(--difference-color);
+    color: var(--black);
+}
+
+.site-title a::selection {
+    background: var(--difference-color);
+    color: var(--black);
 }
