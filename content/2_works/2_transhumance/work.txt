@@ -6,7 +6,7 @@ Description: <p>We want to thwart the future as it comes to us, to change its na
 
 ----
 
-Text: 
+Text: <p>The passage through the city of beings who are not expected there is likely to cause friction and alter the usual interactions. The strangeness of the situation helps to raise questions for the participants. The likely obstacles and conflicts reflect the segmentation of habitats for human and non-human animals, revealing the new inhospitality of our living spaces towards the latter. Transhumance also means linking, in the same route, territories that are thought of as opposites, even though they belong to the same geographical area, sometimes referred to as a bioregion, whose local resources we want to encourage to be identified and shared.&nbsp;</p><p>We want to compare the movements of people in the area and record their movements on a map of interactions with the built environment. To do so, we are equipping some of the human and non-human participants with markers from Géovie, a company specialising in GPS tracking of herds. At the same time, during the transhumance, attention and description exercises are carried out. Based on the accounts of this crossing, we describe a future as a new regime in relation to the old. The videos produced in collaboration with Agnese Laposi (film-maker) and Andrea Bordoli (anthropologist) bear witness to the scenes created by the procession crossing the various territories, and to the visual and aural perceptions of the different people. In short, we are trying to adopt alternative points of view, to trace and record from their corps perspective the movements of those with whom we live but whom we fail to consider as fully-fledged subjects of the environments we create.</p>
 
 ----
 
@@ -16,12 +16,12 @@ Cover: - file://yZO6wxZkOXIE8zFq
 
 Summary:
 
-year: 2022/2023
+year: "2024"
 client: Biennale Svizzera del territorio
 location: Lugano and its surrounding
 category: Explorations
 stat: Completed
-team: studio mäc
+team: 'Augustin Clément, Arianna Frascoli, Capucine Fouquin,<br>in collaboration with Agnese Làposi &amp; Andrea Bordoli'
 
 ----
 
@@ -36,31 +36,11 @@ Preview:
 
 ----
 
+Previewtext: <p>In the form of a transhumance, with shepherds Alessandro Cominelli and Oliver Lucini, we are re-enacting one of the major rituals of alpine farming, the practice of which has declined with the development of techniques and human control over the land. From the Rompiago Alps to the Villa Saroli in the city centre of Lugano, a group of humans and non-humans move in procession along a precise route through different environments.</p>
+
+----
+
 Attachments: 
-
-----
-
-Year: 2024
-
-----
-
-Client: Biennale Svizzera del territorio
-
-----
-
-Location: Lugano and its surrounding
-
-----
-
-Category: Lorem ipsum
-
-----
-
-Stat: Completed
-
-----
-
-Team: Augustin Clément<br>Arianna Frascoli<br>Capucine Fouquin<br>in collaboration with <br>Agnese Làposi &amp; Andrea Bordoli&nbsp;
 
 ----
 

@@ -4,8 +4,14 @@
             <div class="intro-text text-large weight-600">
                 <?= $page->description()->kt() ?>
             </div>
+        <?php elseif ($page->description()->isEmpty() && $page->text()->isNotEmpty()) : ?>
+            <div class="grid">
+                <div class="intro-text text-medium weight-500">
+                    <?= $page->text()->kt() ?>
+                </div>
+            </div>
         <?php endif ?>
-        <?php if ($page->text()->isNotEmpty()) : ?>
+        <?php if ($page->description()->isNotEmpty() && $page->text()->isNotEmpty()) : ?>
             <div class="grid accordion">
                 <div class="button-wrapper accordion-opener">
                     <span class="button-text weight-700">More info</span>

@@ -1,0 +1,25 @@
+Title: impressum
+
+----
+
+Description: 
+
+----
+
+Text: <p><strong>Responsible for the contents of this website</strong></p><p>studio mäc</p><p><strong>Guarantee</strong></p><p>Although the contents of this website have been prepared with the greatest care, I cannot assume any liability for the correctness, completeness and topicality of the contents. I reserve the right to change or update the information on this website at any time and without prior notice.</p><p><strong>Exclusion of liability</strong></p><p>I am not liable for the content of external links. Only the owners and operators of those sites are responsible for their contents.</p><p><strong>Copyright</strong></p><p>All works or parts of works published on my Internet pages, such as texts, photographs, illustrations and files, are subject to copyright and other laws protecting intellectual property. Any further publication, reproduction, distribution, editing or other use – even in part – requires the prior written permission of Giulia Polenta.</p><p><strong>Data Protection</strong></p><p>This website does not store or collect any personal data nor uses cookies.</p>
+
+----
+
+Cover: 
+
+----
+
+Grid: 
+
+----
+
+Attachments: 
+
+----
+
+Uuid: mVUdoqzVFUGJKsAf

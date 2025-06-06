@@ -2,18 +2,11 @@ Title: Brau
 
 ----
 
-Preview:
-
-- file://T9dAhuxWljqCHRgX
-- file://63mjeFEL7WzzrX1j
-
-----
-
 Description: <p>The project takes place in the heart of the “parc naturel régional de la Brenne”, in one of the less populated areas of France, a wild and humid land, sculpted by a former fish farm (lakes)&nbsp;and known for its fauna &amp; flora diversity. The site is surrounded by cultivated fields and a horse breeding farm. The farmer, our client, wanted to live&nbsp;in the middle of it, far from the road,&nbsp;in the heart of a moorland parcel, a typical region habitat. The&nbsp;idea was to be&nbsp;part of the&nbsp;farming system and complete the existing with minimal impact.&nbsp;</p>
 
 ----
 
-Text: 
+Text: <p>The house,&nbsp;like Cabanon is surrounded by the natural environment with no perception of any construction at sight, only horses and wildlife.&nbsp;&nbsp;Its design as a pagoda allows it to maximize the views and the feeling of no borders. Thanks to the plan layout, every room enjoys a double orientation that you can access directly from outside or from the distributive entrance. This simplicity limits the interior wall the the minimum, and the main sleeping room, on the 1st floor, has no doors or walls allowing views 360°&nbsp;like a lighthouse.&nbsp;</p><p>The design was developed with local materials and had minimal impact on the environment. The foundations are punctual with no use of&nbsp;concrete. The project, fully built in wood&nbsp;was conceived hand in hand with a local carpenter.&nbsp;The center space acts as a structural core, where the beams spann to the facade. The exterior walls are insulated with wool hemp.&nbsp;All the used water is treated thanks to Photo-purification.&nbsp;</p>
 
 ----
 
@@ -21,31 +14,35 @@ Cover: - file://C6GMnW9JW3mG2llZ
 
 ----
 
-Year: 2019
+Summary:
 
-----
-
-Client: Private
-
-----
-
-Location: Parc regional de la Brenne (FR)
-
-----
-
-Category: Lorem ipsum
-
-----
-
-Stat: Completed
-
-----
-
-Team: Elsa Beniada, Giulia Altarelli, Augustin Clément
+year: "2019"
+client: Private
+location: Parc regional de la Brenne (FR)
+category: Building
+stat: Completed
+team: >
+  Elsa Beniada, Giulia Altarelli, Augustin
+  Clément
 
 ----
 
 Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://c1bbc8HVgj6652wF"],"caption":""},"id":"c86868f6-682c-497f-9866-a136330fbe6e","isHidden":false,"type":"galleryitem"}],"id":"af0af31a-9e90-4460-88bf-75566a0fe743","width":"1/4"},{"blocks":[{"content":{"images":["file://HkQEJIDNW5YtMUUi"],"caption":""},"id":"a20855ac-2fd3-43fc-8611-31d0afdae4e1","isHidden":false,"type":"galleryitem"}],"id":"a2561ac7-4d65-4dcd-b811-d1cb3fa6bcb4","width":"1/4"},{"blocks":[{"content":{"images":["file://kQUZo6fWvbJWIXTN"],"caption":""},"id":"a69c91e4-9756-4819-9f57-bc415cf2cd20","isHidden":false,"type":"galleryitem"}],"id":"8e53eb35-aa45-46c3-a166-c678051be3b3","width":"1/4"},{"blocks":[{"content":{"images":["file://DJgG31mtk7Y0XElw"],"caption":""},"id":"7221ac95-ac96-4b09-9c11-57932a66845e","isHidden":false,"type":"galleryitem"}],"id":"b13c5fc9-22a7-4dc1-84b6-2b1ea0ef83cf","width":"1/4"}],"id":"b614bdf6-d3a2-431b-aaaa-6e4e27ffe6a6"},{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://oCa67GISFqOO6fWR"],"caption":""},"id":"506d6ef0-71ed-4329-9dd9-a1c98e1af29a","isHidden":false,"type":"galleryitem"}],"id":"7a45b6b7-6877-45f3-bf31-aa709440baf9","width":"1/2"},{"blocks":[{"content":{"images":["file://khztwTyHOpwUkEjq"],"caption":""},"id":"742d9b15-a6b0-403e-a9a2-01beb7187922","isHidden":false,"type":"galleryitem"}],"id":"698cf7c4-ff9d-4723-9bdf-fe7fdf7294e4","width":"1/4"},{"blocks":[{"content":{"images":["file://1kZF2Z8zTke2WvFe"],"caption":""},"id":"10d78830-6d6e-4f4e-a637-0a2dd38c9391","isHidden":false,"type":"galleryitem"}],"id":"e81617d4-8d78-4caf-bbde-885fc1fa7b71","width":"1/4"}],"id":"5c87a09f-f5c3-4875-9b8a-9a848244ecfd"},{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://63mjeFEL7WzzrX1j"],"caption":""},"id":"1cff0ea0-30d1-4341-9ad6-f6f1a2d3c7ec","isHidden":false,"type":"galleryitem"}],"id":"4e95b88c-848d-4c01-bb32-d9753dafb3e2","width":"1/4"},{"blocks":[{"content":{"images":["file://T9dAhuxWljqCHRgX"],"caption":""},"id":"1d982c7f-85c8-4f80-bd9f-203cfe98ccc5","isHidden":false,"type":"galleryitem"}],"id":"6d1752cc-49f8-4a37-a0b2-7cf58a606b06","width":"1/4"},{"blocks":[{"content":{"images":["file://jVflEWWLZiRLMgE8"],"caption":""},"id":"0eb838a0-797b-4c62-9561-c67e2bf33570","isHidden":false,"type":"galleryitem"}],"id":"2d67f4da-383f-4ea4-abbb-e4a12168b524","width":"1/2"}],"id":"f302e213-6ee7-4edb-9387-7b7b914dbd55"}]
+
+----
+
+Preview:
+
+- file://T9dAhuxWljqCHRgX
+- file://63mjeFEL7WzzrX1j
+
+----
+
+Previewtext: <p>The&nbsp;idea was to be&nbsp;part of the&nbsp;farming system and complete the existing with minimal impact.&nbsp;</p>
+
+----
+
+Attachments: 
 
 ----
 

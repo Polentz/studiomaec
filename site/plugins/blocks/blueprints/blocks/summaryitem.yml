@@ -1,7 +1,11 @@
-name: Text
-icon: text
+name: Summary Item
+icon: bars
 wysiwyg: true
 fields:
+  title:
+    label: Title
+    placeholder: Title …
+    type: text
   text:
     label: Text
     placeholder: Text …
@@ -14,4 +18,3 @@ fields:
       - link
       - clear
     nodes: false
-  

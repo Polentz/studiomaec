@@ -10,14 +10,14 @@ fields:
     uploads: image
     query: page.files.filterBy("type", "image")
     multiple: false
-    text: false
     link: false
     image:
       ratio: 4/3
       cover: true
   caption:
-    label: Image caption
+    label: false
     type: writer
+    placeholder: Caption...
     inline: true
     marks:
       - bold

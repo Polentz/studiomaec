@@ -7,9 +7,6 @@ create:
 options:
   move: false
 
-image:
-  icon: false
-
 columns:
   main:
     width: 3/4
@@ -20,6 +17,7 @@ columns:
         fields:
           description:
             label: Text
+            placeholder: Text …
             type: writer
             marks:
               - bold
@@ -31,6 +29,7 @@ columns:
             nodes: false
           text:
             label: Additional text
+            placeholder: Text …
             type: writer
             marks:
               - bold
@@ -70,9 +69,9 @@ columns:
                 layout: list
                 options: query
                 query:
-                  fetch: page.siblings.pluck("year", ",", true)
-                  text: "{{ arrayItem.value }}"
-                  value: "{{ arrayItem.value }}"
+                  fetch: page.siblings.listed
+                  text: "{{ page.summary.toObject.year }}"
+                  value: "{{ page.summary.toObject.year }}"
               client: 
                 label: Client
                 type: tags
@@ -80,9 +79,9 @@ columns:
                 layout: list
                 options: query
                 query:
-                  fetch:  page.siblings.pluck("client", ",", true)
-                  text: "{{ arrayItem.value }}"
-                  value: "{{ arrayItem.value }}"
+                  fetch: page.siblings.listed
+                  text: "{{ page.summary.toObject.client }}"
+                  value: "{{ page.summary.toObject.client }}"
               location: 
                 label: Location
                 type: tags
@@ -90,9 +89,9 @@ columns:
                 layout: list
                 options: query
                 query:
-                  fetch:  page.siblings.pluck("location", ",", true)
-                  text: "{{ arrayItem.value }}"
-                  value: "{{ arrayItem.value }}"
+                  fetch: page.siblings.listed
+                  text: "{{ page.summary.toObject.location }}"
+                  value: "{{ page.summary.toObject.location }}"
               category: 
                 label: Category
                 type: tags
@@ -100,9 +99,9 @@ columns:
                 layout: list
                 options: query
                 query:
-                  fetch:  page.siblings.pluck("category", ",", true)
-                  text: "{{ arrayItem.value }}"
-                  value: "{{ arrayItem.value }}"
+                  fetch: page.siblings.listed
+                  text: "{{ page.summary.toObject.category }}"
+                  value: "{{ page.summary.toObject.category }}"
               stat: 
                 label: Status
                 type: tags
@@ -110,9 +109,9 @@ columns:
                 layout: list
                 options: query
                 query:
-                  fetch:  page.siblings.pluck("stat", ",", true)
-                  text: "{{ arrayItem.value }}"
-                  value: "{{ arrayItem.value }}"
+                  fetch: page.siblings.listed
+                  text: "{{ page.summary.toObject.stat }}"
+                  value: "{{ page.summary.toObject.stat }}"
               team: 
                 label: Team
                 type: writer
@@ -125,159 +124,20 @@ columns:
                   - link
                   - clear
                 nodes: false
-
-      # infos:
-      #   label: Summary
-      #   type: fields
-      #   fields:
-      #     year: 
-      #       label: Year
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch: page.siblings.pluck("year", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     client: 
-      #       label: Client
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("client", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     location: 
-      #       label: Location
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("location", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     category: 
-      #       label: Category
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("category", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     stat: 
-      #       label: Status
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("stat", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     team: 
-      #       label: Team
-      #       type: writer
-      #       inline: true
-      #       marks:
-      #         - bold
-      #         - italic
-      #         - underline
-      #         - strike
-      #         - link
-      #         - clear
-      #       nodes: false
-      # cover:
-      #   label: false
-      #   type: fields
-      #   fields:
-      #     cover:
-      #       label: Cover image
-      #       type: layout
-      #       layouts:
-      #         - "1/4, 1/4, 1/4, 1/4"
-      #         - "1/2, 1/2"
-      #         - "1/2, 1/4, 1/4"
-      #         - "1/4, 1/4, 1/2"
-      #         - "3/4, 1/4"
-      #         - "1/4, 3/4"
-      #       fieldsets:
-      #         - textitem
-      #         - galleryitem
-  # infos:
-  #   width: 1/4
-  #   sections:
-  #     infos:
-  #       label: false
-  #       type: fields
-  #       fields:
-  #         year: 
-  #           label: Year
-  #           type: tags
-  #           max: 1
-  #           layout: list
-  #           options: query
-  #           query:
-  #             fetch: page.siblings.pluck("year", ",", true)
-  #             text: "{{ arrayItem.value }}"
-  #             value: "{{ arrayItem.value }}"
-  #         client: 
-  #           label: Client
-  #           type: tags
-  #           max: 1
-  #           layout: list
-  #           options: query
-  #           query:
-  #             fetch:  page.siblings.pluck("client", ",", true)
-  #             text: "{{ arrayItem.value }}"
-  #             value: "{{ arrayItem.value }}"
-  #         location: 
-  #           label: Location
-  #           type: tags
-  #           max: 1
-  #           layout: list
-  #           options: query
-  #           query:
-  #             fetch:  page.siblings.pluck("location", ",", true)
-  #             text: "{{ arrayItem.value }}"
-  #             value: "{{ arrayItem.value }}"
-  #         category: 
-  #           label: Category
-  #           type: tags
-  #           max: 1
-  #           layout: list
-  #           options: query
-  #           query:
-  #             fetch:  page.siblings.pluck("category", ",", true)
-  #             text: "{{ arrayItem.value }}"
-  #             value: "{{ arrayItem.value }}"
-  #         stat: 
-  #           label: Status
-  #           type: tags
-  #           max: 1
-  #           layout: list
-  #           options: query
-  #           query:
-  #             fetch:  page.siblings.pluck("stat", ",", true)
-  #             text: "{{ arrayItem.value }}"
-  #             value: "{{ arrayItem.value }}"
-  #         team: 
-  #           label: Team
-  #           type: writer
-  #           inline: true
-  #           marks:
-  #             - bold
-  #             - italic
-  #             - underline
-  #             - strike
-  #             - link
-  #             - clear
-  #           nodes: false
+          caption:
+            label: false
+            width: 2/3
+            type: writer
+            placeholder: Caption...
+            inline: true
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
       gallery:
         label: false
         type: fields
@@ -303,6 +163,7 @@ columns:
           preview:
             label: "Preview images (max: 2)"
             type: files
+            help: These two images will display in the {{ page.parent.title }} list dropdown.
             template: image
             uploads: image
             query: page.files.filterBy("type", "image")
@@ -312,72 +173,19 @@ columns:
             image:
               ratio: 4/3
               cover: true
-      # infos:
-      #   label: false
-      #   type: fields
-      #   fields:
-      #     year: 
-      #       label: Year
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch: page.siblings.pluck("year", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     client: 
-      #       label: Client
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("client", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     location: 
-      #       label: Location
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("location", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     category: 
-      #       label: Category
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("category", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     stat: 
-      #       label: Status
-      #       type: tags
-      #       max: 1
-      #       layout: list
-      #       options: query
-      #       query:
-      #         fetch:  page.siblings.pluck("stat", ",", true)
-      #         text: "{{ arrayItem.value }}"
-      #         value: "{{ arrayItem.value }}"
-      #     team: 
-      #       label: Team
-      #       type: writer
-      #       inline: true
-      #       marks:
-      #         - bold
-      #         - italic
-      #         - underline
-      #         - strike
-      #         - link
-      #         - clear
-      #       nodes: false
+          previewText:
+            label: Preview text
+            placeholder: Text …
+            type: writer
+            help: This text will display in the {{ page.parent.title }} list dropdown.
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
       features:
         label: false
         type: fields

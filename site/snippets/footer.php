@@ -6,7 +6,7 @@
         <div class="footer-block text weight-400">
             <p>© <?= $site->title() ?> <?= date("Y") ?> - all rigths reserved</p>
         </div>
-        <?php foreach ($site->children()->listed()->filterBy('template', 'default') as $page) : ?>
+        <?php foreach ($site->children()->listed()->filterBy('template', 'simple') as $page) : ?>
             <div class="footer-block text weight-400">
                 <a href="<?= $page->url() ?>"><?= $page->title() ?></a>
             </div>

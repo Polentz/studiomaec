@@ -19,13 +19,17 @@ Summary:
 year: "2025"
 client: Private
 location: Berlin
-category: Category
+category: Building
 stat: Completed
-team: Laura Doe
+team: studio mäc
 
 ----
 
-Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://T6iPgUXYarKeDYRK"],"caption":""},"id":"30440535-5b38-4826-830a-b0db497b6576","isHidden":false,"type":"galleryitem"}],"id":"02f5795e-696c-4148-9e7d-690d3eb3a1ce","width":"1/4"},{"blocks":[{"content":{"images":["file://6K5mlJArkuEH6gsz"],"caption":""},"id":"b98a6dca-d94b-4b4b-9fad-68349b8cdd1a","isHidden":false,"type":"galleryitem"}],"id":"e6e8cadc-3951-4bb5-bdbe-95b879102381","width":"1/4"},{"blocks":[{"content":{"images":["file://YoXXhVFr9augwTS8"],"caption":""},"id":"c948bd73-fb86-4e29-a301-c92399ee4309","isHidden":false,"type":"galleryitem"}],"id":"80e92e5e-3e7f-416f-a1a8-12e4bc9eea00","width":"1/4"},{"blocks":[{"content":{"images":[],"caption":""},"id":"60c6031e-5d4a-4651-82b1-47cb28856b93","isHidden":false,"type":"galleryitem"}],"id":"3eb8b2c2-6af4-46f2-bec9-5590ba550862","width":"1/4"}],"id":"5263f273-6e35-42cd-be01-bb605ad1d4df"}]
+Caption: 
+
+----
+
+Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://1P2PKfyM4R7Wx7HS"],"caption":"Caption"},"id":"60c6031e-5d4a-4651-82b1-47cb28856b93","isHidden":false,"type":"galleryitem"}],"id":"02f5795e-696c-4148-9e7d-690d3eb3a1ce","width":"1/4"},{"blocks":[{"content":{"images":["file://6K5mlJArkuEH6gsz"],"caption":""},"id":"b98a6dca-d94b-4b4b-9fad-68349b8cdd1a","isHidden":false,"type":"galleryitem"}],"id":"e6e8cadc-3951-4bb5-bdbe-95b879102381","width":"1/4"},{"blocks":[{"content":{"images":["file://YoXXhVFr9augwTS8"],"caption":""},"id":"c948bd73-fb86-4e29-a301-c92399ee4309","isHidden":false,"type":"galleryitem"}],"id":"80e92e5e-3e7f-416f-a1a8-12e4bc9eea00","width":"1/4"},{"blocks":[{"content":{"images":["file://T6iPgUXYarKeDYRK"],"caption":""},"id":"30440535-5b38-4826-830a-b0db497b6576","isHidden":false,"type":"galleryitem"}],"id":"3eb8b2c2-6af4-46f2-bec9-5590ba550862","width":"1/4"}],"id":"5263f273-6e35-42cd-be01-bb605ad1d4df"}]
 
 ----
 
@@ -33,6 +37,10 @@ Preview:
 
 - file://wgpa5lLHJLfyly0w
 - file://1P2PKfyM4R7Wx7HS
+
+----
+
+Previewtext: <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</p>
 
 ----
 

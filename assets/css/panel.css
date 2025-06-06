@@ -1,15 +1,6 @@
 :root {
     --rounded: 0rem;
-    /* --shadow: 0; */
 }
-
-.k-blocks[data-empty="true"] {
-    background-color: #f0f0f0;
-}
-
-/* .k-layout:not(:last-of-type) {
-    margin-bottom: 1rem;
-} */
 
 .k-layout {
     border-bottom: solid 2px #383838;
@@ -19,17 +10,73 @@
     flex-grow: 0;
 }
 
-.k-layout-column>.k-blocks {
-    background-color: #f0f0f0;
+.k-writer-input[name="description"] {
+    font-size: 1.5rem;
 }
 
-
-/* .k-blocks-list .k-block-container-type-griditem:not(:first-child),
-.k-blocks-list .k-block-container-type-galleryitem:not(:first-child) {
-    background-color: red;
+.k-section-name-cover .k-grid {
+    row-gap: 2px;
 }
 
-th[data-column-id="info"],
-td[data-column-id="info"] {
+.k-field-name-caption .k-field-header {
     display: none;
-} */
+}
+
+.k-block-container:last-of-type {
+    border-bottom: 1px dashed rgba(0, 0, 0, .1);
+}
+
+.k-block-container:not([data-hidden=true]) .k-block-type-fields>:not([data-collapsed=true]) {
+    padding-top: var(--spacing-3);
+}
+
+.griditem-block,
+.gallery-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.griditem-block-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.k-choice-input:has(> input[value="true"]) {
+    display: none;
+}
+
+.k-field-name-contact .k-blocks-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.k-field-name-contact .k-block-container {
+    border: 1px solid rgba(0, 0, 0, .1);
+    flex-grow: 1;
+}
+
+.k-block-type-contactitem .k-text>:where(audio, blockquote, details, div, figure, h1, h2, h3, h4, h5, h6, hr, iframe, img, object, ol, p, picture, pre, table, ul)+* {
+    margin-block-start: 0;
+}
+
+.block--empty {
+    width: 100%;
+    height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-gray-500);
+    cursor: pointer;
+}

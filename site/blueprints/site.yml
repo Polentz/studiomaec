@@ -8,18 +8,6 @@ tabs:
       main:
         width: 3/4
         sections:
-          header: 
-            type: fields
-            fields:
-              headerHeadline:
-                label: Header
-                type: headline
-              subtitle:
-                label: Website subtitle
-                type: text
-              pagesHeadline:
-                label: Pages
-                type: headline
           pages:
             label: false
             type: pages
@@ -37,14 +25,8 @@ tabs:
           footer:
             type: fields
             fields:
-              footerHeadline:
-                label: Footer
-                type: headline
-              contactname:
-                label: Contact name
-                type: text
               contact:
-                label: Contact items
+                label: Footer and contact
                 type: blocks
                 fieldsets:
                   - contactitem
@@ -54,9 +36,14 @@ tabs:
           headline: 
             type: fields
             fields:
-              otherHeadline:
-                label: Sidebar
-                type: headline
+              subtitle:
+                label: Website subtitle
+                type: text
+                help: The label on the left of the header.
+              contactname:
+                label: Contact
+                type: text
+                help: The menu label for contact.
   seo:
     label: Website metadata
     icon: angle-right

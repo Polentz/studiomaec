@@ -2,7 +2,7 @@
 $images = $block->images()->toFiles();
 ?>
 
-<div class="grid-item accordion lightbox-item">
+<div class="grid-item accordion">
     <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
         <div class="item-header">
             <?php if ($block->title()->isNotEmpty()) : ?>
@@ -15,7 +15,7 @@ $images = $block->images()->toFiles();
     <?php endif ?>
     <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
-            <figure class="item-image-wrapper">
+            <figure class="item-image-wrapper lightbox-item">
                 <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
             </figure>
         <?php endforeach ?>
@@ -55,7 +55,7 @@ $images = $block->images()->toFiles();
                             <path d="M9.51758 7.14148H15.5176V13.1415" />
                         </svg>
                     </a>
-                <?php elseif ($block->linklocation() == 'page' && $block->link()->isNotEmpty()) : ?>
+                <?php elseif ($block->linklocation() == 'page' && $block->link()->toPage()) : ?>
                     <a href="<?= $block->link()->toPage()->url() ?>" class="button go">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.5176 7.14148L7.51758 15.1415" />

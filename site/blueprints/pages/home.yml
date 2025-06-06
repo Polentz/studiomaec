@@ -21,6 +21,7 @@ columns:
         fields:
           description:
             label: Introduction text
+            placeholder: Text …
             type: writer
             marks:
               - bold
@@ -32,6 +33,7 @@ columns:
             nodes: false
           text:
             label: Additional text
+            placeholder: Text …
             type: writer
             marks:
               - bold

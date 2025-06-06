@@ -55,11 +55,9 @@ const slideshow = () => {
     const items = document.querySelectorAll(".grid-item");
     items.forEach(item => {
         const figures = item.querySelectorAll(".slideshow-item figure");
-        const images = item.querySelectorAll(".slideshow-item img");
         const counter = item.querySelector(".counter-num");
         const prev = item.querySelector(".button.left");
         const next = item.querySelector(".button.right");
-        const imageWrapper = item.querySelector(".slideshow-item");
 
         let slideIndex = 1;
 
@@ -99,49 +97,6 @@ const slideshow = () => {
 
             showSlides(slideIndex);
         };
-
-        // tallest image:
-        // const updateImageWrapperHeight = () => {
-        //     let maxHeight = 0;
-        //     let loadedCount = 0;
-
-        //     images.forEach(img => {
-        //         const measure = () => {
-        //             const height = img.naturalHeight / img.naturalWidth * img.offsetWidth;
-        //             if (height > maxHeight) maxHeight = height;
-        //             loadedCount++;
-        //             if (loadedCount === images.length) {
-        //                 imageWrapper.style.height = `${maxHeight}px`;
-        //             }
-        //         };
-
-        //         if (img.complete) {
-        //             measure();
-        //         } else {
-        //             img.onload = measure;
-        //         }
-        //     });
-        // };
-
-        // first image:
-        // const updateImageWrapperHeight = () => {
-        //     const firstImg = images[0];
-        //     if (!firstImg) return;
-
-        //     const setHeight = () => {
-        //         const height = firstImg.naturalHeight / firstImg.naturalWidth * firstImg.offsetWidth;
-        //         imageWrapper.style.height = `${height}px`;
-        //     };
-
-        //     if (firstImg.complete) {
-        //         setHeight();
-        //     } else {
-        //         firstImg.onload = setHeight;
-        //     }
-        // };
-
-        // updateImageWrapperHeight();
-        // window.addEventListener("resize", updateImageWrapperHeight);
     });
 };
 
@@ -189,8 +144,6 @@ const sortAccordion = () => {
         ascending: true
     };
 
-    // svgs[0].classList.add("asc");
-
     sortButtons.forEach(button => {
         button.addEventListener("click", () => {
             const sortKey = button.dataset.item;
@@ -234,26 +187,27 @@ const sortAccordion = () => {
     });
 };
 
-//  si può eliminare se calcolo le colonne della tabella in percentuali
-const gridAccordionTemplate = () => {
-    const topbars = document.querySelectorAll(".list-topbar-content");
-    topbars.forEach(topbar => {
-        const doc = document.documentElement;
+//  si può eliminare se calcolo le colonne della tabella in percentuali.
 
-        const elements = topbar.querySelectorAll(".topbar-label");
-        const icons = topbar.querySelector(".topbar-icons");
+// const gridAccordionTemplate = () => {
+//     const topbars = document.querySelectorAll(".list-topbar-content");
+//     topbars.forEach(topbar => {
+//         const doc = document.documentElement;
 
-        const topbarWidth = topbar.offsetWidth - 96;
-        const iconsWidth = icons.offsetWidth;
-        const columnWidth = (topbarWidth - iconsWidth) / 6;
+//         const elements = topbar.querySelectorAll(".topbar-label");
+//         const icons = topbar.querySelector(".topbar-icons");
 
-        doc.style.setProperty("--grid-column-width", `${columnWidth}px`);
-        doc.style.setProperty("--icons-width", `${iconsWidth}px`);
-        // elements.forEach(element => {
-        //     element.style.maxWidth = `${columnWidth}px`;
-        // });
-    });
-};
+//         const topbarWidth = topbar.offsetWidth - 96;
+//         const iconsWidth = icons.offsetWidth;
+//         const columnWidth = (topbarWidth - iconsWidth) / 6;
+
+//         doc.style.setProperty("--grid-column-width", `${columnWidth}px`);
+//         doc.style.setProperty("--icons-width", `${iconsWidth}px`);
+//         elements.forEach(element => {
+//             element.style.maxWidth = `${columnWidth}px`;
+//         });
+//     });
+// };
 
 const lightbox = (wrapper) => {
     wrapper.forEach(wrap => {
@@ -352,11 +306,11 @@ window.addEventListener("load", () => {
     headerHeight();
     footerHeight();
     handleHref();
+    accordion();
 });
 
 window.addEventListener("resize", () => {
     documentHeight();
     headerHeight();
     footerHeight();
-    gridAccordionTemplate();
 });

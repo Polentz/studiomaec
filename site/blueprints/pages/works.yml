@@ -4,13 +4,6 @@ create:
   redirect: true
   status: unlisted
   
-# options:
-#   delete: false
-#   duplicate: false
-#   changeStatus: false
-#   move: false
-#   sort: false
-
 image:
   icon: page
   query: false
@@ -19,22 +12,39 @@ columns:
   main:
     width: 3/4
     sections:
+      intro:
+        label: false
+        type: fields
+        fields:
+          description:
+            label: Introduction text
+            placeholder: Text …
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+          text:
+            label: Additional text
+            placeholder: Text …
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
       items:
         label: "{{ page.title }}"
         type: pages
         layout: cards
         size: large
-        # layout: table
-        # info: "{{ page.slug }}"
-        # columns:
-        #   title: true
-        #   info: false
-        #   year: true
-        #   client: true
-        #   location: true
-        #   category: true
-        #   stat:
-        #     label: Status
         template:
           - work
         search: false
@@ -46,3 +56,18 @@ columns:
   sidebar:
     width: 1/4
     sections:
+      features:
+        label: false
+        type: fields
+        fields:
+          attachments:
+            label: Attachments
+            type: files
+            help: Upload here the pdf files you want to use as attachments on this page.
+            template: document
+            uploads: document
+            query: page.files.filterBy("type", "document")
+            link: false
+            image:
+              ratio: 4/3
+              cover: true

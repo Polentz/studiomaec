@@ -4,6 +4,9 @@ create:
   redirect: true
   status: unlisted
 
+options:
+  move: false
+
 image:
   icon: page
   query: false
@@ -94,7 +97,6 @@ columns:
               - "1/4, 3/4"
             fieldsets:
               - textitem
-              - summaryitem
               - galleryitem
   sidebar:
     width: 1/4

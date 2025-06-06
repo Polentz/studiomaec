@@ -1,3 +1,5 @@
+<!-- If I keep cover snippet solution, remove coverField slot! For the slot solution, see full example in default template -->
+
 <?php if ($slots->coverField() && $page->cover()->isNotEmpty()) : ?>
     <section class="section grid-section">
         <?php foreach ($page->cover()->toLayouts() as $layout) : ?>

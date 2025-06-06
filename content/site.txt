@@ -2,6 +2,10 @@ Title: studio mäc
 
 ----
 
+Contact: [{"content":{"text":"<p>architecture &amp; territory</p><p>berlin . paris</p>"},"id":"9099115b-1a72-4d9e-9af5-0cecb407c5c5","isHidden":false,"type":"contactitem"},{"content":{"text":"<p>Julia Mäckler &amp; Augustin Clément</p>"},"id":"fd3c3014-10aa-4645-b9b6-869108dea95b","isHidden":false,"type":"contactitem"},{"content":{"text":"<p><a href=\"mailto:info@studiomaec.com\">info@studiomaec.com</a></p><p><a href=\"tel:+491736351024\">+ 49 173 635 1024</a></p>"},"id":"d17fcf13-51d4-42d9-abd4-17cea941315d","isHidden":false,"type":"contactitem"},{"content":{"text":"<p><a href=\"https://www.instagram.com/studio_maec_arch/\">instagram</a></p>"},"id":"b01e149e-fdd2-4cc8-b819-5355711844a1","isHidden":false,"type":"contactitem"}]
+
+----
+
 Subtitle: Architecture & Territory
 
 ----
@@ -10,4 +14,12 @@ Contactname: Contact
 
 ----
 
-Contact: [{"content":{"text":"<p>architecture &amp; territory</p><p>berlin . paris</p>"},"id":"9099115b-1a72-4d9e-9af5-0cecb407c5c5","isHidden":false,"type":"contactitem"},{"content":{"text":"<p>studio mäc</p><p>Julia Mäckler &amp; Augustin Clément</p>"},"id":"fd3c3014-10aa-4645-b9b6-869108dea95b","isHidden":false,"type":"contactitem"},{"content":{"text":"<p><a href=\"mailto:info@studiomaec.com\">info@studiomaec.com</a></p><p><a href=\"tel:+491736351024\">+ 49 173 635 1024</a></p>"},"id":"d17fcf13-51d4-42d9-abd4-17cea941315d","isHidden":false,"type":"contactitem"},{"content":{"text":"<p><a href=\"https://www.instagram.com/studio_maec_arch/\">instagram</a></p>"},"id":"b01e149e-fdd2-4cc8-b819-5355711844a1","isHidden":false,"type":"contactitem"}]
+Description: 
+
+----
+
+Keywords: 
+
+----
+
+Ogimage: 

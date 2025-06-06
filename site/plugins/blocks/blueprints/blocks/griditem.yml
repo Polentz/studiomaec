@@ -36,7 +36,6 @@ fields:
     min: 1
     template: image
     uploads: image
-    text: false
     link: false
     image:
       ratio: 4/3
@@ -61,11 +60,12 @@ fields:
     width: 1/2
     type: pages
     multiple: false
-    query: site.children.filterBy('template', 'in', ['home', 'page', 'works', 'work'])
+    query: site.children.listed.filterBy('template', 'in', ['home', 'page', 'works', 'work'])
     when:
       linklocation: page
   text:
     label: Text
+    placeholder: Text …
     type: writer
     marks:
       - bold
@@ -77,6 +77,7 @@ fields:
     nodes: false
   subtext:
     label: Notes
+    placeholder: Notes …
     type: writer
     marks:
       - bold

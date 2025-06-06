@@ -8,17 +8,19 @@ panel.plugin("studiomaec/blocks", {
       },
       template: `
           <div @dblclick="open" class="griditem-block">
-            <k-aspect-ratio
-              class="griditem-block-image"
+            <div v-if="!images.url" class="block--empty"> 
+              <p>Double click here to</p>
+              <p>add an element</p>
+            </div>
+            <k-frame v-if="images.url"
               cover="true"
               ratio="4/3"
             >
               <img
                 v-if="images.url"
                 :src="images.url"
-                alt=""
               >
-            </k-aspect-ratio>
+            </k-frame>
           </div>
         `
     },
@@ -31,7 +33,8 @@ panel.plugin("studiomaec/blocks", {
       template: `
           <div @dblclick="open" class="gallery-block">
             <div v-if="!images.url" class="block--empty"> 
-              <p>Add an image or a video</p>
+              <p>Double click here to</p>
+              <p>add an image or a video</p>
             </div>
             <k-frame v-if="images.type === 'image'"
               cover="true"
@@ -51,7 +54,7 @@ panel.plugin("studiomaec/blocks", {
               />
             </k-frame>
             <div class="caption">
-              <k-writer
+              <k-writer style="outline: solid 1px var(--input-color-border);"
                 v-bind="field('caption')"
                 :nodes="false"
                 :value="content.caption"
@@ -65,9 +68,10 @@ panel.plugin("studiomaec/blocks", {
       template: `
         <div @dblclick="open" class="text-block">
           <div v-if="!content.text" class="block--empty"> 
-            <p>(Empty)</p>
+            <p>Double click here to</p>
+            <p>add some text</p>
           </div>
-          <div v-if="content.text" class="text-block">
+          <div v-if="content.text" class="text">
             <k-writer
               v-bind="field('text')"
               :nodes="false"
@@ -77,6 +81,28 @@ panel.plugin("studiomaec/blocks", {
           </div>
         </div>
       `
-    }
+    },
+    summaryitem: {
+      template: `
+        <div class="summary-block">
+          <div v-if="content.title" class="text-title">
+            <k-input style="font-weight: 700;"
+                v-bind="field('title')"
+                :value="content.title"
+                @input="update({ title: $event })">
+            </k-input>
+          </div>
+          <div v-if="content.text" class="text">
+            <k-writer style="outline: solid 1px var(--input-color-border);"
+              v-bind="field('text')"
+              :inline="true"
+              :nodes="false"
+              :value="content.text"
+              @input="update({ text: $event })">
+            </k-writer>
+          </div>
+        </div>
+      `
+    },
   }
 });

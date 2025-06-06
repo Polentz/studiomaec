@@ -5,6 +5,7 @@ preview: text
 fields:
   text:
     label: Text
+    placeholder: Text …
     type: writer
     marks:
       - bold

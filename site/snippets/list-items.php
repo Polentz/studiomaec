@@ -1,5 +1,5 @@
 <?php
-$summary = $item->summary()->toObject()
+$summary = $item->summary()->toObject();
 ?>
 
 <div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-status="<?= $summary->stat()->slug() ?>">
@@ -27,23 +27,26 @@ $summary = $item->summary()->toObject()
             </a>
         </li>
         <?php if ($slots->hasCover()) : ?>
-            <li class="topbar-image">
-                <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
-            </li>
+            <?php if ($cover = $item->cover()->toFile()) : ?>
+                <li class="topbar-image">
+                    <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
+                </li>
+            <?php endif ?>
         <?php endif ?>
     </ul>
     <div class="list-content accordion-content">
-        <div class="list-content-image lightbox-item">
+        <div class="list-content-image">
             <?php foreach ($item->preview()->toFiles()->limit(2) as $image) : ?>
-                <figure class="list-content-image-wrapper">
+                <figure class="lightbox-item">
                     <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
                 </figure>
             <?php endforeach ?>
         </div>
         <div class="list-content-text">
-            <?php if ($item->description()->isNotEmpty()) : ?>
-                <div class="list-content-text-wrapper text-medium weight-500">
-                    <?= $item->description()->kt() ?>
+            <?php if ($item->previewText()->isNotEmpty()) : ?>
+                <h3 class="text-label weight-700"><?= $item->title() ?></h3>
+                <div class="text-medium weight-500">
+                    <?= $item->previewText()->kt() ?>
                 </div>
             <?php endif ?>
             <a href="<?= $item->url() ?>" class="text-label weight-700">View project</a>

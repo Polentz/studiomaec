@@ -10,61 +10,10 @@ $first = $items->first();
 <main class="main">
     <?= snippet('intro') ?>
 
-    <section class="section cover-section">
-        <div class="grid">
-            <?php if ($cover = $page->cover()->toFile()) : ?>
-                <div class="cover-image lightbox-item">
-                    <figure>
-                        <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->name() ?>">
-                    </figure>
-                </div>
-            <?php endif ?>
-            <?php if ($summary = $page->summary()->toObject()): ?>
-                <ul class="intro-info-text">
-                    <li class="text">
-                        <p class="weight-400">Project</p>
-                        <p class="weight-700"><?= $page->title() ?></p>
-                    </li>
-                    <?php if ($summary->year()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Year</p>
-                            <p class="weight-700"><?= $summary->year() ?></p>
-                        </li>
-                    <?php endif ?>
-                    <?php if ($summary->client()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Client</p>
-                            <p class="weight-700"><?= $summary->client() ?></p>
-                        </li>
-                    <?php endif ?>
-                    <?php if ($summary->location()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Location</p>
-                            <p class="weight-700"><?= $summary->location() ?></p>
-                        </li>
-                    <?php endif ?>
-                    <?php if ($summary->category()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Category</p>
-                            <p class="weight-700"><?= $summary->category() ?></p>
-                        </li>
-                    <?php endif ?>
-                    <?php if ($summary->stat()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Status</p>
-                            <p class="weight-700"><?= $summary->stat() ?></p>
-                        </li>
-                    <?php endif ?>
-                    <?php if ($summary->team()->isNotEmpty()) : ?>
-                        <li class="text">
-                            <p class="weight-400">Team</p>
-                            <p class="weight-700"><?= $summary->team() ?></p>
-                        </li>
-                    <?php endif ?>
-                </ul>
-            <?php endif ?>
-        </div>
-    </section>
+    <?php snippet('cover', slots: true) ?>
+    <?php slot('hasSummary') ?>
+    <?php endslot() ?>
+    <?php endsnippet() ?>
 
     <?php snippet('grid', slots: true) ?>
     <?php slot('gridField') ?>
