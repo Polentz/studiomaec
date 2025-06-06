@@ -1,7 +1,7 @@
 :root {
     --doc-height: 100%;
-    --header-height: 7rem;
-    --footer-height: 7rem;
+    --header-height: ;
+    --footer-height: ;
     --bg-color: #e8e8e8;
     --bg-color-opacity: #e8e8e8ea;
     --main-color: #001bcb;
@@ -15,29 +15,29 @@
     --txt-size: 1rem;
     --txt-small-size: .9rem;
     --button-size: 1.5rem;
-    /* --main-margin: calc(2rem + 2vw); */
-    --main-margin: 2rem;
-    --inner-margin: calc(2rem + 2vw);
-    --grid-gap: 2rem;
+    --main-margin: 2.5rem;
+    --inner-margin: 5rem;
+    --grid-gap: 2.5rem;
+    --main-gap: 5rem;
     --inner-gap: .5rem;
     --menu-gap: 2.5rem;
-    --main-gap: calc(var(--grid-gap) * 3);
 }
 
-/* @media screen and (min-width: 1600px) {
+@media screen and (max-width: 800px) {
     :root {
-        --main-margin: 10vw;
+        --txt-title-size: 6rem;
+        --menu-gap: 1rem;
     }
-} */
+}
 
 @media screen and (max-width: 600px) {
     :root {
         --txt-title-size: 4rem;
         --txt-large-size: 1.5rem;
         --main-margin: 1rem;
-        --inner-margin: 1rem;
+        --inner-margin: 2rem;
         --grid-gap: 1rem;
+        --main-gap: 2rem;
         --menu-gap: 1rem;
-        --main-gap: calc(var(--grid-gap) * 3);
     }
 }

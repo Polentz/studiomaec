@@ -4,11 +4,11 @@
     </div>
     <div class="footer-wrapper">
         <div class="footer-block text weight-400">
-            <p>© <?= $site->title() ?> <?= date("Y") ?> - all rigths reserved</p>
+            <p>© <?= date("Y") ?> <?= $site->title() ?></p>
         </div>
         <?php foreach ($site->children()->listed()->filterBy('template', 'simple') as $page) : ?>
             <div class="footer-block text weight-400">
-                <a href="<?= $page->url() ?>"><?= $page->title() ?></a>
+                <a class="link" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             </div>
         <?php endforeach ?>
     </div>

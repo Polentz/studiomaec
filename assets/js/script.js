@@ -5,7 +5,7 @@ const documentHeight = () => {
 
 const headerHeight = () => {
     const doc = document.documentElement;
-    const header = document.querySelector(".header");
+    const header = document.querySelector(".header a");
     doc.style.setProperty("--header-height", `${header.offsetHeight}px`);
 };
 
