@@ -1,6 +1,5 @@
 html {
     font-size: 100%;
-    cursor: none;
     scrollbar-gutter: stable;
 }
 
@@ -11,6 +10,7 @@ body {
     overflow-x: hidden;
     /* font-family: "Elza", sans-serif; */
     font-family: "articulat-cf", sans-serif;
+    cursor: none;
 }
 
 img {
@@ -23,6 +23,10 @@ em {
 
 strong {
     font-weight: 800;
+}
+
+a {
+    cursor: none;
 }
 
 a,
@@ -75,7 +79,7 @@ a:hover,
 .site-title {
     position: relative;
     font-size: var(--txt-title-size);
-    line-height: 1;
+    line-height: 100%;
     color: var(--difference-color);
     text-transform: lowercase;
     transition: .3s;
@@ -92,28 +96,28 @@ a:hover,
 
 .text {
     font-size: var(--txt-size);
-    line-height: 1.2;
+    line-height: 120%;
 }
 
 .text-label {
     font-size: var(--txt-size);
-    line-height: 1;
+    line-height: 100%;
     text-transform: lowercase;
 }
 
 .text-small {
     font-size: var(--txt-small-size);
-    line-height: 1.2;
+    line-height: 120%;
 }
 
 .text-medium {
     font-size: var(--txt-medium-size);
-    line-height: 1.2;
+    line-height: 120%;
 }
 
 .text-large {
     font-size: var(--txt-large-size);
-    line-height: 1.2;
+    line-height: 110%;
 }
 
 .weight-500 {
@@ -153,6 +157,7 @@ a:hover,
 .button {
     width: var(--button-size);
     height: var(--button-size);
+    background-color: var(--bg-color);
     border: solid 1px var(--main-color);
     border-radius: 50%;
     display: -webkit-box;
@@ -291,7 +296,7 @@ a:hover,
     background: var(--acc-color);
 } */
 
-.link.current {
+/* .link.current {
     color: var(--bg-color);
     font-weight: 800;
 }
@@ -300,7 +305,19 @@ a:hover,
     -webkit-transform: translateX(-3px) scaleX(1);
     -ms-transform: translateX(-3px) scaleX(1);
     transform: translateX(-3px) scaleX(1);
+} */
+
+/* .link.current {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    -webkit-text-decoration-color: inherit;
+    text-decoration-color: inherit;
 }
+
+.link.current:hover {
+    text-decoration: none;
+} */
 
 .menu {
     width: 100%;
@@ -368,9 +385,9 @@ a:hover,
     display: none;
 }
 
-.accordion-opener {
+/* .accordion-opener {
     cursor: pointer;
-}
+} */
 
 .intro-section {
     display: -webkit-box;
@@ -430,21 +447,21 @@ a:hover,
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: var(--grid-gap);
+    gap: var(--inner-gap);
     padding: var(--inner-margin) var(--main-margin);
     z-index: 999;
 }
 
-.lightbox-section .button.close {
+/* .lightbox-section .button.close {
     cursor: pointer;
-}
+} */
 
 .lightbox-item {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .lightbox-item::after {
@@ -454,8 +471,9 @@ a:hover,
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--main-color);
-    /* background-color: var(--acc-color); */
+    /* with accent color */
+    /* background-color: var(--main-color); */
+    background-color: var(--acc-color);
     opacity: 0;
     z-index: 2;
     pointer-events: none;
@@ -557,6 +575,30 @@ a:hover,
     -ms-flex-direction: column;
     flex-direction: column;
     gap: var(--inner-gap);
+}
+
+.item-image {
+    position: relative;
+}
+
+.item-image-counter {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    padding: 0 var(--inner-gap);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.item-image-counter .left,
+.item-image-counter .right {
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
 .item-header,
@@ -693,9 +735,9 @@ a:hover,
     border-top: solid 1px var(--main-color);
 }
 
-.topbar-label {
+/* .topbar-label {
     cursor: pointer;
-}
+} */
 
 .list-topbar-header .topbar-label {
     width: -webkit-fit-content;
@@ -913,7 +955,7 @@ a:hover,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: var(--grid-gap);
+    gap: var(--inner-gap)
 }
 
 .footer {

@@ -9,26 +9,26 @@ $images = $block->images()->toFiles();
                 <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
             </figure>
         <?php endforeach ?>
+        <?php if ($images->count() > 1) : ?>
+            <div class="icons item-image-counter">
+                <button class="button left" role="button" aria-label="Previous">
+                    <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.49951 11H16.4995" />
+                        <path d="M10.4995 7L6.49951 11L10.4995 15" />
+                    </svg>
+                </button>
+                <div class="counter text-small weight-500" style="display: none;"><span class="counter-num">1</span>/<span class="counter-lenght"><?= $images->count() ?></span></div>
+                <button class="button right" role="button" aria-label="Next">
+                    <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.5005 11L6.50049 11" />
+                        <path d="M12.5005 15L16.5005 11L12.5005 7" />
+                    </svg>
+                </button>
+            </div>
+        <?php endif ?>
     </div>
     <?php if ($images->count() > 1 || $block->text()->isNotEmpty() || $block->link()->isNotEmpty() || $block->url()->isNotEmpty()) : ?>
         <div class="item-footer">
-            <?php if ($images->count() > 1) : ?>
-                <div class="icons item-footer-counter" style="display: none;">
-                    <button class="button left" role="button" aria-label="Previous">
-                        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.49951 11H16.4995" />
-                            <path d="M10.4995 7L6.49951 11L10.4995 15" />
-                        </svg>
-                    </button>
-                    <div class="counter text-small weight-500"><span class="counter-num">1</span>/<span class="counter-lenght"><?= $images->count() ?></span></div>
-                    <button class="button right" role="button" aria-label="Next">
-                        <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.5005 11L6.50049 11" />
-                            <path d="M12.5005 15L16.5005 11L12.5005 7" />
-                        </svg>
-                    </button>
-                </div>
-            <?php endif ?>
             <?php if ($block->title()->isNotEmpty()) : ?>
                 <p class="item-header-title text-label weight-800"><?= $block->title() ?></p>
             <?php endif ?>

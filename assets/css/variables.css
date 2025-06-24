@@ -11,13 +11,13 @@
     /* ocra (esatto complementare) */
     /* --acc-color: #cc9d00; */
     /* yellow-ish */
-    /* --acc-color: #ffe434; */
+    --acc-color: #ffe434;
     /* orange-ish */
-    --acc-color: #f1980e;
-    --white: #fff;
-    --black: #000;
+    /* --acc-color: #f1980e; */
+    --white: #ffffff;
+    --black: #000000;
     --txt-title-size: 4rem;
-    --txt-large-size: 2.5rem;
+    --txt-large-size: 3.5rem;
     --txt-medium-size: 1.25rem;
     --txt-size: 1rem;
     --txt-small-size: .9rem;

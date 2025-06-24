@@ -175,7 +175,8 @@ a:active {
 
 button,
 label {
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: none;
 }
 
 button,

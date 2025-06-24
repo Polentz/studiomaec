@@ -54,11 +54,15 @@ const cursor = () => {
             y: e.clientY,
         });
     });
+};
 
-    const clickableElements = document.querySelectorAll("a, img, .button, .accordion-opener");
-    clickableElements.forEach(a => {
-        a.addEventListener("mouseenter", () => {
-            console.log(a);
+const attachCursorHoverEffect = (elements) => {
+    const elList = elements instanceof NodeList || Array.isArray(elements)
+        ? elements
+        : [elements];
+
+    elList.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
                 scale: 0.4,
@@ -67,7 +71,7 @@ const cursor = () => {
             });
         });
 
-        a.addEventListener("mouseleave", () => {
+        el.addEventListener("mouseleave", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
                 scale: 1,
@@ -131,6 +135,32 @@ const updateImageWrapperHeight = () => {
     });
 };
 
+const showCounter = () => {
+    const items = document.querySelectorAll(".slideshow-item");
+    items.forEach(item => {
+        const counter = item.querySelector(".item-image-counter");
+        if (counter) {
+            const buttons = counter.querySelectorAll(".left, .right");
+            item.addEventListener("mouseenter", () => {
+                gsap.to(buttons, {
+                    duration: 0.1,
+                    opacity: 1,
+                    pointerEvents: "all",
+                    ease: "power1.out",
+                });
+            });
+            item.addEventListener("mouseleave", () => {
+                gsap.to(buttons, {
+                    duration: 0.1,
+                    opacity: 0,
+                    pointerEvents: "none",
+                    ease: "power1.out",
+                });
+            });
+        };
+    });
+};
+
 const slideshow = () => {
     const items = document.querySelectorAll(".grid-item");
     items.forEach(item => {
@@ -186,7 +216,8 @@ const accordion = () => {
     const buttons = document.querySelectorAll(".button.plus-minus");
     accordions.forEach(accordion => {
         const button = accordion.querySelector(".button.plus-minus");
-        const openers = accordion.querySelectorAll(".accordion-opener", button);
+        const buttonText = accordion.querySelector(".button-text");
+        const openers = accordion.querySelectorAll(".accordion-opener", button, buttonText);
         const content = accordion.querySelector(".accordion-content");
         const excludedButton = accordion.querySelector(".button.go");
         openers.forEach(opener => {
@@ -202,6 +233,11 @@ const accordion = () => {
                 accordion.classList.toggle("selected");
                 content.classList.toggle("open");
                 button.classList.toggle("minus");
+                if (buttonText && buttonText.innerHTML === "more info") {
+                    buttonText.innerHTML = "less info";
+                } else if (buttonText && buttonText.innerHTML === "less info") {
+                    buttonText.innerHTML = "more info";
+                }
                 // const offset = 160;
                 // const itemPosition = accordion.getBoundingClientRect().top;
                 // const offsetPosition = itemPosition - offset;
@@ -372,6 +408,7 @@ const lightbox = (wrapper) => {
                 };
             });
 
+            attachCursorHoverEffect([prevBtn, nextBtn, closeBtn]);
             updateLightbox();
         };
 
@@ -388,6 +425,7 @@ window.addEventListener("load", () => {
     menuHeight();
     handleHref();
     cursor();
+    attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener, .topbar-label"));
     animateHeader();
     accordion();
 });

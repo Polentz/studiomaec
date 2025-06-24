@@ -8,12 +8,12 @@ $first = $items->first();
 <?= snippet('header') ?>
 
 <main class="main">
-    <?= snippet('intro') ?>
-
     <?php snippet('cover', slots: true) ?>
     <?php slot('hasSummary') ?>
     <?php endslot() ?>
     <?php endsnippet() ?>
+
+    <?= snippet('intro') ?>
 
     <?php snippet('grid', slots: true) ?>
     <?php slot('gridField') ?>
