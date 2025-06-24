@@ -63,11 +63,11 @@ const animateHeader = () => {
         ease: "none"
     }, 0.3);
 
-    headerAnim.to(".site-title", {
-        fontWeight: 700,
-        immediateRender: false,
-        ease: "none"
-    }, 0.6);
+    // headerAnim.to(".site-title", {
+    //     fontWeight: 800,
+    //     immediateRender: false,
+    //     ease: "none"
+    // }, 0.6);
 };
 
 const updateImageWrapperHeight = () => {

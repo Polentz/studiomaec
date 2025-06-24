@@ -333,7 +333,7 @@ a:hover,
 }
 
 .main {
-    min-height: 75vh;
+    min-height: calc(var(--doc-height) - var(--footer-height));
     padding-top: calc(var(--inner-margin) * 2);
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
