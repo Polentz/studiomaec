@@ -3,16 +3,6 @@ $images = $block->images()->toFiles();
 ?>
 
 <div class="grid-item accordion">
-    <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
-        <div class="item-header">
-            <?php if ($block->title()->isNotEmpty()) : ?>
-                <p class="item-header-title text-label weight-800"><?= $block->title() ?></p>
-            <?php endif ?>
-            <?php if ($block->category()->isNotEmpty()) : ?>
-                <p class="item-header-category text-label weight-500"><?= $block->category() ?></p>
-            <?php endif ?>
-        </div>
-    <?php endif ?>
     <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
             <figure class="item-image-wrapper lightbox-item">
@@ -23,7 +13,7 @@ $images = $block->images()->toFiles();
     <?php if ($images->count() > 1 || $block->text()->isNotEmpty() || $block->link()->isNotEmpty() || $block->url()->isNotEmpty()) : ?>
         <div class="item-footer">
             <?php if ($images->count() > 1) : ?>
-                <div class="icons item-footer-counter">
+                <div class="icons item-footer-counter" style="display: none;">
                     <button class="button left" role="button" aria-label="Previous">
                         <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6.49951 11H16.4995" />
@@ -38,6 +28,9 @@ $images = $block->images()->toFiles();
                         </svg>
                     </button>
                 </div>
+            <?php endif ?>
+            <?php if ($block->title()->isNotEmpty()) : ?>
+                <p class="item-header-title text-label weight-800"><?= $block->title() ?></p>
             <?php endif ?>
             <div class="icons item-footer-links">
                 <?php if ($block->text()->isNotEmpty()) : ?>
