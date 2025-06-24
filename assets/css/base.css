@@ -204,7 +204,8 @@ button {
     color: var(--black);
 }
 
-.site-title a::selection {
+.site-title a::selection,
+.site-subtitle::selection {
     background: var(--difference-color);
     color: var(--black);
 }

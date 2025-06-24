@@ -23,7 +23,7 @@ $first = $items->first();
 
 <?php if ($page->hasNextListed()) : ?>
     <section class="related-section">
-        <div class="text-large weight-600">
+        <div class="text-large weight-500">
             <p>next project:</p>
         </div>
         <div class="list">
@@ -33,7 +33,7 @@ $first = $items->first();
     </section>
 <?php elseif ($page->isLast()) : ?>
     <section class="related-section">
-        <div class="text-large weight-600">
+        <div class="text-large weight-500">
             <p>next project:</p>
         </div>
         <div class="list">

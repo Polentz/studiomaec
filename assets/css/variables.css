@@ -9,7 +9,7 @@
     --acc-color: #ff4f5d;
     --white: #fff;
     --black: #000;
-    --txt-title-size: 8rem;
+    --txt-title-size: 4rem;
     --txt-large-size: 2.5rem;
     --txt-medium-size: 1.25rem;
     --txt-size: 1rem;
@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 800px) {
     :root {
-        --txt-title-size: 6rem;
+        /* --txt-title-size: 6rem; */
         --menu-gap: 1rem;
     }
 }

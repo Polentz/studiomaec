@@ -6,7 +6,7 @@ $images = $block->images()->toFiles();
     <?php if ($block->title()->isNotEmpty() || $block->category()->isNotEmpty()) : ?>
         <div class="item-header">
             <?php if ($block->title()->isNotEmpty()) : ?>
-                <p class="item-header-title text-label weight-700"><?= $block->title() ?></p>
+                <p class="item-header-title text-label weight-800"><?= $block->title() ?></p>
             <?php endif ?>
             <?php if ($block->category()->isNotEmpty()) : ?>
                 <p class="item-header-category text-label weight-500"><?= $block->category() ?></p>
@@ -73,7 +73,7 @@ $images = $block->images()->toFiles();
                     </div>
                 <?php endif ?>
                 <?php if ($block->subtext()->isNotEmpty()) : ?>
-                    <div class="text weight-700">
+                    <div class="text weight-800">
                         <?= $block->subtext()->kt() ?>
                     </div>
                 <?php endif ?>
