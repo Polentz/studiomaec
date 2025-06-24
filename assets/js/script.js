@@ -38,6 +38,46 @@ const handleHref = () => {
     };
 };
 
+const cursor = () => {
+    const cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    document.querySelector("body").appendChild(cursor);
+
+    window.addEventListener("mousemove", (e) => {
+        gsap.set(".cursor", {
+            xPercent: -50,
+            yPercent: -50,
+        });
+        gsap.to(".cursor", 0, {
+            display: "block",
+            x: e.clientX,
+            y: e.clientY,
+        });
+    });
+
+    const clickableElements = document.querySelectorAll("a, img, .button, .accordion-opener");
+    clickableElements.forEach(a => {
+        a.addEventListener("mouseenter", () => {
+            console.log(a);
+            gsap.to(".cursor", {
+                duration: 0.5,
+                scale: 0.4,
+                opacity: 1,
+                ease: "power1.out",
+            });
+        });
+
+        a.addEventListener("mouseleave", () => {
+            gsap.to(".cursor", {
+                duration: 0.5,
+                scale: 1,
+                opacity: 1,
+                ease: "power1.out",
+            });
+        });
+    });
+};
+
 const animateHeader = () => {
     const headerAnim = gsap.timeline({
         scrollTrigger: {
@@ -347,6 +387,7 @@ window.addEventListener("load", () => {
     footerHeight();
     menuHeight();
     handleHref();
+    cursor();
     animateHeader();
     accordion();
 });

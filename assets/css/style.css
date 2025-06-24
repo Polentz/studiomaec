@@ -1,5 +1,6 @@
 html {
     font-size: 100%;
+    cursor: none;
     scrollbar-gutter: stable;
 }
 
@@ -26,6 +27,7 @@ strong {
 
 a,
 .button-text {
+    width: fit-content;
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
@@ -36,6 +38,20 @@ a,
 a:hover,
 .button-text:hover {
     text-decoration: none;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--main-color);
+    z-index: 999;
+    pointer-events: none;
+    display: none;
 }
 
 .header {
@@ -477,7 +493,7 @@ a:hover,
 }
 
 .lightbox-section img {
-    min-height: 90%;
+    min-height: 70%;
     max-height: 90%;
     max-width: 100%;
     width: auto;
