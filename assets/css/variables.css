@@ -6,7 +6,14 @@
     --bg-color-opacity: #e8e8e8ea;
     --main-color: #001bcb;
     --difference-color: #fcde1e;
-    --acc-color: #ff4f5d;
+    /* red-ish */
+    /* --acc-color: #ff4f5d; */
+    /* ocra (esatto complementare) */
+    /* --acc-color: #cc9d00; */
+    /* yellow-ish */
+    /* --acc-color: #ffe434; */
+    /* orange-ish */
+    --acc-color: #f1980e;
     --white: #fff;
     --black: #000;
     --txt-title-size: 4rem;
@@ -25,7 +32,6 @@
 
 @media screen and (max-width: 800px) {
     :root {
-        /* --txt-title-size: 6rem; */
         --menu-gap: 1rem;
     }
 }
