@@ -17,8 +17,8 @@
     --white: #ffffff;
     --black: #000000;
     --txt-title-size: 4rem;
-    --txt-large-size: 3.5rem;
-    --txt-medium-size: 1.25rem;
+    --txt-large-size: 2.5rem;
+    --txt-medium-size: 1rem;
     --txt-size: 1rem;
     --txt-small-size: .9rem;
     --button-size: 1.5rem;
@@ -29,6 +29,12 @@
     --inner-gap: .5rem;
     --menu-gap: 2.5rem;
     --cursor-size: .75rem;
+}
+
+@media screen and (min-width: 1600px) {
+    :root {
+        --main-margin: 20rem;
+    }
 }
 
 @media screen and (max-width: 800px) {

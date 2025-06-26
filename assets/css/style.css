@@ -86,6 +86,7 @@ a:hover,
 }
 
 .site-title a {
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -96,7 +97,7 @@ a:hover,
 
 .text {
     font-size: var(--txt-size);
-    line-height: 120%;
+    line-height: 130%;
 }
 
 .text-label {
@@ -326,7 +327,7 @@ a:hover,
     height: fit-content;
     position: fixed;
     top: calc(var(--header-height) - var(--inner-gap));
-    background-color: var(--bg-color-opacity);
+    background-color: var(--bg-color);
     padding: 0 var(--main-margin);
     z-index: 999;
     transition: .3s;
@@ -367,7 +368,7 @@ a:hover,
 
 .main {
     min-height: calc(var(--doc-height) - var(--footer-height));
-    padding-top: calc(var(--inner-margin) * 2);
+    padding-top: calc(var(--inner-margin) + var(--header-height) + var(--menu-height));
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
     padding-left: var(--main-margin);
@@ -436,7 +437,7 @@ a:hover,
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: var(--bg-color-opacity);
+    background: var(--bg-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -511,11 +512,10 @@ a:hover,
 }
 
 .lightbox-section img {
-    min-height: 70%;
-    max-height: 90%;
+    height: calc(var(--doc-height) - 2 * var(--button-size) - 2 * var(--inner-gap) - 2 * var(--inner-margin));
     max-width: 100%;
     width: auto;
-    -o-object-fit: contain;
+    -o-object-fit: cover;
     object-fit: cover;
     border-bottom: solid 1px var(--main-color);
     border-top: solid 1px var(--main-color);

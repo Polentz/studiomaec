@@ -58,18 +58,11 @@ $images = $block->images()->toFiles();
                 <?php endif ?>
             </div>
         </div>
-        <?php if ($block->text()->isNotEmpty() || $block->subtext()->isNotEmpty()) : ?>
+        <?php if ($block->text()->isNotEmpty()) : ?>
             <div class="item-content accordion-content">
-                <?php if ($block->text()->isNotEmpty()) : ?>
-                    <div class="text-medium weight-500">
-                        <?= $block->text()->kt() ?>
-                    </div>
-                <?php endif ?>
-                <?php if ($block->subtext()->isNotEmpty()) : ?>
-                    <div class="text weight-800">
-                        <?= $block->subtext()->kt() ?>
-                    </div>
-                <?php endif ?>
+                <div class="text-medium weight-500">
+                    <?= $block->text()->kt() ?>
+                </div>
             </div>
         <?php endif ?>
     <?php endif ?>
