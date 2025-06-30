@@ -6,9 +6,13 @@
 </header>
 <menu class="menu">
     <div class="menu-wrapper">
-        <h3 class="page-title text-label weight-500"><?= $page->title() ?></h3>
+        <?php if ($page->depth() > 1) : ?>
+            <h3 class="page-title text-label weight-500"><?= $page->parent()->title() ?> <span class="page-title-divider">|</span> <?= $page->title() ?></h3>
+        <?php else : ?>
+            <h3 class="page-title text-label weight-500"><?= $page->title() ?></h3>
+        <?php endif ?>
         <nav class="nav">
-            <!-- about needs a specific template! Now is page, change it! -->
+            <!-- About needs a specific template! Now is page, change it! -->
             <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'page']) as $page) : ?>
                 <a class="nav-item text-label weight-800 link <?= e($page->isActive(), 'current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>

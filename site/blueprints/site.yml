@@ -20,7 +20,7 @@ tabs:
             label: Other pages
             type: pages
             template:
-              - default
+              - simple
             help: When a page is listed, it appears in the footer at the bottom of the page.
           footer:
             type: fields

@@ -11,9 +11,9 @@
     /* ocra (esatto complementare) */
     /* --acc-color: #cc9d00; */
     /* yellow-ish */
-    --acc-color: #ffe434;
+    /* --acc-color: #ffe434; */
     /* orange-ish */
-    /* --acc-color: #f1980e; */
+    --acc-color: #f1980e;
     --white: #ffffff;
     --black: #000000;
     --txt-title-size: 4rem;
@@ -27,6 +27,7 @@
     --grid-gap: 2.5rem;
     --main-gap: 5rem;
     --inner-gap: .5rem;
+    --text-gap: 1rem;
     --menu-gap: 2.5rem;
     --cursor-size: .75rem;
 }

@@ -43,6 +43,11 @@ const cursor = () => {
     cursor.classList.add("cursor");
     document.querySelector("body").appendChild(cursor);
 
+    if (cursor) {
+        document.querySelector("body").style.cursor = "none";
+        document.querySelectorAll("a").forEach(a => { a.style.cursor = "none"; });
+    };
+
     window.addEventListener("mousemove", (e) => {
         gsap.set(".cursor", {
             xPercent: -50,
@@ -57,14 +62,12 @@ const cursor = () => {
 };
 
 const attachCursorHoverEffect = (elements) => {
-    const elList = elements instanceof NodeList || Array.isArray(elements)
-        ? elements
-        : [elements];
+    const elementList = elements instanceof NodeList || Array.isArray(elements) ? elements : [elements];
 
-    elList.forEach((el) => {
+    elementList.forEach((el) => {
         el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
-                duration: 0.5,
+                duration: 0.75,
                 scale: 0.4,
                 opacity: 1,
                 ease: "power1.out",
@@ -426,7 +429,7 @@ window.addEventListener("load", () => {
     handleHref();
     cursor();
     attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener, .topbar-label"));
-    animateHeader();
+    // animateHeader();
     accordion();
 });
 
