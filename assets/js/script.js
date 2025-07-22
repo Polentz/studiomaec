@@ -219,13 +219,14 @@ const accordion = () => {
     const accordions = document.querySelectorAll(".accordion");
     const contents = document.querySelectorAll(".accordion-content");
     const buttons = document.querySelectorAll(".button.plus-minus");
+    const labels = document.querySelectorAll(".list-topbar-content");
     accordions.forEach(accordion => {
         const button = accordion.querySelector(".button.plus-minus");
         const buttonText = accordion.querySelector(".button-text");
         const openers = accordion.querySelectorAll(".accordion-opener", button, buttonText);
         const content = accordion.querySelector(".accordion-content");
         const excludedButton = accordion.querySelector(".button.go");
-        const labels = accordion.querySelectorAll(".list-topbar-content span");
+        const accordionLabel = accordion.querySelector(".list-topbar-content");
         openers.forEach(opener => {
             if (excludedButton) {
                 excludedButton.addEventListener("click", event => event.stopPropagation());
@@ -235,6 +236,7 @@ const accordion = () => {
                     [...accordions].filter(i => i !== accordion).forEach(i => i.classList.remove("selected"));
                     [...contents].filter(i => i !== content).forEach(i => i.classList.remove("open"));
                     [...buttons].filter(i => i !== button).forEach(i => i.classList.remove("minus"));
+                    [...labels].filter(i => i !== accordionLabel).forEach(i => i.classList.remove("expanded"));
                 };
                 accordion.classList.toggle("selected");
                 content.classList.toggle("open");
@@ -244,11 +246,9 @@ const accordion = () => {
                 } else if (buttonText && buttonText.innerHTML === "less info") {
                     buttonText.innerHTML = "more info";
                 }
-                labels.forEach(label => {
-                    if (label) {
-                        label.classList.toggle("expanded");
-                    };
-                });
+                if (accordionLabel) {
+                    accordionLabel.classList.toggle("expanded");
+                };
                 // const offset = 160;
                 // const itemPosition = accordion.getBoundingClientRect().top;
                 // const offsetPosition = itemPosition - offset;

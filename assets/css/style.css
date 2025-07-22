@@ -791,7 +791,7 @@ a:hover,
     text-overflow: ellipsis;
 }
 
-.list-topbar-content .topbar-label span.expanded {
+.list-topbar-content.expanded .topbar-label span {
     white-space: unset;
 }
 
