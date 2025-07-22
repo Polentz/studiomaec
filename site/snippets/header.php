@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header-wrapper">
-        <h1 class="site-title weight-500"><a href="<?= $site->url() ?>"><?= $site->title() ?></a></h1>
+        <h1 class="site-title"><a href="<?= $site->url() ?>"><?= $site->title() ?></a></h1>
         <h2 class="site-subtitle text-label weight-500"><?= $site->subtitle() ?></h2>
     </div>
 </header>

@@ -5,12 +5,24 @@ $summary = $item->summary()->toObject();
 <div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-status="<?= $summary->stat()->slug() ?>">
     <ul class="list-topbar-content accordion-opener">
         <?php if ($summary): ?>
-            <li class="topbar-label text-label link weight-800"><span><?= $item->title() ?></span></li>
-            <li class="topbar-label text-label <?php if ($summary->year()->isNotEmpty()) : ?>link<?php endif ?> weight-800"><span><?= $summary->year() ?></span></li>
-            <li class="topbar-label text-label <?php if ($summary->client()->isNotEmpty()) : ?>link<?php endif ?> weight-800"><span><?= $summary->client() ?></span></li>
-            <li class="topbar-label text-label <?php if ($summary->location()->isNotEmpty()) : ?>link<?php endif ?> weight-800"><span><?= $summary->location() ?></span></li>
-            <li class="topbar-label text-label <?php if ($summary->category()->isNotEmpty()) : ?>link<?php endif ?> weight-800"><span><?= $summary->category() ?></span></li>
-            <li class="topbar-label text-label <?php if ($summary->stat()->isNotEmpty()) : ?>link<?php endif ?> weight-800"><span><?= $summary->stat() ?></span></li>
+            <li class="topbar-label text-label weight-800">
+                <span class="link"><?= $item->title() ?></span>
+            </li>
+            <li class="topbar-label text-label weight-800">
+                <span<?php if ($summary->year()->isNotEmpty()) : ?> class="link" <?php endif ?>><?= $summary->year() ?></span>
+            </li>
+            <li class="topbar-label text-label weight-800">
+                <span<?php if ($summary->client()->isNotEmpty()) : ?> class="link" <?php endif ?>><?= $summary->client() ?></span>
+            </li>
+            <li class="topbar-label text-label weight-800">
+                <span <?php if ($summary->location()->isNotEmpty()) : ?> class="link" <?php endif ?>><?= $summary->location() ?></span>
+            </li>
+            <li class="topbar-label text-label weight-800">
+                <span <?php if ($summary->category()->isNotEmpty()) : ?> class="link" <?php endif ?>><?= $summary->category() ?></span>
+            </li>
+            <li class="topbar-label text-label weight-800">
+                <span <?php if ($summary->stat()->isNotEmpty()) : ?> class="link" <?php endif ?>><?= $summary->stat() ?></span>
+            </li>
         <?php endif ?>
         <li class="topbar-icons icons">
             <button class="button plus-minus" role="button" aria-label="Open/Close">

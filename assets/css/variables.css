@@ -13,7 +13,8 @@
     /* yellow-ish */
     /* --acc-color: #ffe434; */
     /* orange-ish */
-    --acc-color: #f1980e;
+    /* --acc-color: #f1980e; */
+    --acc-color: #f49f0a;
     --white: #ffffff;
     --black: #000000;
     --txt-title-size: 4rem;
@@ -32,11 +33,11 @@
     --cursor-size: .75rem;
 }
 
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
     :root {
         --main-margin: 20rem;
     }
-}
+} */
 
 @media screen and (max-width: 800px) {
     :root {

@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+const mediaQuery = window.matchMedia("(max-width: 600px)");
 
 const documentHeight = () => {
     const doc = document.documentElement;
@@ -85,6 +86,7 @@ const attachCursorHoverEffect = (elements) => {
     });
 };
 
+// delete gsap.registerPlugin(ScrollTrigger); if not in use
 const animateHeader = () => {
     const headerAnim = gsap.timeline({
         scrollTrigger: {
@@ -223,6 +225,7 @@ const accordion = () => {
         const openers = accordion.querySelectorAll(".accordion-opener", button, buttonText);
         const content = accordion.querySelector(".accordion-content");
         const excludedButton = accordion.querySelector(".button.go");
+        const labels = accordion.querySelectorAll(".list-topbar-content span");
         openers.forEach(opener => {
             if (excludedButton) {
                 excludedButton.addEventListener("click", event => event.stopPropagation());
@@ -241,6 +244,11 @@ const accordion = () => {
                 } else if (buttonText && buttonText.innerHTML === "less info") {
                     buttonText.innerHTML = "more info";
                 }
+                labels.forEach(label => {
+                    if (label) {
+                        label.classList.toggle("expanded");
+                    };
+                });
                 // const offset = 160;
                 // const itemPosition = accordion.getBoundingClientRect().top;
                 // const offsetPosition = itemPosition - offset;
@@ -306,27 +314,33 @@ const sortAccordion = () => {
     });
 };
 
-//  si può eliminare se calcolo le colonne della tabella in percentuali.
+// si può eliminare se calcolo le colonne della tabella in percentuali.
+// ma ho aggiunto qui la max-width per lo span.
+const gridAccordionTemplate = (e) => {
+    const topbars = document.querySelectorAll(".list-topbar-content");
+    topbars.forEach(topbar => {
+        if (topbar) {
+            const columns = topbar.querySelectorAll(".topbar-label");
+            const icons = topbar.querySelector(".topbar-icons");
 
-// const gridAccordionTemplate = () => {
-//     const topbars = document.querySelectorAll(".list-topbar-content");
-//     topbars.forEach(topbar => {
-//         const doc = document.documentElement;
+            const topbarWidth = topbar.offsetWidth;
+            const iconsWidth = icons.offsetWidth;
+            const columnWidth = (topbarWidth - iconsWidth) / 6;
 
-//         const elements = topbar.querySelectorAll(".topbar-label");
-//         const icons = topbar.querySelector(".topbar-icons");
+            document.documentElement.style.setProperty("--grid-column-width", `${columnWidth}px`);
+            document.documentElement.style.setProperty("--icons-width", `${iconsWidth}px`);
 
-//         const topbarWidth = topbar.offsetWidth - 96;
-//         const iconsWidth = icons.offsetWidth;
-//         const columnWidth = (topbarWidth - iconsWidth) / 6;
-
-//         doc.style.setProperty("--grid-column-width", `${columnWidth}px`);
-//         doc.style.setProperty("--icons-width", `${iconsWidth}px`);
-//         elements.forEach(element => {
-//             element.style.maxWidth = `${columnWidth}px`;
-//         });
-//     });
-// };
+            columns.forEach(column => {
+                const spanElement = column.querySelector("span");
+                if (e.matches) {
+                    spanElement.style.maxWidth = "none";
+                } else {
+                    spanElement.style.maxWidth = `${columnWidth - 8}px`;
+                };
+            });
+        };
+    });
+};
 
 const lightbox = (wrapper) => {
     wrapper.forEach(wrap => {
@@ -421,6 +435,10 @@ const lightbox = (wrapper) => {
     });
 };
 
+const handleMediaQuery = () => {
+    gridAccordionTemplate(mediaQuery);
+};
+
 window.addEventListener("load", () => {
     documentHeight();
     headerHeight();
@@ -431,6 +449,7 @@ window.addEventListener("load", () => {
     attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener, .topbar-label"));
     // animateHeader();
     accordion();
+    handleMediaQuery();
 });
 
 window.addEventListener("resize", () => {
@@ -438,4 +457,5 @@ window.addEventListener("resize", () => {
     headerHeight();
     footerHeight();
     menuHeight();
+    handleMediaQuery();
 });
