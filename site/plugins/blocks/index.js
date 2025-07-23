@@ -54,12 +54,12 @@ panel.plugin("studiomaec/blocks", {
               />
             </k-frame>
             <div class="caption">
-              <k-writer style="outline: solid 1px var(--input-color-border);"
+              <k-writer-input style="outline: solid 1px var(--input-color-border);"
                 v-bind="field('caption')"
                 :nodes="false"
                 :value="content.caption"
                 @input="update({ caption: $event })">
-              </k-writer>
+              </k-writer-input>
             </div>
           </div>
         `
@@ -72,37 +72,37 @@ panel.plugin("studiomaec/blocks", {
             <p>add some text</p>
           </div>
           <div v-if="content.text" class="text">
-            <k-writer
+            <k-writer-input
               v-bind="field('text')"
               :nodes="false"
               :value="content.text"
               @input="update({ text: $event })">
-            </k-writer>
+            </k-writer-input>
           </div>
         </div>
       `
     },
-    summaryitem: {
-      template: `
-        <div class="summary-block">
-          <div v-if="content.title" class="text-title">
-            <k-input style="font-weight: 700;"
-                v-bind="field('title')"
-                :value="content.title"
-                @input="update({ title: $event })">
-            </k-input>
-          </div>
-          <div v-if="content.text" class="text">
-            <k-writer style="outline: solid 1px var(--input-color-border);"
-              v-bind="field('text')"
-              :inline="true"
-              :nodes="false"
-              :value="content.text"
-              @input="update({ text: $event })">
-            </k-writer>
-          </div>
-        </div>
-      `
-    },
+    // summaryitem: {
+    //   template: `
+    //     <div class="summary-block">
+    //       <div v-if="content.title" class="text-title">
+    //         <k-input style="font-weight: 700;"
+    //             v-bind="field('title')"
+    //             :value="content.title"
+    //             @input="update({ title: $event })">
+    //         </k-input>
+    //       </div>
+    //       <div v-if="content.text" class="text">
+    //         <k-writer-input style="outline: solid 1px var(--input-color-border);"
+    //           v-bind="field('text')"
+    //           :inline="true"
+    //           :nodes="false"
+    //           :value="content.text"
+    //           @input="update({ text: $event })">
+    //         </k-writer-input>
+    //       </div>
+    //     </div>
+    //   `
+    // },
   }
 });

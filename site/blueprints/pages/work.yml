@@ -11,34 +11,6 @@ columns:
   main:
     width: 3/4
     sections:
-      intro:
-        label: false
-        type: fields
-        fields:
-          description:
-            label: Text
-            placeholder: Text …
-            type: writer
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
-          text:
-            label: Additional text
-            placeholder: Text …
-            type: writer
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
       cover:
         label: Cover Image
         type: fields
@@ -138,6 +110,34 @@ columns:
               - link
               - clear
             nodes: false
+      intro:
+        label: false
+        type: fields
+        fields:
+          description:
+            label: Text
+            placeholder: Text …
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
+          text:
+            label: Additional text
+            placeholder: Text …
+            type: writer
+            marks:
+              - bold
+              - italic
+              - underline
+              - strike
+              - link
+              - clear
+            nodes: false
       gallery:
         label: false
         type: fields
@@ -161,7 +161,7 @@ columns:
         type: fields
         fields:
           preview:
-            label: "Preview images (max: 2)"
+            label: "Preview images (max. 2)"
             type: files
             help: These two images will display in the {{ page.parent.title }} list dropdown.
             template: image

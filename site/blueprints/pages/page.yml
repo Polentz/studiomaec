@@ -93,9 +93,9 @@ columns:
               - "3/4, 1/4"
               - "1/4, 3/4"
             fieldsets:
+              - galleryitem
               - textitem
               - summaryitem
-              - galleryitem
   sidebar:
     width: 1/4
     sections:

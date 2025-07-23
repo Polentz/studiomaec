@@ -26,8 +26,9 @@ tabs:
             type: fields
             fields:
               contact:
-                label: Footer and contact
+                label: Footer and contact (max. 4 items)
                 type: blocks
+                max: 4
                 fieldsets:
                   - contactitem
       sidebar:
@@ -59,9 +60,7 @@ tabs:
                 type: textarea
                 buttons: false
               keywords:
-                label: 
-                  en: Keywords
-                  it: Parole chiave
+                label: Keywords
                 type: tags         
       image:
         width: 1/2

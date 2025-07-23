@@ -752,6 +752,13 @@ a:hover,
     gap: var(--grid-gap);
 }
 
+.list-topbar-header .topbar-label span {
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    -webkit-text-decoration-color: inherit;
+    text-decoration-color: inherit;
+}
+
 .list-topbar-header .topbar-label svg {
     width: 8px;
     fill: none;

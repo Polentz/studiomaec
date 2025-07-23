@@ -4,7 +4,6 @@ wysiwyg: true
 fields:
   title:
     label: Title
-    width: 1/2
     placeholder: Title …
     type: writer
     inline: true
@@ -16,19 +15,19 @@ fields:
       - link
       - clear
     nodes: false
-  category:
-    label: Category
-    width: 1/2
-    type: tags
-    max: 1
-    layout: list
-    options:
-      type: query
-      query: page.grid.toBlocks.filterBy("type", "griditem")
-      text: "{{ block.category }}"
-      value: "{{ block.category }}"
+  # category:
+  #   label: Category
+  #   width: 1/2
+  #   type: tags
+  #   max: 1
+  #   layout: list
+  #   options:
+  #     type: query
+  #     query: page.grid.toBlocks.filterBy("type", "griditem")
+  #     text: "{{ block.category }}"
+  #     value: "{{ block.category }}"
   images:
-    label: Images
+    label: Image(s)
     type: files
     template: image
     uploads: image
@@ -42,12 +41,14 @@ fields:
       cover: true
   linklocation:
     label: Link
-    type: radio
-    columns: 2
-    default: "web"
+    type: toggles
     options:
-      web: External URL
-      page: Internal URL (link one of your pages)
+      - value: web
+        text: External URL
+        icon: url
+      - value: page
+        text: Internal URL (link one of your pages)
+        icon: page
   url:
     label: External URL
     width: 1/2
