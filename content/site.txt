@@ -23,3 +23,7 @@ Keywords:
 ----
 
 Ogimage: 
+
+----
+
+Applystyle: 1

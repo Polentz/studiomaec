@@ -33,5 +33,10 @@
         '@auto',
     ]) ?>
 </head>
+<style>
+    :root {
+        --lowercase: <?= $site->lowercase()->toBool() ? 'lowercase' : 'none' ?>;
+    }
+</style>
 
 <body>

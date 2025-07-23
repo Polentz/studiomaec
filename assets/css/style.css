@@ -89,7 +89,7 @@ a:hover,
     font-weight: 500;
     line-height: 100%;
     color: var(--difference-color);
-    text-transform: lowercase;
+    text-transform: var(--lowercase);
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
@@ -117,7 +117,7 @@ a:hover,
 .text-label {
     font-size: var(--txt-size);
     line-height: 100%;
-    text-transform: lowercase;
+    text-transform: var(--lowercase);
 }
 
 .text-small {
@@ -365,7 +365,7 @@ a:hover,
     -ms-flex-align: center;
     align-items: center;
     gap: var(--menu-gap);
-    text-transform: lowercase;
+    text-transform: var(--lowercase);
     border-top: solid 1px var(--main-color);
     border-bottom: solid 1px var(--main-color);
     padding: var(--inner-gap) 0;
