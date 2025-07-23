@@ -14,7 +14,7 @@
         <nav class="nav">
             <!-- About needs a specific template! Now is page, change it! -->
             <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'page']) as $page) : ?>
-                <a class="nav-item text-label weight-800 link <?= e($page->isActive(), 'current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
+                <a class="nav-item text-label weight-800 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
             <a class="nav-item text-label weight-800 link js-href" href="#contact"><?= $site->contactname() ?></a>
         </nav>

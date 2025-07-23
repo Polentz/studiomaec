@@ -969,12 +969,10 @@ a:hover,
     padding: 0 var(--main-margin);
 }
 
-.footer-wrapper {
+.footer-contact {
     width: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr var(--menu-gap) 1fr var(--menu-gap) 1fr var(--menu-gap) 1fr;
-    grid-template-columns: repeat(4, 1fr);
     -webkit-column-gap: var(--menu-gap);
     -moz-column-gap: var(--menu-gap);
     column-gap: var(--menu-gap);
@@ -987,7 +985,7 @@ a:hover,
     border-bottom: none;
 }
 
-.footer-block {
+.contact-block {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -997,23 +995,29 @@ a:hover,
     flex-direction: column;
 }
 
-.footer-block:not(:first-of-type),
-.footer-block:not(:last-of-type) {
+.contact-block:not(:first-of-type),
+.contact-block:not(:last-of-type) {
     -ms-grid-row-align: center;
     -ms-grid-column-align: center;
     place-self: center;
 }
 
-.footer-block:first-of-type {
+.contact-block:first-of-type {
     -ms-grid-row-align: start;
     -ms-grid-column-align: start;
     place-self: start;
 }
 
-.footer-block:last-of-type {
+.contact-block:last-of-type {
     -ms-grid-row-align: end;
     -ms-grid-column-align: end;
     place-self: end;
+}
+
+.footer-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--inner-gap) 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -1051,7 +1055,8 @@ a:hover,
     } */
 
     .menu-wrapper,
-    .footer-wrapper {
+    .footer-contact,
+    .footer-navigation {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -1066,20 +1071,20 @@ a:hover,
         gap: var(--inner-gap);
     }
 
-    .footer-block:not(:first-of-type),
-    .footer-block:not(:last-of-type) {
+    .contact-block:not(:first-of-type),
+    .contact-block:not(:last-of-type) {
         -ms-grid-row-align: center;
         -ms-grid-column-align: center;
         place-self: center;
     }
 
-    .footer-block:first-of-type {
+    .contact-block:first-of-type {
         -ms-grid-row-align: center;
         -ms-grid-column-align: center;
         place-self: center;
     }
 
-    .footer-block:last-of-type {
+    .contact-block:last-of-type {
         -ms-grid-row-align: center;
         -ms-grid-column-align: center;
         place-self: center;
