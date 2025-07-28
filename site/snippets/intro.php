@@ -14,7 +14,7 @@
         <?php if ($page->description()->isNotEmpty() && $page->text()->isNotEmpty()) : ?>
             <div class="grid accordion">
                 <div class="button-wrapper accordion-opener">
-                    <span class="button-text weight-800">more info</span>
+                    <span class="button-text weight-500">more info</span>
                     <button class="button plus-minus more-info" role="button" aria-label="Open/Close">
                         <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
                             <path class="horizontal-path" d="M5.94434 10.9553H15.9443" />

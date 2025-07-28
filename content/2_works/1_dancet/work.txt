@@ -20,7 +20,7 @@ year: "2025"
 client: Private
 location: Berlin
 category: Building
-stat: Completed
+stage: Completed
 team: studio mäc
 
 ----

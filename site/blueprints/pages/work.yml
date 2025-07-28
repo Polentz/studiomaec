@@ -74,7 +74,7 @@ columns:
                   fetch: page.siblings.listed
                   text: "{{ page.summary.toObject.category }}"
                   value: "{{ page.summary.toObject.category }}"
-              stat: 
+              stage: 
                 label: Status
                 type: tags
                 max: 1
@@ -82,8 +82,8 @@ columns:
                 options: query
                 query:
                   fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.stat }}"
-                  value: "{{ page.summary.toObject.stat }}"
+                  text: "{{ page.summary.toObject.stage }}"
+                  value: "{{ page.summary.toObject.stage }}"
               team: 
                 label: Team
                 type: writer
@@ -138,6 +138,7 @@ columns:
               - link
               - clear
             nodes: false
+            help: Adding text here will activate the "More info" button below the main text.
       gallery:
         label: false
         type: fields

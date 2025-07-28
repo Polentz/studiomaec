@@ -175,7 +175,6 @@ a:active {
 
 button,
 label {
-    /* cursor: pointer; */
     cursor: none;
 }
 
@@ -191,13 +190,13 @@ button {
 }
 
 *::-moz-selection {
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: transparent;
+    color: var(--acc-color);
 }
 
 *::selection {
-    background: var(--main-color);
-    color: var(--bg-color);
+    background: transparent;
+    color: var(--acc-color);
 }
 
 .site-title a::-moz-selection {

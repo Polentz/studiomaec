@@ -14,7 +14,7 @@ Cover:
 
 ----
 
-Summary: 
+Summary: [{"content":{"summaryentries":[{"title":"Team","text":"<p>Giulia and Maya</p>"},{"title":"Studio","text":"<p>Berlin and Paris</p>"},{"title":"Experience","text":"<p>10+ years</p>"}],"title":"Team","text":""},"id":"1657e4c6-4447-4998-b422-3ec0b9eced26","isHidden":false,"type":"summaryitem"}]
 
 ----
 

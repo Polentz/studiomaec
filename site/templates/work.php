@@ -28,7 +28,10 @@ $first = $items->first();
         </div>
         <div class="list">
             <?php snippet('list-header', slots: false) ?>
-            <?php snippet('list-items', ['item' => $page->nextListed()]) ?>
+            <?php snippet('list-items', ['item' => $page->nextListed()], slots: true) ?>
+            <?php slot('hasCover') ?>
+            <?php endslot() ?>
+            <?php endsnippet() ?>
         </div>
     </section>
 <?php elseif ($page->isLast()) : ?>
@@ -38,7 +41,10 @@ $first = $items->first();
         </div>
         <div class="list">
             <?php snippet('list-header', slots: false) ?>
-            <?php snippet('list-items', ['item' => $first]) ?>
+            <?php snippet('list-items', ['item' => $first], slots: true) ?>
+            <?php slot('hasCover') ?>
+            <?php endslot() ?>
+            <?php endsnippet() ?>
         </div>
     </section>
 <?php endif ?>

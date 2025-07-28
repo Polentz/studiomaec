@@ -20,7 +20,7 @@ year: "2024"
 client: Biennale Svizzera del territorio
 location: Lugano and its surrounding
 category: Explorations
-stat: Completed
+stage: Completed
 team: 'Augustin Clément, Arianna Frascoli, Capucine Fouquin,<br>in collaboration with Agnese Làposi &amp; Andrea Bordoli'
 
 ----

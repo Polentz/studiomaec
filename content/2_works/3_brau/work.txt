@@ -20,7 +20,7 @@ year: "2019"
 client: Private
 location: Parc regional de la Brenne (FR)
 category: Building
-stat: Completed
+stage: Completed
 team: >
   Elsa Beniada, Giulia Altarelli, Augustin
   Clément

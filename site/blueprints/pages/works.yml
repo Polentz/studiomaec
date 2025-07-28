@@ -12,39 +12,57 @@ columns:
   main:
     width: 3/4
     sections:
-      intro:
-        label: false
-        type: fields
-        fields:
-          description:
-            label: Introduction text
-            placeholder: Text …
-            type: writer
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
-          text:
-            label: Additional text
-            placeholder: Text …
-            type: writer
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
+      # intro:
+      #   label: false
+      #   type: fields
+      #   fields:
+      #     description:
+      #       label: Introduction text
+      #       placeholder: Text …
+      #       type: writer
+      #       marks:
+      #         - bold
+      #         - italic
+      #         - underline
+      #         - strike
+      #         - link
+      #         - clear
+      #       nodes: false
+      #     text:
+      #       label: Additional text
+      #       placeholder: Text …
+      #       type: writer
+      #       marks:
+      #         - bold
+      #         - italic
+      #         - underline
+      #         - strike
+      #         - link
+      #         - clear
+      #       nodes: false
       items:
         label: "{{ page.title }}"
         type: pages
-        layout: cards
-        size: large
+        layout: table
+        columns:
+          title:
+            label: Project
+          year:
+            label: Year
+            type: text
+            value: "{{ page.summary.toObject.year }}"
+          client:
+            label: Client
+            type: text
+            value: "{{ page.summary.toObject.client }}"
+          location:
+            label: Location
+            type: text  
+            value: "{{ page.summary.toObject.location }}"
+          category:
+            label: Category
+            type: text
+            value: "{{ page.summary.toObject.category }}"
         template:
           - work
         search: false

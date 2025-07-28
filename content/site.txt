@@ -14,6 +14,10 @@ Contactname: Contact
 
 ----
 
+Lowercase: true
+
+----
+
 Description: 
 
 ----

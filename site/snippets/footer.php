@@ -3,7 +3,7 @@
         <?= $site->contact()->toBlocks() ?>
     </ul>
     <div class="footer-navigation">
-        <p>© <?= date("Y") ?> <?= $site->title() ?></p>
+        <p class="text">© <?= date("Y") ?> <?= $site->title() ?></p>
         <nav class="nav">
             <?php foreach ($site->children()->listed()->filterBy('template', 'simple') as $page) : ?>
                 <a class="nav-item text-label weight-800 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>

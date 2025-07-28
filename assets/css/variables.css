@@ -19,25 +19,19 @@
     --black: #000000;
     --txt-title-size: 4rem;
     --txt-large-size: 2.5rem;
-    --txt-medium-size: 1rem;
-    --txt-size: 1rem;
-    --txt-small-size: .9rem;
-    --button-size: 1.5rem;
+    --txt-medium-size: 1.1rem;
+    --txt-size: .9rem;
+    --txt-small-size: .8rem;
+    --button-size: 1.25rem;
     --main-margin: 2.5rem;
     --inner-margin: 5rem;
+    --menu-gap: 2.5rem;
     --grid-gap: 2.5rem;
     --main-gap: 5rem;
     --inner-gap: .5rem;
     --text-gap: 1rem;
-    --menu-gap: 2.5rem;
     --cursor-size: .75rem;
 }
-
-/* @media screen and (min-width: 1600px) {
-    :root {
-        --main-margin: 20rem;
-    }
-} */
 
 @media screen and (max-width: 800px) {
     :root {
@@ -49,10 +43,11 @@
     :root {
         --txt-title-size: 4rem;
         --txt-large-size: 1.5rem;
+        --txt-medium-size: .9rem;
         --main-margin: 1rem;
         --inner-margin: 2rem;
+        --menu-gap: 1rem;
         --grid-gap: 1rem;
         --main-gap: 2rem;
-        --menu-gap: 1rem;
     }
 }

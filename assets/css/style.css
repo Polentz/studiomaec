@@ -23,23 +23,6 @@ strong {
     font-weight: 700;
 }
 
-a,
-.button-text {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-    -webkit-text-decoration-color: inherit;
-    text-decoration-color: inherit;
-}
-
-a:hover,
-.button-text:hover {
-    text-decoration: none;
-}
-
 .cursor {
     position: fixed;
     top: 0;
@@ -114,6 +97,7 @@ a:hover,
     line-height: 130%;
 }
 
+.button-text,
 .text-label {
     font-size: var(--txt-size);
     line-height: 100%;
@@ -255,19 +239,57 @@ a:hover,
     stroke: var(--bg-color);
 }
 
-.link,
-.item-header-title a {
+a,
+.button-text {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    -webkit-text-decoration-color: inherit;
+    text-decoration-color: inherit;
+}
+
+a,
+.button-text,
+.list-topbar-header .topbar-label,
+.list-topbar-content .topbar-label-name {
+    transition: .25s ease;
+}
+
+a:hover,
+.button-text:hover,
+.list-topbar-header .topbar-label:hover,
+.list-topbar-content:hover .topbar-label-name {
+    text-decoration: none;
+    color: var(--acc-color);
+}
+
+.list-topbar-header .topbar-label:hover svg {
+    stroke: var(--acc-color);
+}
+
+.list-topbar-header .topbar-label:hover svg.asc,
+.list-topbar-header .topbar-label:hover svg.desc {
+    fill: var(--acc-color);
+}
+
+.link {
+    text-transform: var(--lowercase);
+}
+
+.link {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     position: relative;
     line-height: 120%;
     text-decoration: none;
-    padding: 0 1px;
+    transition: .2s ease;
 }
 
-.link::after,
-.item-header-title a::after {
+.link::after {
     content: "";
     background: var(--main-color);
     width: 100%;
@@ -289,16 +311,11 @@ a:hover,
     transition: transform .15s ease-in-out, -webkit-transform .15s ease-in-out;
 }
 
-.list-topbar-content:not(.selected):hover .link,
-.link:hover,
-.item-header-title a:hover {
+.link:hover {
     color: var(--bg-color);
-    font-weight: 700;
 }
 
-.list-topbar-content:not(.selected):hover .link::after,
-.link:hover::after,
-.item-header-title a:hover::after {
+.link:hover::after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
     transform: scaleX(1);
@@ -365,7 +382,6 @@ a:hover,
     -ms-flex-align: center;
     align-items: center;
     gap: var(--menu-gap);
-    text-transform: var(--lowercase);
     border-top: solid 1px var(--main-color);
     border-bottom: solid 1px var(--main-color);
     padding: var(--inner-gap) 0;
@@ -433,7 +449,7 @@ a:hover,
     -ms-flex-direction: column;
     flex-direction: column;
     gap: var(--grid-gap);
-    padding-top: var(--inner-margin);
+    /* padding-top: var(--inner-margin); */
     padding-right: var(--main-margin);
     padding-bottom: var(--inner-margin);
     padding-left: var(--main-margin);
@@ -692,7 +708,6 @@ a:hover,
     -ms-flex-direction: column;
     flex-direction: column;
     gap: var(--text-gap);
-    padding-top: var(--inner-gap);
 }
 
 .item-text {
@@ -749,7 +764,7 @@ a:hover,
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    gap: var(--grid-gap);
+    gap: var(--text-gap);
 }
 
 .list-topbar-header .topbar-label span {
@@ -790,15 +805,19 @@ a:hover,
     transform: rotate(180deg);
 }
 
-.list-topbar-content .topbar-label span {
+.topbar-label-name {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     display: block;
+    line-height: 120%;
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 
-.list-topbar-content.expanded .topbar-label span {
+.list-topbar-content.expanded .topbar-label-name {
     white-space: unset;
 }
 
@@ -961,7 +980,23 @@ a:hover,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: var(--inner-gap)
+    /* gap: var(--inner-gap); */
+}
+
+.summary-item {
+    display: flex;
+    gap: var(--grid-gap);
+    align-items: baseline;
+    justify-content: space-between;
+    padding: var(--inner-gap) 0;
+}
+
+.summary-item:not(:last-of-type) {
+    border-bottom: solid 1px var(--main-color);
+}
+
+.summary-item .weight-800 {
+    text-align: end;
 }
 
 .footer {

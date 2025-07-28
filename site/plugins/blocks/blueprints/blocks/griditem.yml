@@ -1,5 +1,5 @@
 name: Grid Item
-icon: page
+icon: grid
 wysiwyg: true
 fields:
   title:

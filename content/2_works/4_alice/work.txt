@@ -20,7 +20,7 @@ year: 2022/2023
 client: Various
 location: Various
 category: Explorations
-stat: On going
+stage: On going
 team: Alice
 
 ----

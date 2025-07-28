@@ -32,7 +32,7 @@ tabs:
             type: fields
             fields:
               contact:
-                label: Contact (max. 4 items)
+                label: Contact (max. 4 elements)
                 type: blocks
                 max: 4
                 fieldsets:
@@ -64,7 +64,7 @@ tabs:
                 type: toggle
                 text: Make all labels lowercase?
                 # default: true
-                help: This will make all links in the header and footer lowercase, regardless of how they are written in the page titles.
+                help: This switcher will make all links and labels lowercase, regardless of how they are written.
   seo:
     label: Website metadata
     icon: angle-right

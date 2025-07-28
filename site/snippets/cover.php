@@ -14,44 +14,44 @@
                 <?php endif ?>
                 <?php if ($summary = $page->summary()->toObject()) : ?>
                     <ul class="summary-list">
-                        <li class="text">
-                            <p class="weight-500">Project</p>
-                            <p class="weight-800"><?= $page->title() ?></p>
+                        <li class="summary-item">
+                            <p class="text-label weight-500">Project</p>
+                            <p class="text weight-800"><?= $page->title() ?></p>
                         </li>
                         <?php if ($summary->year()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Year</p>
-                                <p class="weight-800"><?= $summary->year() ?></p>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Year</p>
+                                <p class="text weight-800"><?= $summary->year() ?></p>
                             </li>
                         <?php endif ?>
                         <?php if ($summary->client()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Client</p>
-                                <p class="weight-800"><?= $summary->client() ?></p>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Client</p>
+                                <p class="text weight-800"><?= $summary->client() ?></p>
                             </li>
                         <?php endif ?>
                         <?php if ($summary->location()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Location</p>
-                                <p class="weight-800"><?= $summary->location() ?></p>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Location</p>
+                                <p class="text weight-800"><?= $summary->location() ?></p>
                             </li>
                         <?php endif ?>
                         <?php if ($summary->category()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Category</p>
-                                <p class="weight-800"><?= $summary->category() ?></p>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Category</p>
+                                <p class="text weight-800"><?= $summary->category() ?></p>
                             </li>
                         <?php endif ?>
-                        <?php if ($summary->stat()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Status</p>
-                                <p class="weight-800"><?= $summary->stat() ?></p>
+                        <?php if ($summary->stage()->isNotEmpty()) : ?>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Stage</p>
+                                <p class="text weight-800"><?= $summary->stage() ?></p>
                             </li>
                         <?php endif ?>
                         <?php if ($summary->team()->isNotEmpty()) : ?>
-                            <li class="text">
-                                <p class="weight-500">Team</p>
-                                <p class="weight-800"><?= $summary->team() ?></p>
+                            <li class="summary-item">
+                                <p class="text-label weight-500">Team</p>
+                                <p class="text weight-800"><?= $summary->team() ?></p>
                             </li>
                         <?php endif ?>
                     </ul>
@@ -73,11 +73,9 @@
                         <?php endif ?>
                     </figure>
                 <?php endif ?>
-                <div class="summary-list">
-                    <?php if ($page->summary()->isNotEmpty()) : ?>
-                        <?= $page->summary()->toBlocks() ?>
-                    <?php endif ?>
-                </div>
+                <?php if ($page->summary()->isNotEmpty()) : ?>
+                    <?= $page->summary()->toBlocks() ?>
+                <?php endif ?>
             </div>
         </section>
     <?php endif ?>
