@@ -15,17 +15,6 @@ fields:
       - link
       - clear
     nodes: false
-  # category:
-  #   label: Category
-  #   width: 1/2
-  #   type: tags
-  #   max: 1
-  #   layout: list
-  #   options:
-  #     type: query
-  #     query: page.grid.toBlocks.filterBy("type", "griditem")
-  #     text: "{{ block.category }}"
-  #     value: "{{ block.category }}"
   images:
     label: Image(s)
     type: files
@@ -61,7 +50,7 @@ fields:
     width: 1/2
     type: pages
     multiple: false
-    query: site.children.listed.filterBy('template', 'in', ['home', 'page', 'works', 'work'])
+    query: site.children.filterBy('template', 'in', ['home', 'page', 'about', 'works', 'work'])
     when:
       linklocation: page
   text:

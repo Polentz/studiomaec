@@ -2,12 +2,33 @@
     --rounded: 0rem;
 }
 
+.text {
+    font-size: inherit;
+}
+
+.text-label {
+    font-size: inherit;
+}
+
+.text-small {
+    font-size: .9rem;
+}
+
+.text-medium {
+    font-size: 1rem
+}
+
+.text-large {
+    font-size: 1.5rem
+}
+
 .k-layout {
-    border-bottom: solid 2px #383838;
+    border-bottom: solid 2px rgba(0, 0, 0, .1);
 }
 
 .k-layout-column>.k-blocks>.k-blocks-list>.k-block-container:last-of-type {
     flex-grow: 0;
+    border-bottom: none;
 }
 
 .k-writer-input[name="description"] {
@@ -42,13 +63,9 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.k-choice-input:has(> input[value="true"]) {
-    display: none;
-}
-
 .k-field-name-contact .k-blocks-list {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .k-field-name-contact .k-block-container {
@@ -56,7 +73,7 @@
     flex-grow: 1;
 }
 
-.k-block-type-contactitem .k-text>:where(audio, blockquote, details, div, figure, h1, h2, h3, h4, h5, h6, hr, iframe, img, object, ol, p, picture, pre, table, ul)+* {
+.k-block-type-contacblock .k-text>:where(audio, blockquote, details, div, figure, h1, h2, h3, h4, h5, h6, hr, iframe, img, object, ol, p, picture, pre, table, ul)+* {
     margin-block-start: 0;
 }
 
@@ -79,4 +96,30 @@
     gap: 8px;
     color: var(--color-gray-500);
     cursor: pointer;
+}
+
+.additional-text-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 1rem;
+}
+
+.simulate-button {
+    color: rgb(210, 210, 210);
+}
+
+.additional-text {
+    grid-column: span 3;
+}
+
+.k-block-type-summaryblock header {
+    display: none;
+}
+
+.k-block-type-summaryblock .k-block-type-fields-form {
+    padding: 0;
+}
+
+.k-block-type-summaryblock .k-structure-field .k-table+footer {
+    margin: 0;
 }

@@ -11,10 +11,7 @@
             <?php endslot() ?>
             <?php endsnippet() ?>
             <?php foreach ($page->children()->listed() as $project) : ?>
-                <?php snippet('list-items', ['item' => $project], slots: true) ?>
-                <?php slot('hasCover') ?>
-                <?php endslot() ?>
-                <?php endsnippet() ?>
+                <?= snippet('list-items', ['item' => $project]) ?>
             <?php endforeach ?>
         </div>
     </section>

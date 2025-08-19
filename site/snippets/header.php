@@ -12,8 +12,7 @@
             <h3 class="page-title text-label weight-500"><?= $page->title() ?></h3>
         <?php endif ?>
         <nav class="nav">
-            <!-- About needs a specific template! Now is page, change it! -->
-            <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'page']) as $page) : ?>
+            <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'about']) as $page) : ?>
                 <a class="nav-item text-label weight-800 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
             <a class="nav-item text-label weight-800 link js-href" href="#contact"><?= $site->contactname() ?></a>

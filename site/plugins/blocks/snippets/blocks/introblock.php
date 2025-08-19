@@ -1,17 +1,17 @@
-<?php if ($page->description()->isNotEmpty() || $page->text()->isNotEmpty()) : ?>
-    <section class="section intro-section">
-        <?php if ($page->description()->isNotEmpty()) : ?>
+<?php if ($block->description()->isNotEmpty() || $block->text()->isNotEmpty()) : ?>
+    <div class="intro-block">
+        <?php if ($block->description()->isNotEmpty()) : ?>
             <div class="intro-text text-large weight-500">
-                <?= $page->description()->kt() ?>
+                <?= $block->description()->kt() ?>
             </div>
-        <?php elseif ($page->description()->isEmpty() && $page->text()->isNotEmpty()) : ?>
+        <?php elseif ($block->description()->isEmpty() && $block->text()->isNotEmpty()) : ?>
             <div class="grid">
                 <div class="intro-text text-medium weight-500">
-                    <?= $page->text()->kt() ?>
+                    <?= $block->text()->kt() ?>
                 </div>
             </div>
         <?php endif ?>
-        <?php if ($page->description()->isNotEmpty() && $page->text()->isNotEmpty()) : ?>
+        <?php if ($block->description()->isNotEmpty() && $block->text()->isNotEmpty()) : ?>
             <div class="grid accordion">
                 <div class="button-wrapper accordion-opener">
                     <span class="button-text weight-800">More info</span>
@@ -23,9 +23,9 @@
                     </button>
                 </div>
                 <div class="intro-text text-medium weight-500 accordion-content">
-                    <?= $page->text()->kt() ?>
+                    <?= $block->text()->kt() ?>
                 </div>
             </div>
         <?php endif ?>
-    </section>
+    </div>
 <?php endif ?>

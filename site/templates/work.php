@@ -8,17 +8,9 @@ $first = $items->first();
 <?= snippet('header') ?>
 
 <main class="main">
-    <?php snippet('cover', slots: true) ?>
-    <?php slot('hasSummary') ?>
-    <?php endslot() ?>
-    <?php endsnippet() ?>
-
+    <?= snippet('cover') ?>
     <?= snippet('intro') ?>
-
-    <?php snippet('grid', slots: true) ?>
-    <?php slot('gridField') ?>
-    <?php endslot() ?>
-    <?php endsnippet() ?>
+    <?= snippet('grid') ?>
 </main>
 
 <?php if ($page->hasNextListed()) : ?>
@@ -27,11 +19,8 @@ $first = $items->first();
             <p>next project:</p>
         </div>
         <div class="list">
-            <?php snippet('list-header', slots: false) ?>
-            <?php snippet('list-items', ['item' => $page->nextListed()], slots: true) ?>
-            <?php slot('hasCover') ?>
-            <?php endslot() ?>
-            <?php endsnippet() ?>
+            <?= snippet('list-header', slots: false) ?>
+            <?= snippet('list-items', ['item' => $page->nextListed()]) ?>
         </div>
     </section>
 <?php elseif ($page->isLast()) : ?>
@@ -40,11 +29,8 @@ $first = $items->first();
             <p>next project:</p>
         </div>
         <div class="list">
-            <?php snippet('list-header', slots: false) ?>
-            <?php snippet('list-items', ['item' => $first], slots: true) ?>
-            <?php slot('hasCover') ?>
-            <?php endslot() ?>
-            <?php endsnippet() ?>
+            <?= snippet('list-header', slots: false) ?>
+            <?= snippet('list-items', ['item' => $first]) ?>
         </div>
     </section>
 <?php endif ?>

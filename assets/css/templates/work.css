@@ -1,4 +1,5 @@
-.button.plus-minus.minus:not(.more-info) {
+/* with accent color */
+/* .button.plus-minus.minus:not(.more-info) {
     border: solid 1px var(--main-color);
 }
 
@@ -30,4 +31,10 @@
 
 .selected:hover .link::after {
     background: var(--main-color);
+} */
+
+.list-topbar-header .topbar-label:hover,
+.list-topbar-content:hover .topbar-label-name {
+    text-decoration: none;
+    color: var(--main-color);
 }

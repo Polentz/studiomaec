@@ -1,0 +1,30 @@
+name: Large text and Read more button
+description: A block for introducing content with a large text area and a Read more button.
+icon: title
+wysiwyg: true        
+fields:
+  description:
+    label: Introduction text
+    placeholder: Text …
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+  text:
+    label: Additional text
+    placeholder: Text …
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - strike
+      - link
+      - clear
+    nodes: false
+    help: Adding text here will activate the "More info" button below the main text.

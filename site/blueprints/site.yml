@@ -20,6 +20,7 @@ tabs:
             template:
               - home
               - works
+              - about
               - page
             help: When a page is listed, it appears as a link in the main navigation menu at the top of the page.
           footerHeadline:
@@ -36,12 +37,12 @@ tabs:
                 type: blocks
                 max: 4
                 fieldsets:
-                  - contactitem
+                  - contacblock
           footermenu:
             label: Footer menu
             type: pages
             template:
-              - simple
+              - footerpage
             help: When a page is listed, it appears as a link in the footer navigation menu at the bottom of the page.
       sidebar:
         width: 1/4
@@ -56,14 +57,13 @@ tabs:
                 label: Website subtitle
                 type: text
               contactname:
-                label: Contact
+                label: Contact label
                 type: text
-                help: The menu label for contact.
+                help: The menu label name for contact.
               lowercase:
                 label: false
                 type: toggle
                 text: Make all labels lowercase?
-                # default: true
                 help: This switcher will make all links and labels lowercase, regardless of how they are written.
   seo:
     label: Website metadata

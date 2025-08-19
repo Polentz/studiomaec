@@ -78,14 +78,4 @@ columns:
         label: false
         type: fields
         fields:
-          attachments:
-            label: Attachments
-            type: files
-            help: Upload here the pdf files you want to use as attachments on this page.
-            template: document
-            uploads: document
-            query: page.files.filterBy("type", "document")
-            link: false
-            image:
-              ratio: 4/3
-              cover: true
+          attachments: fields/attachments

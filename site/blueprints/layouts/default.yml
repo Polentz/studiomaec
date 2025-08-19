@@ -1,33 +1,27 @@
-title: Homepage
-
-options:
-  delete: false
-  duplicate: false
-  changeStatus: false
-  move: false
-  sort: false
-
-image:
-  icon: home
-  query: false
-
 columns:
   main:
     width: 3/4
     sections:
-      gallery:
+      elements:
+        label: false
         type: fields
         fields:
           grid:
-            label: Gallery
+            label: Build your {{ page.title }} page
             type: layout
             layouts:
+              - "1/1"
               - "1/4, 1/4, 1/4, 1/4"
               - "1/2, 1/2"
               - "1/2, 1/4, 1/4"
               - "1/4, 1/4, 1/2"
+              - "3/4, 1/4"
+              - "1/4, 3/4"
             fieldsets:
-              - griditem
+              - introblock
+              - textblock
+              - summaryblock
+              - galleryblock
   sidebar:
     width: 1/4
     sections:

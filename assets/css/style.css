@@ -82,6 +82,10 @@ strong {
     text-decoration: none;
 }
 
+.site-title a:hover {
+    color: inherit;
+}
+
 .site-subtitle {
     color: var(--difference-color);
     -webkit-transform: translateY(4px);
@@ -418,17 +422,6 @@ a:hover,
     display: none;
 }
 
-.intro-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    gap: var(--grid-gap);
-}
-
 .grid-section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -438,6 +431,18 @@ a:hover,
     -ms-flex-direction: column;
     flex-direction: column;
     gap: var(--main-gap);
+}
+
+.intro-section,
+.intro-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: var(--grid-gap);
 }
 
 .related-section {
@@ -487,6 +492,12 @@ a:hover,
     position: relative;
 }
 
+.lightbox-item img {
+    -webkit-transition: filter .3s ease;
+    -o-transition: filter .3s ease;
+    transition: filter .3s ease;
+}
+
 .lightbox-item::after {
     content: "";
     position: absolute;
@@ -509,6 +520,10 @@ a:hover,
 /* .selected .lightbox-item::after {
     background-color: var(--acc-color);
 } */
+
+.lightbox-item:hover img {
+    filter: grayscale(1);
+}
 
 .lightbox-item:hover::after {
     opacity: .5;
@@ -579,6 +594,11 @@ a:hover,
 .span-9 {
     -ms-grid-column-span: 3;
     grid-column: span 3;
+}
+
+.span-12 {
+    -ms-grid-column-span: 4;
+    grid-column: span 4;
 }
 
 .grid-item {
@@ -887,8 +907,7 @@ a:hover,
     -ms-grid-columns: 1fr var(--grid-gap) 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--grid-gap);
-    padding-top: var(--inner-gap);
-    padding-bottom: var(--grid-gap);
+    padding: var(--text-gap) 0;
     /* with accent color */
     /* border-bottom: solid 1px var(--acc-color); */
     border-bottom: solid 1px var(--main-color);
@@ -915,6 +934,9 @@ a:hover,
     /* color: var(--acc-color); */
 }
 
+.list-item {
+    text-decoration: none;
+}
 
 .list-item:nth-child(even) .topbar-image {
     -webkit-transform: translate(calc(-50% + 100px), -50%);
@@ -1166,6 +1188,12 @@ a:hover,
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+    }
+
+    .item-image-counter .left,
+    .item-image-counter .right {
+        opacity: 1;
+        pointer-events: all;
     }
 
     .list-topbar-content:hover .topbar-image {

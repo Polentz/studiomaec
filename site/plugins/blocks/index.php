@@ -4,17 +4,19 @@ use Kirby\Cms\App as Kirby;
 
 Kirby::plugin('studiomaec/blocks', [
   'blueprints' => [
+    'blocks/contacblock' => __DIR__ . '/blueprints/blocks/contacblock.yml',
     'blocks/griditem' => __DIR__ . '/blueprints/blocks/griditem.yml',
-    'blocks/galleryitem' => __DIR__ . '/blueprints/blocks/galleryitem.yml',
-    'blocks/textitem' => __DIR__ . '/blueprints/blocks/textitem.yml',
-    'blocks/summaryitem' => __DIR__ . '/blueprints/blocks/summaryitem.yml',
-    'blocks/contactitem' => __DIR__ . '/blueprints/blocks/contactitem.yml',
+    'blocks/galleryblock' => __DIR__ . '/blueprints/blocks/galleryblock.yml',
+    'blocks/textblock' => __DIR__ . '/blueprints/blocks/textblock.yml',
+    'blocks/summaryblock' => __DIR__ . '/blueprints/blocks/summaryblock.yml',
+    'blocks/introblock' => __DIR__ . '/blueprints/blocks/introblock.yml',
   ],
   'snippets' => [
+    'blocks/contacblock' => __DIR__ . '/snippets/blocks/contacblock.php',
     'blocks/griditem' => __DIR__ . '/snippets/blocks/griditem.php',
-    'blocks/galleryitem' => __DIR__ . '/snippets/blocks/galleryitem.php',
-    'blocks/textitem' => __DIR__ . '/snippets/blocks/textitem.php',
-    'blocks/summaryitem' => __DIR__ . '/snippets/blocks/summaryitem.php',
-    'blocks/contactitem' => __DIR__ . '/snippets/blocks/contactitem.php',
+    'blocks/galleryblock' => __DIR__ . '/snippets/blocks/galleryblock.php',
+    'blocks/textblock' => __DIR__ . '/snippets/blocks/textblock.php',
+    'blocks/summaryblock' => __DIR__ . '/snippets/blocks/summaryblock.php',
+    'blocks/introblock' => __DIR__ . '/snippets/blocks/introblock.php',
   ],
 ]);

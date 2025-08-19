@@ -1,0 +1,27 @@
+name: Summary item
+icon: bars
+wysiwyg: true
+preview: fields
+fields:
+  summaryentries:
+    label: Summary
+    type: structure
+    fields:
+      header:
+        label: Title
+        placeholder: Title …
+        type: text
+        width: 1/2
+      body:
+        label: Text
+        placeholder: Text …
+        type: writer
+        width: 1/2
+        marks:
+          - bold
+          - italic
+          - underline
+          - strike
+          - link
+          - clear
+        nodes: false

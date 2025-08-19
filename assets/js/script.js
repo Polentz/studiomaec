@@ -140,11 +140,11 @@ const updateImageWrapperHeight = () => {
     });
 };
 
-const showCounter = () => {
+const showCounter = (e) => {
     const items = document.querySelectorAll(".slideshow-item");
     items.forEach(item => {
         const counter = item.querySelector(".item-image-counter");
-        if (counter) {
+        if (counter && !e.matches) {
             const buttons = counter.querySelectorAll(".left, .right");
             item.addEventListener("mouseenter", () => {
                 gsap.to(buttons, {
@@ -162,7 +162,7 @@ const showCounter = () => {
                     ease: "power1.out",
                 });
             });
-        };
+        }
     });
 };
 
@@ -241,10 +241,10 @@ const accordion = () => {
                 accordion.classList.toggle("selected");
                 content.classList.toggle("open");
                 button.classList.toggle("minus");
-                if (buttonText && buttonText.innerHTML === "more info") {
-                    buttonText.innerHTML = "less info";
-                } else if (buttonText && buttonText.innerHTML === "less info") {
-                    buttonText.innerHTML = "more info";
+                if (buttonText && buttonText.innerHTML === "More info") {
+                    buttonText.innerHTML = "Less info";
+                } else if (buttonText && buttonText.innerHTML === "Less info") {
+                    buttonText.innerHTML = "More info";
                 }
                 if (accordionLabel) {
                     accordionLabel.classList.toggle("expanded");
@@ -446,7 +446,7 @@ window.addEventListener("load", () => {
     menuHeight();
     handleHref();
     cursor();
-    attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener, .topbar-label"));
+    attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener"));
     // animateHeader();
     accordion();
     handleMediaQuery();
