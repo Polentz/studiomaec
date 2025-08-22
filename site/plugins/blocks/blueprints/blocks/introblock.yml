@@ -1,11 +1,10 @@
-name: Large text and Read more button
-description: A block for introducing content with a large text area and a Read more button.
+name: Large text and additional text (read more button)
 icon: title
 wysiwyg: true        
 fields:
   description:
     label: Introduction text
-    placeholder: Text …
+    placeholder: Introduction text …
     type: writer
     marks:
       - bold
@@ -17,7 +16,7 @@ fields:
     nodes: false
   text:
     label: Additional text
-    placeholder: Text …
+    placeholder: Additional text …
     type: writer
     marks:
       - bold

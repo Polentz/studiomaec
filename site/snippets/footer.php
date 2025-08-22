@@ -5,7 +5,7 @@
     <div class="footer-navigation">
         <p class="text">© <?= date("Y") ?> <?= $site->title() ?></p>
         <nav class="nav">
-            <?php foreach ($site->children()->listed()->filterBy('template', 'footerpage') as $page) : ?>
+            <?php foreach ($site->children()->listed()->filterBy('template', 'appendix') as $page) : ?>
                 <a class="nav-item text-label weight-800 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
         </nav>

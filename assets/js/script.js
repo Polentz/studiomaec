@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 const mediaQuery = window.matchMedia("(max-width: 600px)");
 
 const documentHeight = () => {
@@ -68,8 +68,9 @@ const attachCursorHoverEffect = (elements) => {
     elementList.forEach((el) => {
         el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
-                duration: 0.75,
-                scale: 0.4,
+                duration: 0.5,
+                backgroundColor: "#f49f0a",
+                scale: 1.5,
                 opacity: 1,
                 ease: "power1.out",
             });
@@ -78,45 +79,13 @@ const attachCursorHoverEffect = (elements) => {
         el.addEventListener("mouseleave", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
+                backgroundColor: "#001bcb",
                 scale: 1,
                 opacity: 1,
                 ease: "power1.out",
             });
         });
     });
-};
-
-// delete gsap.registerPlugin(ScrollTrigger); if not in use
-const animateHeader = () => {
-    const headerAnim = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".header",
-            start: "top top",
-            end: () => "bottom+=" + document.querySelector(".header").offsetTop,
-            scrub: true,
-        }
-    });
-
-    headerAnim.to(".site-title", {
-        fontSize: "1rem",
-        ease: "none"
-    }, 0);
-
-    headerAnim.to(".header", {
-        height: "var(--menu-height)",
-        ease: "none"
-    }, 0.3);
-
-    headerAnim.to(".menu", {
-        top: "var(--menu-height)",
-        ease: "none"
-    }, 0.3);
-
-    // headerAnim.to(".site-title", {
-    //     fontWeight: 800,
-    //     immediateRender: false,
-    //     ease: "none"
-    // }, 0.6);
 };
 
 const updateImageWrapperHeight = () => {
@@ -192,7 +161,7 @@ const slideshow = () => {
                 figures.forEach((figure, i) => {
                     figure.classList.remove("active");
                     gsap.to(figure.querySelector("img"), {
-                        duration: .5,
+                        duration: 0.5,
                         ease: "power1.out",
                     });
                 });
@@ -202,7 +171,7 @@ const slideshow = () => {
                 counter.innerHTML = slideIndex;
 
                 gsap.to(activeFigure.querySelector("img"), {
-                    duration: .5,
+                    duration: 0.5,
                     ease: "power1.out",
                 });
             };
@@ -225,6 +194,7 @@ const accordion = () => {
         const buttonText = accordion.querySelector(".button-text");
         const openers = accordion.querySelectorAll(".accordion-opener", button, buttonText);
         const content = accordion.querySelector(".accordion-content");
+        const contentText = accordion.querySelectorAll(".accordion-content p");
         const excludedButton = accordion.querySelector(".button.go");
         const accordionLabel = accordion.querySelector(".list-topbar-content");
         openers.forEach(opener => {
@@ -249,15 +219,32 @@ const accordion = () => {
                 if (accordionLabel) {
                     accordionLabel.classList.toggle("expanded");
                 };
-                // const offset = 160;
-                // const itemPosition = accordion.getBoundingClientRect().top;
-                // const offsetPosition = itemPosition - offset;
-                // window.scrollTo({
-                //     top: offsetPosition,
-                //     behavior: "smooth",
-                // });            
+                // GSAP animation:
+                if (content.classList.contains("open")) {
+                    gsap.set(contentText, { opacity: 1 });
+
+                    if (contentText.splitInstance) {
+                        contentText.splitInstance.revert();
+                    }
+
+                    contentText.splitInstance = new SplitText(contentText, {
+                        type: "lines",
+                        linesClass: "line",
+                    });
+
+                    gsap.from(contentText.splitInstance.lines, {
+                        duration: 0.5,
+                        yPercent: 150,
+                        opacity: 0,
+                        stagger: 0.1,
+                        ease: "expo.out",
+                    });
+                };
+
             });
+
         });
+
     });
 };
 
@@ -314,8 +301,6 @@ const sortAccordion = () => {
     });
 };
 
-// si può eliminare se calcolo le colonne della tabella in percentuali.
-// ma ho aggiunto qui la max-width per lo span.
 const gridAccordionTemplate = (e) => {
     const topbars = document.querySelectorAll(".list-topbar-content");
     topbars.forEach(topbar => {
@@ -447,7 +432,6 @@ window.addEventListener("load", () => {
     handleHref();
     cursor();
     attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener"));
-    // animateHeader();
     accordion();
     handleMediaQuery();
 });

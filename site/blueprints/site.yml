@@ -20,7 +20,6 @@ tabs:
             template:
               - home
               - works
-              - about
               - page
             help: When a page is listed, it appears as a link in the main navigation menu at the top of the page.
           footerHeadline:
@@ -42,7 +41,7 @@ tabs:
             label: Footer menu
             type: pages
             template:
-              - footerpage
+              - appendix
             help: When a page is listed, it appears as a link in the footer navigation menu at the bottom of the page.
       sidebar:
         width: 1/4
@@ -59,12 +58,15 @@ tabs:
               contactname:
                 label: Contact label
                 type: text
-                help: The menu label name for contact.
+                help: The menu label for contact.
+              settingsHeadline:
+                type: headline
+                label: Settings
               lowercase:
                 label: false
                 type: toggle
                 text: Make all labels lowercase?
-                help: This switcher will make all links and labels lowercase, regardless of how they are written.
+                help: This switcher will make all labels lowercase (e.g., menu labels, buttons), regardless of how they are written.
   seo:
     label: Website metadata
     icon: angle-right

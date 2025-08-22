@@ -1,3 +1,1 @@
-<li class="contact-block text weight-500">
-    <?= $block->text()->kt() ?>
-</li>
+<li class="contact-block text weight-800"><?= $block->text()->kt()->inline() ?></li>

@@ -1,5 +1,4 @@
 name: Simple text
-description: A simple text block for adding content.
 icon: text
 wysiwyg: true
 fields:

@@ -1,4 +1,4 @@
-title: Works
+title: Projects page
 
 create:
   redirect: true
@@ -12,34 +12,6 @@ columns:
   main:
     width: 3/4
     sections:
-      # intro:
-      #   label: false
-      #   type: fields
-      #   fields:
-      #     description:
-      #       label: Introduction text
-      #       placeholder: Text …
-      #       type: writer
-      #       marks:
-      #         - bold
-      #         - italic
-      #         - underline
-      #         - strike
-      #         - link
-      #         - clear
-      #       nodes: false
-      #     text:
-      #       label: Additional text
-      #       placeholder: Text …
-      #       type: writer
-      #       marks:
-      #         - bold
-      #         - italic
-      #         - underline
-      #         - strike
-      #         - link
-      #         - clear
-      #       nodes: false
       items:
         label: "{{ page.title }}"
         type: pages

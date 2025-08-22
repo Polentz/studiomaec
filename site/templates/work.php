@@ -9,29 +9,31 @@ $first = $items->first();
 
 <main class="main">
     <?= snippet('cover') ?>
-    <?= snippet('intro') ?>
+    <section class="section intro-section">
+        <?= $page->intro()->toBlocks() ?>
+    </section>
     <?= snippet('grid') ?>
 </main>
 
 <?php if ($page->hasNextListed()) : ?>
     <section class="related-section">
         <div class="text-large weight-500">
-            <p>next project:</p>
+            <p>Next project: <a href="<?= $page->nextListed()->url() ?>"><?= $page->nextListed()->title() ?></a></p>
         </div>
-        <div class="list">
+        <!-- <div class="list">
             <?= snippet('list-header', slots: false) ?>
             <?= snippet('list-items', ['item' => $page->nextListed()]) ?>
-        </div>
+        </div> -->
     </section>
 <?php elseif ($page->isLast()) : ?>
     <section class="related-section">
         <div class="text-large weight-500">
-            <p>next project:</p>
+            <p>Next project: <a href="<?= $first->url() ?>"><?= $first->title() ?></a></p>
         </div>
-        <div class="list">
+        <!-- <div class="list">
             <?= snippet('list-header', slots: false) ?>
             <?= snippet('list-items', ['item' => $first]) ?>
-        </div>
+        </div> -->
     </section>
 <?php endif ?>
 

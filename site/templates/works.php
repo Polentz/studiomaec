@@ -2,8 +2,6 @@
 <?= snippet('header') ?>
 
 <main class="main">
-    <?= snippet('intro') ?>
-
     <section class="section list-section">
         <div class="list">
             <?php snippet('list-header', slots: true) ?>

@@ -6,7 +6,7 @@ $previewText = $item->previewText();
 
 <?php if ($previewImages->isNotEmpty() || $previewText->isNotEmpty()) : ?>
     <div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-stage="<?= $summary->stage()->slug() ?>">
-        <ul class="list-topbar-content<?php if ($page->template() != 'work') : ?> accordion-opener<?php endif ?>">
+        <ul class="list-topbar-content accordion-opener">
             <?php if ($summary): ?>
                 <li class="topbar-label text-label weight-800">
                     <span class="topbar-label-name"><?= $item->title() ?></span>
@@ -28,14 +28,12 @@ $previewText = $item->previewText();
                 </li>
             <?php endif ?>
             <li class="topbar-icons icons">
-                <?php if ($page->template() != 'work') : ?>
-                    <button class="button plus-minus" role="button" aria-label="Open/Close">
-                        <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-                            <path class="horizontal-path" d="M5.94434 10.9553H15.9443" />
-                            <path class="vertical-path" d="M10.9443 5.95532V15.9553" />
-                        </svg>
-                    </button>
-                <?php endif ?>
+                <button class="button plus-minus" role="button" aria-label="Open/Close">
+                    <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                        <path class="horizontal-path" d="M5.94434 10.9553H15.9443" />
+                        <path class="vertical-path" d="M10.9443 5.95532V15.9553" />
+                    </svg>
+                </button>
                 <a href="<?= $item->url() ?>" class="button go">
                     <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.5176 7.14148L7.51758 15.1415" />
@@ -49,7 +47,6 @@ $previewText = $item->previewText();
                 </li>
             <?php endif ?>
         </ul>
-
 
         <div class="list-content accordion-content<?php if ($page->template() == 'work') : ?> open<?php endif ?>">
             <div class="list-content-image">
@@ -70,7 +67,6 @@ $previewText = $item->previewText();
             </div>
         </div>
     </div>
-
 <?php else : ?>
     <a href="<?= $item->url() ?>" class="list-item" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-stage="<?= $summary->stage()->slug() ?>">
         <ul class="list-topbar-content">

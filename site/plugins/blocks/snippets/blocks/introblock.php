@@ -1,12 +1,12 @@
 <?php if ($block->description()->isNotEmpty() || $block->text()->isNotEmpty()) : ?>
     <div class="intro-block">
         <?php if ($block->description()->isNotEmpty()) : ?>
-            <div class="intro-text text-large weight-500">
+            <div class="text-wrapper text-large weight-500">
                 <?= $block->description()->kt() ?>
             </div>
         <?php elseif ($block->description()->isEmpty() && $block->text()->isNotEmpty()) : ?>
-            <div class="grid">
-                <div class="intro-text text-medium weight-500">
+            <div class="text-block">
+                <div class="text-wrapper text-medium weight-500">
                     <?= $block->text()->kt() ?>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="intro-text text-medium weight-500 accordion-content">
+                <div class="text-wrapper text-medium weight-500 accordion-content">
                     <?= $block->text()->kt() ?>
                 </div>
             </div>
