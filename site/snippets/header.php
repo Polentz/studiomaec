@@ -13,9 +13,9 @@
         <?php endif ?>
         <nav class="nav">
             <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'page']) as $page) : ?>
-                <a class="nav-item text-label weight-800 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
+                <a class="nav-item text-label weight-700 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
-            <a class="nav-item text-label weight-800 link js-href" href="#contact"><?= $site->contactname() ?></a>
+            <a class="nav-item text-label weight-700 link js-href" href="#contact"><?= $site->contactname() ?></a>
         </nav>
     </div>
 </menu>

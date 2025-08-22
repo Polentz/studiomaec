@@ -30,7 +30,7 @@ $images = $block->images()->toFiles();
     <?php if ($images->count() > 1 || $block->text()->isNotEmpty() || $block->link()->isNotEmpty() || $block->url()->isNotEmpty()) : ?>
         <div class="item-footer">
             <?php if ($block->title()->isNotEmpty()) : ?>
-                <p class="item-header-title text-label weight-800"><?= $block->title() ?></p>
+                <p class="item-header-title text-label weight-700"><?= $block->title() ?></p>
             <?php endif ?>
             <div class="icons item-footer-links">
                 <?php if ($block->text()->isNotEmpty()) : ?>

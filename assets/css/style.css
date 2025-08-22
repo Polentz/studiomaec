@@ -127,7 +127,7 @@ strong {
     font-weight: 500;
 }
 
-.weight-800 {
+.weight-700 {
     font-weight: 700;
 }
 
@@ -904,7 +904,7 @@ a:hover,
     border-bottom: solid 1px var(--main-color);
 }
 
-.summary-item .weight-800 {
+.summary-item .weight-700 {
     text-align: end;
 }
 
