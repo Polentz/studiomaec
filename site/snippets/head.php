@@ -8,7 +8,7 @@
     <?php if ($page->template()->name() == 'home') : ?>
         <title><?= $site->title() ?></title>
     <?php else : ?>
-        <title><?= $site->title() ?> - <?= $page->title()->lower() ?></title>
+        <title><?= $site->title() ?> | <?= $page->title()->lower() ?></title>
     <?php endif ?>
     <meta name="description" content="<?= $site->description() ?>">
     <link rel="canonical" href="<?= $page->url() ?>">
