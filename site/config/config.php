@@ -8,5 +8,5 @@ return [
     'install' => true,
     'css' => 'assets/css/panel.css'
   ],
-  'home' => 'wip',
+  // 'home' => 'wip',
 ];
