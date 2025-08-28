@@ -10,7 +10,6 @@ fields:
     uploads: image
     query: page.files.filterBy("type", "image")
     multiple: false
-    link: false
     image:
       ratio: 4/3
       cover: true

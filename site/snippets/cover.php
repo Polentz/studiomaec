@@ -3,7 +3,7 @@
         <div class="grid">
             <?php if ($cover = $page->cover()->toFile()) : ?>
                 <figure class="cover-image lightbox-item">
-                    <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->name() ?>">
+                    <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->alt() ?>">
                     <?php if ($page->caption()->isNotEmpty()) : ?>
                         <figcaption class="item-image-caption text-small weight-500">
                             <?= $page->caption()->inline() ?>

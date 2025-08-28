@@ -6,7 +6,7 @@ $images = $block->images()->toFiles();
     <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
             <figure class="item-image-wrapper lightbox-item">
-                <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
+                <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->alt() ?>">
             </figure>
         <?php endforeach ?>
         <?php if ($images->count() > 1) : ?>

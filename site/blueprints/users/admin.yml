@@ -55,37 +55,20 @@ sections:
     type: fields
     fields:
       name:
-        label:
-          en: First Name
-          it: Nome
+        label: First Name
         type: text
         width: 1/2
-        placeholder:
-          en: First Name
-          it: Nome    
+        placeholder: First Name  
         translate: false
         validate:
           minLength: 3
           maxLength: 160
       surname:
-        label:
-          en: Last Name
-          it: Cognome
+        label: Last Name
         type: text
         width: 1/2
-        placeholder:
-          en: Last Name
-          it: Cognome 
+        placeholder: Last Name
         translate: false
         validate:
           minLength: 3
-          maxLength: 160
-      organization:
-        label:
-          en: Organization
-          it: Organizzazione
-        type: text
-        width: 1/2
-        translate: false
-        validate:
           maxLength: 160

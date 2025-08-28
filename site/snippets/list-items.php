@@ -41,16 +41,18 @@ $previewText = $item->previewText();
                     </svg>
                 </a>
             </li>
-            <li class="topbar-image">
-                <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
-            </li>
+            <?php if ($cover = $item->cover()->toFile()) : ?>
+                <li class="topbar-image">
+                    <img src="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>">
+                </li>
+            <?php endif ?>
         </ul>
 
         <div class="list-content accordion-content">
             <div class="list-content-image">
                 <?php foreach ($item->preview()->toFiles()->limit(2) as $image) : ?>
                     <figure class="lightbox-item">
-                        <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->name() ?>">
+                        <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->alt() ?>">
                     </figure>
                 <?php endforeach ?>
             </div>
@@ -98,7 +100,7 @@ $previewText = $item->previewText();
             </li>
             <?php if ($cover = $item->cover()->toFile()) : ?>
                 <li class="topbar-image">
-                    <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
+                    <img src="<?= $cover->url() ?>" alt="<?= $cover->alt() ?>">
                 </li>
             <?php endif ?>
         </ul>

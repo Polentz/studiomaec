@@ -1,4 +1,4 @@
-title: Project page
+title: Project
 
 create:
   redirect: true
@@ -25,7 +25,6 @@ columns:
             uploads: image
             query: page.files.filterBy("type", "image")
             multiple: false
-            link: false
             image:
               ratio: 16/9
               cover: true
@@ -151,7 +150,6 @@ columns:
             query: page.files.filterBy("type", "image")
             max: 2
             multiple: true
-            link: false
             image:
               ratio: 4/3
               cover: true

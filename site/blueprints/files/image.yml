@@ -4,3 +4,10 @@ preview: false
 accept: 
   extension: jpg, png, jpeg
   type: image
+
+fields:
+  alt:
+    label: Alternative text
+    width: 1/2
+    type: text
+    help: The alternative text describes the content of the image and/or its function on the page to facilitate accessibility of the site for visually impaired users who use screen readers.
