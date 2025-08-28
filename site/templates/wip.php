@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $site->title() ?></title>
+    <title>studio mäc</title>
     <meta name="description" content="<?= $site->description() ?>">
     <link rel="canonical" href="<?= $page->url() ?>">
     <meta name="keywords" content="<?= $site->keywords() ?>">
     <meta property="og:locale" content="en">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<?= $site->title() ?>">
+    <meta property="og:title" content="studio mäc">
     <meta property="og:description" content="<?= $site->description() ?>">
     <meta property="og:url" content="<?= $page->url() ?>">
-    <meta property="og:site_name" content="<?= $site->title() ?>">
+    <meta property="og:site_name" content="studio mäc">
     <?php if ($ogImage = $site->ogImage()->toFile()) : ?>
         <meta property="og:image" content="<?= $ogImage->url() ?>">
     <?php endif ?>

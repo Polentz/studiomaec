@@ -80,7 +80,8 @@
 }
 
 .k-field-name-contact .k-block-container {
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: none;
+    outline: 1px solid var(--input-color-border);
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -144,4 +145,12 @@
 .k-block-type-contacblock .k-block-type-text-input.k-writer-input:not([data-toolbar-inline=true])>.ProseMirror,
 .k-block-type-contacblock .k-block-type-text-input.k-writer-input:not([data-toolbar-inline=true])[data-placeholder][data-empty=true]:before {
     padding: var(--input-padding);
+}
+
+.k-headline-field {
+    padding-top: 0;
+}
+
+.k-line-field {
+    height: 1rem;
 }

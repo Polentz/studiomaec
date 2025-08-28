@@ -22,16 +22,32 @@ tabs:
               - projects
               - page
             help: When a page is listed, it appears as a link in the main navigation menu at the top of the page.
-          footerHeadline:
+          header:
             type: fields
             fields:
-              footerHeadline:
+              lineA:
+                type: line
+              headerHeadline:
+                label: Header
                 type: headline
-                label: Footer
+              subtitle:
+                label: Website subtitle
+                width: 1/4
+                type: text
+              contactname:
+                label: Contact label
+                width: 1/4
+                type: text
+                help: The menu label for contact.
           footer:
             type: fields
             fields:
-              footerheadline:
+              lineB:
+                type: line
+              footerHeadline:
+                type: headline
+                label: Footer
+              contactheadline:
                 label: Headline
                 width: 1/4
                 type: text
@@ -51,19 +67,9 @@ tabs:
       sidebar:
         width: 1/4
         sections:
-          header: 
+          settings: 
             type: fields
             fields:
-              headerHeadline:
-                label: Header
-                type: headline
-              subtitle:
-                label: Website subtitle
-                type: text
-              contactname:
-                label: Contact label
-                type: text
-                help: The menu label for contact.
               settingsHeadline:
                 type: headline
                 label: Settings
@@ -72,6 +78,14 @@ tabs:
                 type: toggle
                 text: Make all labels lowercase?
                 help: This switcher will make all labels lowercase (e.g., menu labels, buttons, contact links), regardless of how they are written.
+              setHomePage:
+                label: Launch your website!
+                type: pages
+                max: 1
+                link: false
+                subpages: false
+                query: site.children.filterBy('template', 'wip')
+                help: Deselect the “Under Construction” page when you are ready to launch your website. Select the 'Under Construction' page again whenever you need to put your website into maintenance mode.
   seo:
     label: Website metadata
     icon: angle-right

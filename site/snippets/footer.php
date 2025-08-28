@@ -1,6 +1,6 @@
 <footer class="footer">
     <div id="contact" class="footer-navigation">
-        <h3 class="text weight-700"><?= $site->footerheadline() ?></h3>
+        <h3 class="text weight-700"><?= $site->contactheadline() ?></h3>
         <ul class="nav">
             <?= $site->contact()->toBlocks() ?>
         </ul>

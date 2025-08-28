@@ -7,5 +7,9 @@ return [
     'install' => true,
     'css' => 'assets/css/panel.css'
   ],
-  'home' => 'wip',
+  'ready' => function () {
+    return [
+      'home' => ($p = site()->setHomePage()->toPage()) ? $p->id() : 'home'
+    ];
+  }
 ];
