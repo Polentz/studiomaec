@@ -50,7 +50,7 @@ fields:
     width: 1/2
     type: pages
     multiple: false
-    query: site.children.filterBy('template', 'in', ['home', 'page', 'works', 'work'])
+    query: site.children.filterBy('template', 'in', ['home', 'page', 'projects', 'project'])
     when:
       linklocation: page
   text:

@@ -12,7 +12,7 @@
             <h3 class="page-title text-label weight-500"><?= $page->title() ?></h3>
         <?php endif ?>
         <nav class="nav">
-            <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'works', 'page']) as $page) : ?>
+            <?php foreach ($site->children()->listed()->filterBy('template', 'in', ['home', 'projects', 'page']) as $page) : ?>
                 <a class="nav-item text-label weight-700 link<?= e($page->isActive(), ' current') ?>" href="<?= $page->url() ?>"><?= $page->title() ?></a>
             <?php endforeach ?>
             <a class="nav-item text-label weight-700 link js-href" href="#contact"><?= $site->contactname() ?></a>

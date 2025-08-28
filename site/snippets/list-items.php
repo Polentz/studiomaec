@@ -41,14 +41,12 @@ $previewText = $item->previewText();
                     </svg>
                 </a>
             </li>
-            <?php if ($cover = $item->cover()->toFile() && $page->template() != 'work') : ?>
-                <li class="topbar-image">
-                    <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
-                </li>
-            <?php endif ?>
+            <li class="topbar-image">
+                <img src="<?= $item->cover()->toFile()->url() ?>" alt="<?= $item->cover()->toFile()->name() ?>">
+            </li>
         </ul>
 
-        <div class="list-content accordion-content<?php if ($page->template() == 'work') : ?> open<?php endif ?>">
+        <div class="list-content accordion-content">
             <div class="list-content-image">
                 <?php foreach ($item->preview()->toFiles()->limit(2) as $image) : ?>
                     <figure class="lightbox-item">

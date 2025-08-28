@@ -20,20 +20,12 @@ $first = $items->first();
         <div class="text-large weight-500">
             <p>Next project: <a href="<?= $page->nextListed()->url() ?>"><?= $page->nextListed()->title() ?></a></p>
         </div>
-        <!-- <div class="list">
-            <?= snippet('list-header', slots: false) ?>
-            <?= snippet('list-items', ['item' => $page->nextListed()]) ?>
-        </div> -->
     </section>
 <?php elseif ($page->isLast()) : ?>
     <section class="related-section">
         <div class="text-large weight-500">
             <p>Next project: <a href="<?= $first->url() ?>"><?= $first->title() ?></a></p>
         </div>
-        <!-- <div class="list">
-            <?= snippet('list-header', slots: false) ?>
-            <?= snippet('list-items', ['item' => $first]) ?>
-        </div> -->
     </section>
 <?php endif ?>
 

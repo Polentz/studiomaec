@@ -19,7 +19,7 @@ tabs:
             type: pages
             template:
               - home
-              - works
+              - projects
               - page
             help: When a page is listed, it appears as a link in the main navigation menu at the top of the page.
           footerHeadline:

@@ -219,7 +219,7 @@ const accordion = () => {
                 if (accordionLabel) {
                     accordionLabel.classList.toggle("expanded");
                 };
-                // GSAP animation:
+
                 if (content.classList.contains("open")) {
                     gsap.set(contentText, { opacity: 1 });
 
