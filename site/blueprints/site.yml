@@ -31,8 +31,13 @@ tabs:
           footer:
             type: fields
             fields:
+              footerheadline:
+                label: Headline
+                width: 1/4
+                type: text
               contact:
                 label: Contact (max. 4 elements)
+                width: 3/4
                 type: blocks
                 max: 4
                 fieldsets:
@@ -50,8 +55,8 @@ tabs:
             type: fields
             fields:
               headerHeadline:
-                type: headline
                 label: Header
+                type: headline
               subtitle:
                 label: Website subtitle
                 type: text
@@ -66,7 +71,7 @@ tabs:
                 label: false
                 type: toggle
                 text: Make all labels lowercase?
-                help: This switcher will make all labels lowercase (e.g., menu labels, buttons), regardless of how they are written.
+                help: This switcher will make all labels lowercase (e.g., menu labels, buttons, contact links), regardless of how they are written.
   seo:
     label: Website metadata
     icon: angle-right

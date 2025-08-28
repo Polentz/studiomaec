@@ -140,3 +140,8 @@
 .k-block-type-summaryblock .k-structure-field .k-table+footer {
     margin: 0;
 }
+
+.k-block-type-contacblock .k-block-type-text-input.k-writer-input:not([data-toolbar-inline=true])>.ProseMirror,
+.k-block-type-contacblock .k-block-type-text-input.k-writer-input:not([data-toolbar-inline=true])[data-placeholder][data-empty=true]:before {
+    padding: var(--input-padding);
+}

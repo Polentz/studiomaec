@@ -1,13 +1,9 @@
 <footer class="footer">
-    <!-- <ul class="footer-contact" style="grid-template-columns: repeat(<?= $site->contact()->toBlocks()->count() ?>, 1fr);">
-        <?= $site->contact()->toBlocks() ?>
-    </ul> -->
-
     <div id="contact" class="footer-navigation">
-        <div class="text-label weight-700">Julia Mäckler + Augustin Clément</div>
-        <nav class="nav">
+        <h3 class="text weight-700"><?= $site->footerheadline() ?></h3>
+        <ul class="nav">
             <?= $site->contact()->toBlocks() ?>
-        </nav>
+        </ul>
     </div>
     <div class="footer-navigation">
         <p class="text">© <?= date("Y") ?> <?= $site->title() ?></p>
