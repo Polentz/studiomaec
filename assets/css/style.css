@@ -11,6 +11,11 @@ body {
     font-family: "articulat-cf", sans-serif;
 }
 
+body,
+a {
+    cursor: none;
+}
+
 img {
     width: 100%;
 }
@@ -156,6 +161,9 @@ strong {
 }
 
 .button-wrapper {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1009,6 +1017,22 @@ a:hover,
 }
 
 @media screen and (max-width: 600px) {
+
+    body {
+        cursor: auto;
+    }
+
+    a,
+    img,
+    .button,
+    .accordion-opener {
+        cursor: pointer;
+    }
+
+    .cursor {
+        visibility: hidden;
+    }
+
     .header {
         height: auto;
         top: 0;

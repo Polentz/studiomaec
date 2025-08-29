@@ -15,13 +15,14 @@ tabs:
                 type: headline
                 label: Main pages
           pages:
-            label: false
+            label: Pages
             type: pages
             template:
-              - home
-              - projects
               - page
-            help: When a page is listed, it appears as a link in the main navigation menu at the top of the page.
+              - projects
+              - home
+            info: "Template: {{ page.template.name() }}"
+            help: When a page is listed, it appears as a link in the main navigation menu at the top of the page. The homepage ({{ site.find("home").title }}) is always listed, even in maintenance mode.
           header:
             type: fields
             fields:
@@ -61,8 +62,8 @@ tabs:
           footermenu:
             label: Footer menu
             type: pages
-            template:
-              - appendix
+            parent: site.find("appendix")
+            templates: appendix
             help: When a page is listed, it appears as a link in the footer navigation menu at the bottom of the page.
       sidebar:
         width: 1/4
@@ -79,13 +80,13 @@ tabs:
                 text: Make all labels lowercase?
                 help: This switcher will make all labels lowercase (e.g., menu labels, buttons, contact links), regardless of how they are written.
               setHomePage:
-                label: Launch your website!
+                label: Launch your website / Maintenance mode
                 type: pages
                 max: 1
                 link: false
                 subpages: false
                 query: site.children.filterBy('template', 'wip')
-                help: Deselect the “Under Construction” page when you are ready to launch your website. Select the 'Under Construction' page again whenever you need to put your website into maintenance mode.
+                help: Deselect the "Under Construction" page when you are ready to launch your website. Select the "Under Construction" page again whenever you need to put your website into maintenance mode.
   seo:
     label: Website metadata
     icon: angle-right

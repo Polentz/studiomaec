@@ -1,4 +1,5 @@
 gsap.registerPlugin(SplitText);
+
 const mediaQuery = window.matchMedia("(max-width: 600px)");
 
 const documentHeight = () => {
@@ -44,11 +45,6 @@ const cursor = () => {
     cursor.classList.add("cursor");
     document.querySelector("body").appendChild(cursor);
 
-    if (cursor) {
-        document.querySelector("body").style.cursor = "none";
-        document.querySelectorAll("a").forEach(a => { a.style.cursor = "none"; });
-    };
-
     window.addEventListener("mousemove", (e) => {
         gsap.set(".cursor", {
             xPercent: -50,
@@ -69,9 +65,9 @@ const attachCursorHoverEffect = (elements) => {
         el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
-                backgroundColor: "#f49f0a",
+                backgroundColor: "#0047c4",
+                mixBlendMode: "difference",
                 scale: 1.5,
-                opacity: 1,
                 ease: "power1.out",
             });
         });
@@ -80,8 +76,8 @@ const attachCursorHoverEffect = (elements) => {
             gsap.to(".cursor", {
                 duration: 0.5,
                 backgroundColor: "#001bcb",
+                mixBlendMode: "normal",
                 scale: 1,
-                opacity: 1,
                 ease: "power1.out",
             });
         });

@@ -1,7 +1,7 @@
 title: Project
 
 create:
-  redirect: true
+  redirect: false
   status: unlisted
 
 options:
@@ -132,6 +132,7 @@ columns:
               - "1/2, 1/2"
               - "1/2, 1/4, 1/4"
               - "1/4, 1/4, 1/2"
+              - "1/4, 1/2, 1/4"
             fieldsets:
               - galleryblock
   sidebar:

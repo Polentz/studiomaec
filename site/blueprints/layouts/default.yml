@@ -7,7 +7,7 @@ columns:
         type: fields
         fields:
           grid:
-            label: Build your {{ page.title }} page
+            label: Build the {{ page.title }} page
             type: layout
             layouts:
               - "1/1"
@@ -15,6 +15,7 @@ columns:
               - "1/2, 1/2"
               - "1/2, 1/4, 1/4"
               - "1/4, 1/4, 1/2"
+              - "1/4, 1/2, 1/4"
               - "3/4, 1/4"
               - "1/4, 3/4"
             fieldsets:

@@ -1,9 +1,12 @@
 title: Page
 
 create:
-  redirect: true
+  redirect: false
   status: unlisted
 
+options:
+  move: false
+  
 image:
   icon: page
   query: false

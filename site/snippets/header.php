@@ -6,7 +6,7 @@
 </header>
 <menu class="menu">
     <div class="menu-wrapper">
-        <?php if ($page->depth() > 1) : ?>
+        <?php if ($page->depth() > 1 && $page->template()->name() != 'appendix') : ?>
             <h3 class="page-title text-label weight-500"><?= $page->parent()->title() ?> <span class="page-title-divider">|</span> <?= $page->title() ?></h3>
         <?php else : ?>
             <h3 class="page-title text-label weight-500"><?= $page->title() ?></h3>

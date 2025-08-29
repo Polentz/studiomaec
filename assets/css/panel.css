@@ -154,3 +154,16 @@
 .k-line-field {
     height: 1rem;
 }
+
+.k-column:has(> .k-field-name-position.k-field-type-select) {
+    display: none;
+}
+
+li:has(> .k-breadcrumb-link[title="appendix"]),
+.k-breadcrumb-link[title="appendix"] {
+    display: none;
+}
+
+.k-breadcrumb-link[title="appendix"]::after {
+    content: none !important;
+}

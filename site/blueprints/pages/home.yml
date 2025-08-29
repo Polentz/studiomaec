@@ -4,8 +4,8 @@ options:
   delete: false
   duplicate: false
   changeStatus: false
+  changeSlug: false
   move: false
-  sort: false
 
 image:
   icon: home
@@ -26,6 +26,7 @@ columns:
               - "1/2, 1/2"
               - "1/2, 1/4, 1/4"
               - "1/4, 1/4, 1/2"
+              - "1/4, 1/2, 1/4"
             fieldsets:
               - griditem
   sidebar:
