@@ -65,7 +65,7 @@ const attachCursorHoverEffect = (elements) => {
         el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
-                backgroundColor: "#0047c4",
+                backgroundColor: "var(--acc-difference-color)",
                 mixBlendMode: "difference",
                 scale: 1.5,
                 ease: "power1.out",
@@ -75,7 +75,7 @@ const attachCursorHoverEffect = (elements) => {
         el.addEventListener("mouseleave", () => {
             gsap.to(".cursor", {
                 duration: 0.5,
-                backgroundColor: "#001bcb",
+                backgroundColor: "var(--main-color)",
                 mixBlendMode: "normal",
                 scale: 1,
                 ease: "power1.out",
