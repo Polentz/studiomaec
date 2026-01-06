@@ -23,8 +23,6 @@
     --inner-gap: .5rem;
     --text-gap: 1rem;
     --cursor-size: .75rem;
-    --grid-column-width: calc((100% / 7) - 1rem);
-    --icons-width: 1rem;
 }
 
 @media screen and (max-width: 800px) {

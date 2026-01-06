@@ -67,7 +67,7 @@ $images = $block->images()->toFiles();
         </div>
         <?php if ($block->text()->isNotEmpty()) : ?>
             <div class="item-content accordion-content">
-                <div class="text-medium weight-500">
+                <div class="text weight-500">
                     <?= $block->text()->kt() ?>
                 </div>
             </div>

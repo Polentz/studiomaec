@@ -7,25 +7,25 @@ $previewText = $item->previewText();
 
 <div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-meters="<?= $summary->meters()->slug() ?>" data-stage="<?= $summary->stage()->slug() ?>">
     <ul class="list-topbar-content<?php if ($previewImages->isNotEmpty() || $previewText->isNotEmpty()) : ?> accordion-opener<?php endif ?>">
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span class="topbar-label-name"><?= $item->title() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span<?php if ($summary->year()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->year() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span<?php if ($summary->client()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->client() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span <?php if ($summary->location()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->location() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span <?php if ($summary->category()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->category() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span <?php if ($summary->meters()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->meters() ?></span>
         </li>
-        <li class="topbar-label text-label weight-700">
+        <li class="topbar-label text-label weight-500">
             <span <?php if ($summary->stage()->isNotEmpty()) : ?> class="topbar-label-name" <?php endif ?>><?= $summary->stage() ?></span>
         </li>
         <li class="topbar-icons icons">
@@ -78,7 +78,7 @@ $previewText = $item->previewText();
             <div class="list-content-text">
                 <h3 class="text-label weight-700"><?= $item->title() ?></h3>
                 <?php if ($item->previewText()->isNotEmpty()) : ?>
-                    <div class="text-medium weight-500">
+                    <div class="text weight-500">
                         <?= $item->previewText()->kt() ?>
                     </div>
                 <?php endif ?>

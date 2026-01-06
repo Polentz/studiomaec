@@ -324,15 +324,12 @@ const gridAccordionTemplate = (e) => {
             const iconsWidth = icons.offsetWidth;
             const columnWidth = (topbarWidth - iconsWidth) / 7;
 
-            document.documentElement.style.setProperty("--grid-column-width", `${columnWidth}px`);
-            document.documentElement.style.setProperty("--icons-width", `${iconsWidth}px`);
-
             columns.forEach(column => {
                 const spanElement = column.querySelector("span");
                 if (e.matches) {
                     spanElement.style.maxWidth = "none";
                 } else {
-                    spanElement.style.maxWidth = `${columnWidth - 8}px`;
+                    spanElement.style.maxWidth = `${columnWidth - 16}px`;
                 };
             });
         };

@@ -674,9 +674,7 @@ a:hover,
     position: relative;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: repeat(7, var(--grid-column-width)) var(--icons-width);
-    grid-template-columns: repeat(7, var(--grid-column-width)) var(--icons-width);
-    /* grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 0.5fr 1fr 0.5fr; */
+    grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 0.5fr 1fr 3rem;
     justify-items: stretch;
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -747,14 +745,16 @@ a:hover,
     width: fit-content;
     display: block;
     line-height: 120%;
-    /* white-space: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
-    text-overflow: ellipsis; */
+    text-overflow: ellipsis;
+    transform: all .3s ease;
 }
 
 .list-topbar-content.expanded .topbar-label-name {
     white-space: unset;
+    font-weight: 700;
 }
 
 .topbar-label span:has(+ svg.asc),
@@ -763,8 +763,6 @@ a:hover,
 }
 
 .topbar-icons {
-    position: absolute;
-    top: 6px;
     justify-self: flex-end;
 }
 
@@ -824,11 +822,8 @@ a:hover,
 }
 
 .list-content-image {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr var(--grid-gap) 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--grid-gap);
+    display: flex;
+    gap: var(--text-gap);
 }
 
 .list-content-text {
@@ -994,6 +989,19 @@ a:hover,
     }
 }
 
+@media screen and (max-width: 950px) {
+
+    .list-topbar-header,
+    .list-topbar-content {
+        grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 3rem
+    }
+
+    .topbar-label:nth-of-type(3),
+    .topbar-label:nth-of-type(6) {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .grid {
         -ms-grid-columns: 1fr 1fr;
@@ -1002,6 +1010,20 @@ a:hover,
 
     .grid-column {
         position: static;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .list-topbar-header,
+    .list-topbar-content {
+        grid-template-columns: 1fr 0.5fr 1fr 1fr 3rem
+    }
+
+    .topbar-label:nth-of-type(3),
+    .topbar-label:nth-of-type(4),
+    .topbar-label:nth-of-type(6) {
+        display: none;
     }
 }
 
@@ -1142,11 +1164,7 @@ a:hover,
 
     .list-topbar-header,
     .list-topbar-content {
-        -ms-grid-columns: 16% 0% 8%;
-        grid-template-columns: 16% 8%;
-        -webkit-column-gap: 0%;
-        -moz-column-gap: 0%;
-        column-gap: 0%;
+        grid-template-columns: 1fr 3rem;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
