@@ -47,6 +47,10 @@ Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://c1bbc8HVg
 
 ----
 
+Publishtoggle: false
+
+----
+
 Attachments: 
 
 ----
