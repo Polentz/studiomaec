@@ -674,6 +674,7 @@ a:hover,
     position: relative;
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 0.5fr 1fr 1fr 1fr 0.5fr 1fr 3rem;
     grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 0.5fr 1fr 3rem;
     justify-items: stretch;
     -webkit-box-align: start;
@@ -749,6 +750,8 @@ a:hover,
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+    -webkit-transform: all .3s ease;
+    -ms-transform: all .3s ease;
     transform: all .3s ease;
 }
 
@@ -822,6 +825,8 @@ a:hover,
 }
 
 .list-content-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--text-gap);
 }
@@ -993,6 +998,7 @@ a:hover,
 
     .list-topbar-header,
     .list-topbar-content {
+        -ms-grid-columns: 1fr 0.5fr 1fr 1fr 1fr 3rem;
         grid-template-columns: 1fr 0.5fr 1fr 1fr 1fr 3rem
     }
 
@@ -1017,6 +1023,7 @@ a:hover,
 
     .list-topbar-header,
     .list-topbar-content {
+        -ms-grid-columns: 1fr 0.5fr 1fr 1fr 3rem;
         grid-template-columns: 1fr 0.5fr 1fr 1fr 3rem
     }
 
@@ -1164,6 +1171,7 @@ a:hover,
 
     .list-topbar-header,
     .list-topbar-content {
+        -ms-grid-columns: 1fr 3rem;
         grid-template-columns: 1fr 3rem;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
