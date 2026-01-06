@@ -6,7 +6,14 @@ $images = $block->images()->toFiles();
     <div class="item-image slideshow-item">
         <?php foreach ($images as $image): ?>
             <figure class="item-image-wrapper lightbox-item">
-                <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->alt() ?>">
+                <?php if ($image->type() == 'image') : ?>
+                    <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->alt() ?>">
+                <?php elseif ($image->type() == 'video') : ?>
+                    <video autoplay muted loop controlslist="noplaybackrate nodownload" disablePictureInPicture>
+                        <source src="<?= $image->url() ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                <?php endif ?>
             </figure>
         <?php endforeach ?>
         <?php if ($images->count() > 1) : ?>

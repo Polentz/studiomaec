@@ -2,30 +2,19 @@ Title: Dancet
 
 ----
 
-Cover: - file://wgpa5lLHJLfyly0w
-
-----
-
 Summary:
 
 year: "2025"
 client: Private
 location: Berlin
 category: Building
+meters: ""
 stage: Completed
 team: studio mäc
 
 ----
 
-Caption: 
-
-----
-
-Intro: [{"content":{"text":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>"},"id":"06f9422f-6da8-4b38-bd23-413b52666a23","isHidden":false,"type":"textblock"},{"content":{"description":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>","text":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p><p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>"},"id":"4d762cbf-df92-4cd6-962f-760912f517b4","isHidden":false,"type":"introblock"}]
-
-----
-
-Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://1P2PKfyM4R7Wx7HS"],"caption":"Caption"},"id":"60c6031e-5d4a-4651-82b1-47cb28856b93","isHidden":false,"type":"galleryblock"}],"id":"02f5795e-696c-4148-9e7d-690d3eb3a1ce","width":"1/4"},{"blocks":[{"content":{"images":["file://6K5mlJArkuEH6gsz"],"caption":""},"id":"b98a6dca-d94b-4b4b-9fad-68349b8cdd1a","isHidden":false,"type":"galleryblock"}],"id":"e6e8cadc-3951-4bb5-bdbe-95b879102381","width":"1/4"},{"blocks":[{"content":{"images":["file://YoXXhVFr9augwTS8"],"caption":""},"id":"c948bd73-fb86-4e29-a301-c92399ee4309","isHidden":false,"type":"galleryblock"}],"id":"80e92e5e-3e7f-416f-a1a8-12e4bc9eea00","width":"1/4"},{"blocks":[{"content":{"images":["file://T6iPgUXYarKeDYRK"],"caption":""},"id":"30440535-5b38-4826-830a-b0db497b6576","isHidden":false,"type":"galleryblock"}],"id":"3eb8b2c2-6af4-46f2-bec9-5590ba550862","width":"1/4"}],"id":"5263f273-6e35-42cd-be01-bb605ad1d4df"}]
+Previewimage: - file://nfbnqjdxuaqnt8cm
 
 ----
 
@@ -37,7 +26,35 @@ Previewtext:
 
 ----
 
+Cover: - file://6xr8j16iclejeldk
+
+----
+
+Caption: 
+
+----
+
+Intro: [{"content":{"text":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>"},"id":"06f9422f-6da8-4b38-bd23-413b52666a23","isHidden":false,"type":"textblock"},{"content":{"description":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>","text":"<p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p><p>Lorem ipsum dolor sit <a href=\"http://localhost:8080/works\" target=\"_blank\">amet consectetur adipiscing elit</a>. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>"},"id":"4d762cbf-df92-4cd6-962f-760912f517b4","isHidden":false,"type":"introblock"}]
+
+----
+
+Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://1P2PKfyM4R7Wx7HS"],"caption":"Caption"},"id":"60c6031e-5d4a-4651-82b1-47cb28856b93","isHidden":false,"type":"galleryblock"}],"id":"02f5795e-696c-4148-9e7d-690d3eb3a1ce","width":"1/4"},{"blocks":[{"content":{"images":["file://nfbnqjdxuaqnt8cm"],"caption":"Caption"},"id":"f185e7c0-c76e-40c2-859c-ee8e4495745a","isHidden":false,"type":"galleryblock"}],"id":"e6e8cadc-3951-4bb5-bdbe-95b879102381","width":"1/4"},{"blocks":[{"content":{"images":["file://YoXXhVFr9augwTS8"],"caption":""},"id":"c948bd73-fb86-4e29-a301-c92399ee4309","isHidden":false,"type":"galleryblock"}],"id":"80e92e5e-3e7f-416f-a1a8-12e4bc9eea00","width":"1/4"},{"blocks":[{"content":{"images":["file://T6iPgUXYarKeDYRK"],"caption":""},"id":"30440535-5b38-4826-830a-b0db497b6576","isHidden":false,"type":"galleryblock"}],"id":"3eb8b2c2-6af4-46f2-bec9-5590ba550862","width":"1/4"}],"id":"5263f273-6e35-42cd-be01-bb605ad1d4df"},{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://6K5mlJArkuEH6gsz"],"caption":""},"id":"b98a6dca-d94b-4b4b-9fad-68349b8cdd1a","isHidden":false,"type":"galleryblock"}],"id":"a8ca2c7b-ba8f-47e0-aabb-089ad58da6ad","width":"1/4"},{"blocks":[],"id":"a66eabc8-0781-4a5b-bb02-507f878f93ad","width":"1/4"},{"blocks":[],"id":"c56790fd-5c6b-4a31-9023-a9614f6fabbc","width":"1/4"},{"blocks":[],"id":"1cfb1c57-a932-43ed-b0ac-2eea4f126207","width":"1/4"}],"id":"d11554ba-a9a7-49f8-9697-d92b254d79c5"}]
+
+----
+
+Publishtoggle: true
+
+----
+
 Attachments: 
+
+----
+
+Ispage: true
+
+----
+
+Ispublished: true
 
 ----
 

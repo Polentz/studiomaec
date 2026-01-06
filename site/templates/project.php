@@ -16,7 +16,7 @@ $siblings = $page->siblings()->listed();
 
 <section class="related-section">
     <?php foreach ($siblings->random(1, true) as $sibling) : ?>
-        <div class="button-wrapper accordion-opener">
+        <div class="button-wrapper">
             <a href="<?= $sibling->url() ?>" class="button-text weight-700">Next project</a>
             <a href="<?= $sibling->url() ?>" class="button go">
                 <svg viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">

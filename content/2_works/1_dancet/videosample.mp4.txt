@@ -1,0 +1,9 @@
+Alt: 
+
+----
+
+Uuid: 6xr8j16iclejeldk
+
+----
+
+Template: image

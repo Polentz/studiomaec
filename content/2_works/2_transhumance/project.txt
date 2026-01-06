@@ -2,18 +2,34 @@ Title: Transhumance
 
 ----
 
-Cover: - file://yZO6wxZkOXIE8zFq
-
-----
-
 Summary:
 
 year: "2024"
 client: Biennale Svizzera del territorio
 location: Lugano and its surrounding
 category: Explorations
+meters: ""
 stage: Completed
 team: 'Augustin Clément, Arianna Frascoli, Capucine Fouquin,<br>in collaboration with Agnese Làposi &amp; Andrea Bordoli'
+
+----
+
+Previewimage: - file://yZO6wxZkOXIE8zFq
+
+----
+
+Preview:
+
+- file://IvTVFNBqshlMAGhX
+- file://hvBv7as6G8JzZKA0
+
+----
+
+Previewtext: <p>In the form of a transhumance, with shepherds Alessandro Cominelli and Oliver Lucini, we are re-enacting one of the major rituals of alpine farming, the practice of which has declined with the development of techniques and human control over the land. From the Rompiago Alps to the Villa Saroli in the city centre of Lugano, a group of humans and non-humans move in procession along a precise route through different environments.</p>
+
+----
+
+Cover: - file://yZO6wxZkOXIE8zFq
 
 ----
 
@@ -29,18 +45,11 @@ Grid: [{"attrs":[],"columns":[{"blocks":[{"content":{"images":["file://IvTVFNBqs
 
 ----
 
-Preview:
-
-- file://IvTVFNBqshlMAGhX
-- file://hvBv7as6G8JzZKA0
-
-----
-
-Previewtext: <p>In the form of a transhumance, with shepherds Alessandro Cominelli and Oliver Lucini, we are re-enacting one of the major rituals of alpine farming, the practice of which has declined with the development of techniques and human control over the land. From the Rompiago Alps to the Villa Saroli in the city centre of Lugano, a group of humans and non-humans move in procession along a precise route through different environments.</p>
-
-----
-
 Attachments: 
+
+----
+
+Ispublished: true
 
 ----
 

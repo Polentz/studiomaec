@@ -38,6 +38,10 @@ columns:
             label: Category
             type: text
             value: "{{ page.summary.toObject.category }}"
+          meters:
+            label: m²
+            type: text
+            value: "{{ page.summary.toObject.meters }}"
         template:
           - project
         search: false

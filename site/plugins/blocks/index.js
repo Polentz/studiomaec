@@ -5,6 +5,14 @@ panel.plugin("studiomaec/blocks", {
         images() {
           return this.content.images[0] || {};
         },
+        isVideo() {
+          if (!this.images?.url) return false
+
+          const videoExtensions = ['mp4', 'webm', 'ogg']
+          const ext = this.images.url.split('.').pop().toLowerCase()
+
+          return videoExtensions.includes(ext)
+        }
       },
       template: `
           <div @dblclick="open" class="griditem-block">
@@ -12,12 +20,20 @@ panel.plugin("studiomaec/blocks", {
               <p>Double click here to</p>
               <p>add an element</p>
             </div>
-            <k-frame v-if="images.url"
+            <k-frame
+              v-else
               cover="true"
               ratio="4/3"
             >
-              <img
-                v-if="images.url"
+              <video v-if="isVideo"
+                :src="images.url"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+
+              <img v-else
                 :src="images.url"
               >
             </k-frame>

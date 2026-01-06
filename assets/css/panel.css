@@ -167,3 +167,7 @@ li:has(> .k-breadcrumb-link[title="appendix"]),
 .k-breadcrumb-link[title="appendix"]::after {
     content: none !important;
 }
+
+.k-info-field div.k-box {
+    padding: .375rem var(--box-padding-inline);
+}

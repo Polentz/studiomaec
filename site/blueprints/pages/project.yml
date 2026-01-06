@@ -7,85 +7,170 @@ create:
 options:
   move: false
 
-columns:
-  main:
-    width: 3/4
-    sections:
-      cover:
-        label: Cover Image
-        type: fields
-        fields:
-          cover:
-            label: Cover image
-            width: 2/3
-            type: files
-            layout: cards
-            size: full
-            template: image
-            uploads: image
-            query: page.files.filterBy("type", "image")
-            multiple: false
-            image:
-              ratio: 16/9
-              cover: true
-          summary:
-            label: Summary
-            width: 1/3
-            type: object
+tabs:
+  preview:
+    label: Preview
+    icon: angle-right
+    columns:
+      main:
+        width: 1/1
+        sections:
+          preview:
+            label: false
+            type: fields
             fields:
-              year:
-                label: Year
-                type: tags
-                max: 1
-                layout: list
-                options: query
-                query:
-                  fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.year }}"
-                  value: "{{ page.summary.toObject.year }}"
-              client: 
-                label: Client
-                type: tags
-                max: 1
-                layout: list
-                options: query
-                query:
-                  fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.client }}"
-                  value: "{{ page.summary.toObject.client }}"
-              location: 
-                label: Location
-                type: tags
-                max: 1
-                layout: list
-                options: query
-                query:
-                  fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.location }}"
-                  value: "{{ page.summary.toObject.location }}"
-              category: 
-                label: Category
-                type: tags
-                max: 1
-                layout: list
-                options: query
-                query:
-                  fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.category }}"
-                  value: "{{ page.summary.toObject.category }}"
-              stage: 
-                label: Status
-                type: tags
-                max: 1
-                layout: list
-                options: query
-                query:
-                  fetch: page.siblings.listed
-                  text: "{{ page.summary.toObject.stage }}"
-                  value: "{{ page.summary.toObject.stage }}"
-              team: 
-                label: Team
+              summary:
+                label: Summary
+                width: 1/2
+                type: object
+                fields:
+                  year:
+                    label: Year
+                    type: tags
+                    max: 1
+                    layout: list
+                    options: query
+                    query:
+                      fetch: page.siblings.listed
+                      text: "{{ page.summary.toObject.year }}"
+                      value: "{{ page.summary.toObject.year }}"
+                  client: 
+                    label: Client
+                    type: tags
+                    max: 1
+                    layout: list
+                    options: query
+                    query:
+                      fetch: page.siblings.listed
+                      text: "{{ page.summary.toObject.client }}"
+                      value: "{{ page.summary.toObject.client }}"
+                  location: 
+                    label: Location
+                    type: tags
+                    max: 1
+                    layout: list
+                    options: query
+                    query:
+                      fetch: page.siblings.listed
+                      text: "{{ page.summary.toObject.location }}"
+                      value: "{{ page.summary.toObject.location }}"
+                  category: 
+                    label: Category
+                    type: tags
+                    max: 1
+                    layout: list
+                    options: query
+                    query:
+                      fetch: page.siblings.listed
+                      text: "{{ page.summary.toObject.category }}"
+                      value: "{{ page.summary.toObject.category }}"
+                  meters: 
+                    label: m²
+                    type: text
+                  stage: 
+                    label: Status
+                    type: tags
+                    max: 1
+                    layout: list
+                    options: query
+                    query:
+                      fetch: page.siblings.listed
+                      text: "{{ page.summary.toObject.stage }}"
+                      value: "{{ page.summary.toObject.stage }}"
+                  team: 
+                    label: Team
+                    type: writer
+                    inline: true
+                    marks:
+                      - bold
+                      - italic
+                      - underline
+                      - strike
+                      - link
+                      - clear
+                    nodes: false
+              previewImage:
+                label: Preview cover image
+                width: 1/2
+                type: files
+                template: image
+                uploads: image
+                query: page.files.filterBy("type", "in", ["image", "video"])
+                multiple: false
+                image:
+                  ratio: 16/9
+                  cover: true           
+              preview:
+                label: "Preview images (max. 2)"
+                width: 1/2
+                type: files
+                help: These two images will display in the {{ page.parent.title }} list dropdown.
+                template: image
+                uploads: image
+                query: page.files.filterBy("type", "in", ["image", "video"])
+                max: 2
+                multiple: true
+                image:
+                  ratio: 4/3
+                  cover: true
+              previewText:
+                label: Preview text
+                width: 1/2
+                placeholder: Text …
                 type: writer
+                help: This text will display in the {{ page.parent.title }} list dropdown.
+                marks:
+                  - bold
+                  - italic
+                  - underline
+                  - strike
+                  - link
+                  - clear
+                nodes: false
+  page:
+    label: Page content
+    icon: angle-right
+    columns:  
+      main:
+        width: 2/3
+        sections:
+          cover:
+            label: Cover Image
+            type: fields
+            fields:
+              cover:
+                label: Cover image
+                width: 2/3
+                type: files
+                layout: cards
+                size: full
+                template: image
+                uploads: image
+                query: page.files.filterBy("type", "in", ["image", "video"])
+                multiple: false
+                image:
+                  ratio: 16/9
+                  cover: true
+              overview:
+                label: Summary
+                type: info
+                width: 1/3
+                theme: text
+                text:
+                  |
+                    Year: {{ page.summary.toObject.year }}
+                    Client: {{ page.summary.toObject.client }}
+                    Location: {{ page.summary.toObject.location }}
+                    Category: {{ page.summary.toObject.category }}
+                    m²: {{ page.summary.toObject.meters }}
+                    Status: {{ page.summary.toObject.stage }}
+                    Team: {{ page.summary.toObject.team }}
+                help: This is a overview. Edit the summary information in the Preview tab.
+              caption:
+                label: false
+                width: 2/3
+                type: writer
+                placeholder: Caption...
                 inline: true
                 marks:
                   - bold
@@ -95,82 +180,43 @@ columns:
                   - link
                   - clear
                 nodes: false
-          caption:
-            label: false
-            width: 2/3
-            type: writer
-            placeholder: Caption...
-            inline: true
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
-      intro:
-        label: false
-        type: fields
-        fields:
           intro:
-            label: Introduction text
-            type: blocks
-            fieldsets:
-              - introblock
-              - textblock
-      gallery:
-        label: false
-        type: fields
-        fields:
-          grid:
-            label: Gallery
-            type: layout
-            translate: false
-            layouts:
-              - "1/4, 1/4, 1/4, 1/4"
-              - "1/2, 1/2"
-              - "1/2, 1/4, 1/4"
-              - "1/4, 1/4, 1/2"
-              - "1/4, 1/2, 1/4"
-            fieldsets:
-              - galleryblock
-  sidebar:
-    width: 1/4
-    sections:
-      preview:
-        label: false
-        type: fields
-        fields:
-          preview:
-            label: "Preview images (max. 2)"
-            type: files
-            help: These two images will display in the {{ page.parent.title }} list dropdown.
-            template: image
-            uploads: image
-            query: page.files.filterBy("type", "image")
-            max: 2
-            multiple: true
-            image:
-              ratio: 4/3
-              cover: true
-          previewText:
-            label: Preview text
-            placeholder: Text …
-            type: writer
-            help: This text will display in the {{ page.parent.title }} list dropdown.
-            marks:
-              - bold
-              - italic
-              - underline
-              - strike
-              - link
-              - clear
-            nodes: false
-      features:
-        label: false
-        type: fields
-        fields:
-          attachments: fields/attachments
-
+            label: false
+            type: fields
+            fields:
+              intro:
+                label: Introduction text
+                type: blocks
+                fieldsets:
+                  - introblock
+                  - textblock
+          gallery:
+            label: false
+            type: fields
+            fields:
+              grid:
+                label: Gallery
+                type: layout
+                translate: false
+                layouts:
+                  - "1/4, 1/4, 1/4, 1/4"
+                  - "1/2, 1/2"
+                  - "1/2, 1/4, 1/4"
+                  - "1/4, 1/4, 1/2"
+                  - "1/4, 1/2, 1/4"
+                fieldsets:
+                  - galleryblock
+      sidebar:
+        width: 1/3
+        sections:    
+          features:
+            label: false
+            type: fields
+            fields:
+              publishToggle:
+                label: false
+                type: toggle
+                text: Would you like to publish this page?
+                help: If enabled, the project page will be accessible to visitors. If disabled, the project page will be visible as preview only.
+              attachments: fields/attachments
 

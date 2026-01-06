@@ -1,0 +1,52 @@
+Title: New project sample
+
+----
+
+Summary:
+
+year: "2025"
+client: Private
+location: Italy
+category: Restoration
+meters: "45"
+stage: Completed
+team: Us
+
+----
+
+Previewimage: - file://r7b3yg60rtso7d9m
+
+----
+
+Preview:
+
+- file://mhjvqcydml2a1fz8
+- file://r7b3yg60rtso7d9m
+
+----
+
+Previewtext: 
+
+----
+
+Cover: 
+
+----
+
+Caption: 
+
+----
+
+Intro: 
+
+----
+
+Grid: 
+
+----
+
+Attachments: 
+
+----
+
+Uuid: 5ju2xa4cwduckdsq

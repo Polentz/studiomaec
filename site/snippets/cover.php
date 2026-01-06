@@ -1,9 +1,16 @@
 <?php if ($page->cover()->toFile() || $page->summary()->toObject()->isNotEmpty()) : ?>
     <section class="section cover-section">
         <div class="grid">
-            <?php if ($cover = $page->cover()->toFile()) : ?>
+            <?php if ($image = $page->cover()->toFile()) : ?>
                 <figure class="cover-image lightbox-item">
-                    <img src="<?= $cover->resize(1200, null)->url() ?>" alt="<?= $cover->alt() ?>">
+                    <?php if ($image->type() == 'image') : ?>
+                        <img src="<?= $image->resize(1200, null)->url() ?>" alt="<?= $image->alt() ?>">
+                    <?php elseif ($image->type() == 'video') : ?>
+                        <video autoplay muted loop controlslist="noplaybackrate nodownload" disablePictureInPicture>
+                            <source src="<?= $image->url() ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php endif ?>
                     <?php if ($page->caption()->isNotEmpty()) : ?>
                         <figcaption class="item-image-caption text-small weight-500">
                             <?= $page->caption()->inline() ?>

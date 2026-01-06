@@ -44,6 +44,7 @@ const cursor = () => {
     const cursor = document.createElement("span");
     cursor.classList.add("cursor");
     document.querySelector("body").appendChild(cursor);
+    const images = document.querySelectorAll(".topbar-image");
 
     window.addEventListener("mousemove", (e) => {
         gsap.set(".cursor", {
@@ -55,12 +56,27 @@ const cursor = () => {
             x: e.clientX,
             y: e.clientY,
         });
+
+        images.forEach(element => {
+            if (element) {
+                gsap.set(element, {
+                    xPercent: -50,
+                    yPercent: -50,
+                });
+                gsap.to(element, 0, {
+                    display: "block",
+                    x: e.clientX,
+                    y: e.clientY,
+                });
+            }
+        });
+
+
     });
 };
 
-const attachCursorHoverEffect = (elements) => {
-    const elementList = elements instanceof NodeList || Array.isArray(elements) ? elements : [elements];
-
+const attachCursorHoverEffect = () => {
+    const elementList = document.querySelectorAll("a, img, video, .button, .accordion-opener, .list-topbar-header .topbar-label");
     elementList.forEach((el) => {
         el.addEventListener("mouseenter", () => {
             gsap.to(".cursor", {
@@ -306,7 +322,7 @@ const gridAccordionTemplate = (e) => {
 
             const topbarWidth = topbar.offsetWidth;
             const iconsWidth = icons.offsetWidth;
-            const columnWidth = (topbarWidth - iconsWidth) / 6;
+            const columnWidth = (topbarWidth - iconsWidth) / 7;
 
             document.documentElement.style.setProperty("--grid-column-width", `${columnWidth}px`);
             document.documentElement.style.setProperty("--icons-width", `${iconsWidth}px`);
@@ -325,7 +341,7 @@ const gridAccordionTemplate = (e) => {
 
 const lightbox = (wrapper) => {
     wrapper.forEach(wrap => {
-        const galleryImages = wrap.querySelectorAll(".lightbox-item img");
+        const galleryImages = wrap.querySelectorAll(".lightbox-item img, .lightbox-item video");
         const container = document.querySelector(".main");
 
         const openLightbox = (startIndex) => {
@@ -343,7 +359,8 @@ const lightbox = (wrapper) => {
             </svg>
         `;
 
-            const lightboxImg = document.createElement("img");
+            const mediaContainer = document.createElement("div");
+            mediaContainer.classList.add("lightbox-media");
 
             const icons = document.createElement("div");
             icons.classList.add("icons");
@@ -371,13 +388,30 @@ const lightbox = (wrapper) => {
         `;
 
             icons.append(prevBtn, counter, nextBtn);
-            lightbox.append(closeBtn, lightboxImg, icons);
+            lightbox.append(closeBtn, mediaContainer, icons);
             container.appendChild(lightbox);
 
             let currentIndex = startIndex;
 
             const updateLightbox = () => {
-                lightboxImg.src = galleryImages[currentIndex].src;
+                const currentMedia = galleryImages[currentIndex];
+                mediaContainer.innerHTML = "";
+
+                if (currentMedia.tagName === "IMG") {
+                    const img = document.createElement("img");
+                    img.src = currentMedia.src;
+                    img.alt = currentMedia.alt || "";
+                    mediaContainer.appendChild(img);
+                };
+
+                if (currentMedia.tagName === "VIDEO") {
+                    const video = document.createElement("video");
+                    video.src = currentMedia.currentSrc || currentMedia.src;
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.playsInline = true;
+                    mediaContainer.appendChild(video);
+                }
                 counter.innerHTML = `<span class="counter-num">${currentIndex + 1}</span> / <span class="counter-lenght">${galleryImages.length}</span>`;
             };
 
@@ -391,7 +425,7 @@ const lightbox = (wrapper) => {
                 updateLightbox();
             };
 
-            lightboxImg.onclick = () => {
+            mediaContainer.onclick = () => {
                 currentIndex = (currentIndex + 1) % galleryImages.length;
                 updateLightbox();
             };
@@ -427,7 +461,7 @@ window.addEventListener("load", () => {
     menuHeight();
     handleHref();
     cursor();
-    attachCursorHoverEffect(document.querySelectorAll("a, img, .button, .accordion-opener"));
+    attachCursorHoverEffect();
     accordion();
     handleMediaQuery();
 });

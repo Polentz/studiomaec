@@ -20,10 +20,9 @@ fields:
     type: files
     template: image
     uploads: image
+    query: page.files.filterBy("type", "in", ["image", "video"])
     multiple: true
     min: 1
-    template: image
-    uploads: image
     image:
       ratio: 4/3
       cover: true

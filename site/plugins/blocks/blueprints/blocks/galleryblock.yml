@@ -8,7 +8,7 @@ fields:
     type: files
     template: image
     uploads: image
-    query: page.files.filterBy("type", "image")
+    query: page.files.filterBy("type", "in", ["image", "video"])
     multiple: false
     image:
       ratio: 4/3
