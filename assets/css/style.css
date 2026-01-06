@@ -438,7 +438,8 @@ a:hover,
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    position: relative;
+    position: sticky;
+    top: var(--header-height);
 }
 
 .lightbox-item img,

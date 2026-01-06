@@ -5,7 +5,7 @@ $previewText = $item->previewText();
 ?>
 
 
-<div class="list-item accordion alternate" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-meters="<?= $summary->meters()->slug() ?>" data-stage="<?= $summary->stage()->slug() ?>">
+<div class="list-item accordion" data-project="<?= $item->title() ?>" data-year="<?= $summary->year() ?>" data-client="<?= $summary->client()->slug() ?>" data-location="<?= $summary->location()->slug() ?>" data-category="<?= $summary->category()->slug() ?>" data-meters="<?= $summary->meters()->slug() ?>" data-stage="<?= $summary->stage()->slug() ?>">
     <ul class="list-topbar-content<?php if ($previewImages->isNotEmpty() || $previewText->isNotEmpty()) : ?> accordion-opener<?php endif ?>">
         <li class="topbar-label text-label weight-500">
             <span class="topbar-label-name"><?= $item->title() ?></span>

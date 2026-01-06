@@ -232,7 +232,7 @@ const accordion = () => {
                     accordionLabel.classList.toggle("expanded");
                 };
 
-                if (content.classList.contains("open")) {
+                if (content.classList.contains("open") && contentText.length > 0) {
                     gsap.set(contentText, { opacity: 1 });
 
                     if (contentText.splitInstance) {
