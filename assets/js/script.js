@@ -295,8 +295,8 @@ const sortAccordion = () => {
                 let aValue = a.dataset[sortKey] || "";
                 let bValue = b.dataset[sortKey] || "";
 
-                aValue = sortKey === "type" ? aValue.toLowerCase() : aValue;
-                bValue = sortKey === "type" ? bValue.toLowerCase() : bValue;
+                aValue = typeof aValue === "string" ? aValue.toLowerCase() : aValue;
+                bValue = typeof bValue === "string" ? bValue.toLowerCase() : bValue;
 
                 if (sortKey === "date") {
                     aValue = new Date(aValue).getTime();
