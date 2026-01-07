@@ -34,7 +34,7 @@ $images = $block->images()->toFiles();
             </div>
         <?php endif ?>
     </div>
-    <?php if ($images->count() > 1 || $block->text()->isNotEmpty() || $block->link()->isNotEmpty() || $block->url()->isNotEmpty()) : ?>
+    <?php if ($block->title()->isNotEmpty() || $block->text()->isNotEmpty() || $block->url()->isNotEmpty() || $block->link()->isNotEmpty()) : ?>
         <div class="item-footer">
             <?php if ($block->title()->isNotEmpty()) : ?>
                 <p class="item-header-title text-label weight-700"><?= $block->title() ?></p>
