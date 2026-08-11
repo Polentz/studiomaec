@@ -1,0 +1,53 @@
+Title: another
+
+----
+
+Summary:
+
+year: "2000"
+client: Private
+location: Berlin
+category: Restoration
+meters: "1"
+stage: On going
+team: ""
+
+----
+
+Previewimage: - file://zzz6fuowtlzcmt0u
+
+----
+
+Preview: 
+
+----
+
+Previewtext: 
+
+----
+
+Cover: 
+
+----
+
+Caption: 
+
+----
+
+Intro: 
+
+----
+
+Grid: 
+
+----
+
+Publishtoggle: false
+
+----
+
+Attachments: 
+
+----
+
+Uuid: lr0clh7o6f8mmmee
